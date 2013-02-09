@@ -9,7 +9,9 @@ nbproject
 vendor/*
 
 app/logs/*
-app/cache/*
+app/cache/dev
+app/cache/prod
+app/cache/.gitkeep
 
 #web/uploads/*
 #web/bundles/acmedemo*
