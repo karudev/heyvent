@@ -1,7 +1,3 @@
-_events:
-    pattern:  /
-    defaults: { _controller: HeyMyEventsBundle:Default:index }
-
 _events_show:
     pattern:  /event/show
     defaults: { _controller: HeySiteBundle:Event:show }
