@@ -16,4 +16,13 @@ class EventController extends Controller
     {
         return array();
     }
+    
+    /**
+     * 
+     * @Template()
+     */
+    public function footerAction()
+    {
+        return array();
+    }
 }
