@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+   	<title>{% block title %}Heyvent{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <link href="{{ asset('bundles/hey/css/main.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/hey/css/base.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/hey/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/hey/css/event/boilerplate.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/hey/css/event/elem.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/hey/css/event/custom.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/hey/css/webfonts/titre/stylesheet.css') }}" rel="stylesheet" type="text/css">
+     <link href="{{ asset('bundles/hey/css/scrollbar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" type="text/css">
+    {% block stylesheets %}{% endblock %}
+   <!-- stylesheet for demo and examples -->
+	<style type="text/css">
+      
+		
+		
+		
+    </style>
+	<!-- Custom scrollbars CSS -->
+    <link href="{{ asset('bundles/hey/css/bootstrap-responsive.css') }}" rel="stylesheet">
+    
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  
+  </head>
+
+  <body>
+
+
+      {% block body %}
+	
+      {% endblock %}
+     
+
+  
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+ 
+ 	<script src="{{ asset('bundles/hey/js/jquery-1.7.2.min.js') }}" ></script>
+        <script src="{{ asset('bundles/hey/js/jquery-ui-1.9.1.custom.min.js') }}" ></script> 
+        <script src="{{ asset('bundles/hey/js/jquery.iphone-slide.min.js') }}" ></script>
+        <script src="{{ asset('bundles/hey/js/respond.min.js') }}" ></script>
+        <script src="{{ asset('bundles/hey/js/jquery.mousewheel.min.js') }}"></script>
+        <script src="{{ asset('bundles/hey/js/scrollbar/jquery.mCustomScrollbar.js') }}"></script>
+        <script src="{{ asset('bundles/hey/js/masonry/jquery.masonry.js') }}"></script>
+        <script src="{{ asset('bundles/hey/js/jquery.heyvent.js') }}"></script>
+        <script>
+		(function($){
+			
+				$("#pave1,#pave2,#pave3,#pave4").mCustomScrollbar();
+                             $('#content').masonry({
+                                // options
+                                itemSelector : '.paveposter',
+                                columnWidth : 356
+                              });
+                              
+                              $('#options').masonry({
+                                // options
+                                itemSelector : '.bloc',
+                                columnWidth : 356
+                              });
+			
+		})(jQuery);
+	</script>
+        {% block javascripts %}
+         {% endblock %}
+  </body>
+</html>

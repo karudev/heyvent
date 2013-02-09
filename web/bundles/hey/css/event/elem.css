@@ -1,0 +1,1477 @@
+@charset "UTF-8";
+/* Média fluide simple
+   Remarque : un média fluide exige que vous supprimiez les attributs de hauteur et de largeur du média du code HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+    max-width: 100%;
+}
+body {
+    background-image: url("/bundles/hey/images/event/bandeau_sm.jpg"), url("/bundles/hey/images/event/1pix.png");
+    background-repeat: repeat-x, repeat-y;
+    background-color:#f2f2f2;
+} 
+.sizelogo {
+    width:86px
+}
+
+textarea.contribution{
+height: 18px;
+}
+section.button{
+    margin-top: 4px;
+    width: 18%;
+}
+
+/* IE 6 ne prend pas en charge max-width ; la largeur par défaut est donc fixée à 100% */
+.ie6 img {
+    width:100%;
+}
+
+/*
+        Propriétés de grille fluide Dreamweaver
+        ----------------------------------
+        dw-num-cols-mobile:		6;
+        dw-num-cols-tablet:		8;
+        dw-num-cols-desktop:	16;
+        dw-gutter-percentage:	25;
+        
+        Inspiré par "Responsive Web Design" par Ethan Marcotte 
+        http://www.alistapart.com/articles/responsive-web-design
+        
+        et le système Golden Grid par Joni Korpi
+        http://goldengridsystem.com/
+*/
+
+.albumavec {
+    width:225px;
+    background-color:#FFF;
+    clear:both;
+    float:none;
+    border-radius:5px;
+    min-height:23px;
+    display:block;
+    margin-bottom:10px;
+    margin-top:10px;
+    margin-left:7px;
+}
+img.albumavec {
+    width:225px;
+    display:block;
+}
+.albumseul {
+    width:225px;
+    background-color:#000;
+    clear:both;
+    float:none;
+    border-radius:5px;
+    min-height:23px;
+    display:block;
+    /*margin-bottom:10px;
+    margin-top:10px;*/
+
+
+}
+img.albumseul {
+    width:225px;
+    display:block;
+    border-radius:5px;
+}
+.albumavec p {
+    padding-left:10px;
+    color:#692a68;
+    padding-bottom:10px;
+    padding-top:10px;
+
+}
+
+#album {
+
+    /*
+    
+    margin-left: 0;*/
+    float: left;
+    /*clear: both;*/
+    margin:auto;
+    height:200px;
+    width: 352px;
+    display: block;
+    background-color:#FFF;
+}	
+
+
+.gridContainer {
+    margin-left: auto;
+    margin-right: auto;
+    /*width: 87.9666%;*/
+    width:100%;
+    /*padding-left: 1.1625%;
+    padding-right: 1.1625%;*/
+    min-width: 362px;
+}
+
+
+#header {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    height:34px;
+}
+#intro {
+    clear: both;
+    float: none;
+    width: 90%;
+    margin:auto;
+    display: block;
+    text-align:center;
+
+}
+#content {
+    clear: both;
+    float: none;
+    margin:auto;
+    width: 352px;
+    margin-bottom:12px;
+
+
+}
+#options {
+
+  /*clear: both;*/
+    float:none;
+    margin:auto;
+   /* position:fixed;*/
+    z-index:100;
+    bottom:0px;
+    width: 100%;
+    margin-top:42px;
+}
+.comenvoi {
+    width:100%;
+    padding:5px;
+    background:#803a7f;
+    float: none;
+    left:0;
+    margin-bottom:12px;
+}
+.comenvoicentre {
+   /* width:59%;
+    margin:auto;*/
+   /* background:#803a7f;*/
+}
+.comesocial {
+    width:280px;
+    margin-bottom:12px;
+    background:#ffffff;
+    padding:10px;
+    height:206px;
+   /* display:none;*/
+    border: 1px solid #d9d9d9;
+    border-radius:5px;
+    box-shadow: 0px 0px 2px #DFDFDF;
+    float: none;
+    clear:both;
+}
+
+.comepub{
+    width:280px;
+    margin-left:12px;
+    margin-bottom:12px;
+    background-color:#999;
+    float: left;
+    display:none
+}
+.comeautre {
+    width:280px;
+    /*position:absolute;*/
+    margin-bottom:12px;
+    background:#ffffff;
+    /*margin-left:12px;*/
+   /* display:none;*/
+    padding:10px;
+    height:135px;
+    border: 1px solid #d9d9d9;
+    border-radius:5px;
+    box-shadow: 0px 0px 2px #DFDFDF;
+    float: left;
+}
+
+#footer {
+    clear: both;
+    float: none;
+    margin-left: 0;
+    width: 100%;
+    display:none;
+    background-color:#0F0;
+    margin-top:20px;
+}
+
+
+#myprofil {
+    clear: none;
+    position:absolute;
+    right:12px;
+    top:0px;
+    /*margin-left: 1.2658%;*/
+    max-width: 250px;
+    height:34px;
+    line-height:34px;
+    display:inline-block;
+    vertical-align:bottom;
+    overflow:hidden;
+    color:#a78da7;
+
+}
+#myprofil img {
+    padding-right:10px;
+    width:34px;
+    height:34px;
+}
+#separe {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    /*height:11px;*/
+    display: block;
+    background-image:url("/bundles/hey/images/event/ombre.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:bottom;
+    font-family:legende;
+    font-size:1.4em;
+    color:#723072;
+    border-bottom:dotted;
+    border-bottom-width:2px;
+    border-bottom-color: solid black;
+}
+#message {
+    clear: none;
+    margin:auto;
+    width: 352px;
+    display: block;
+}
+#testcol {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+}
+
+
+
+#pave1 {
+    clear: none;
+    float: left;
+    margin-left: 0px;
+    width: 100%;
+    height:100%;
+    display: block;
+    background-color:#232323;
+    overflow: hidden;
+}
+
+
+
+#pave2 {
+    clear: none;
+    float: left;
+    margin-left: 0px;
+    width: 25%;
+    display: block;
+    background-color:#232323;
+    display:none;
+    overflow: hidden;
+}
+
+
+#pave3 {
+    clear: none;
+    float: left;
+    margin-left: 0px;
+    width: 25%;
+    display: block;
+    background-color:#232323;
+    display:none;
+    overflow: hidden;
+}
+
+
+#pave4 {
+    clear: none;
+    float: left;
+    margin-left: 0px;
+    width: 25%;
+    display: block;
+    background-color:#232323;
+    display:none;
+    overflow: hidden;
+}
+
+#pave1:hover,
+#pave2:hover,
+#pave3:hover,
+#pave4:hover
+{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#picinsert1 {
+    clear: none;
+    float: left;
+    margin-left: 0px;
+    width: 100%;
+    height:490px;
+    display: block;
+    background-color:#FF6;
+
+    background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+    background-repeat:no-repeat;
+    background-position:0px 0px;
+    background-size:352px;
+    display:block;
+}
+#picinsert2 {
+    clear: none;
+    float: left;
+    margin-left: 0px;
+    width: 100%;
+    height:490px;
+    display: block;
+    background-color:#FF6;
+
+    background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+    background-repeat:no-repeat;
+    background-position:-236px 0px;
+    background-size:352px;
+    display:none
+}
+#picinsert3 {
+    clear: none;
+    float: left;
+    margin-left: 0px;
+    width: 100%;
+    height:490px;
+    display: block;
+    background-color:#09F;
+
+    background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+    background-repeat:no-repeat;
+    background-position:-474px 0px;
+    background-size:352px;
+    display:none
+}
+#picinsert4 {
+    clear: none;
+    float: left;
+    margin-left: 0px;
+    width: 100%;
+    height:490px;
+    background-color:#0FF;
+
+    background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+    background-repeat:no-repeat;
+    background-position:-715px 0px;;
+    background-size:352px;
+    display:none
+}
+
+/** Timeline **/
+
+.timeline
+{
+    float:left;  
+    position: absolute;
+    z-index: 1;
+    height:490px;
+    background-color: #65326a;
+}
+
+.timeline .precedent
+{
+    background-image:url('/bundles/hey/images/event/ascensseur/fleche_haut.png');
+    width : 40px;
+    height : 34px;
+    cursor: pointer;
+    top:0px;
+    position: absolute;
+    opacity: 0.75;        
+}
+.timeline .line
+{
+    background-color: #65326a;
+    position: absolute;
+    height : 423px;
+    width : 40px;
+    margin-top: 34px;
+    opacity: 0.75;
+
+}
+
+.timeline .suivant
+{
+    background-image:url('/bundles/hey/images/event/ascensseur/fleche_bas.png');
+    width : 40px;
+    height : 34px;   
+    cursor: pointer;
+    bottom:0px;
+    position: absolute;
+    opacity: 0.75;
+}
+
+.timeline .suivant:hover,.timeline .precedent:hover
+{
+    opacity: 1;  
+}
+
+.timeline .line .debut
+{
+    background-image:url('/bundles/hey/images/event/ascensseur/status_start.png');
+    position: absolute;
+    height : 34px;
+    width : 29px;
+    top: 10px;
+    opacity: 0.75;
+    margin-left: 5px;
+
+}
+.timeline .line .fin
+{
+    background-image:url('/bundles/hey/images/event/ascensseur/status_end.png');
+    position: absolute;
+    height : 34px;
+    width : 29px;
+    bottom:10px;
+    opacity: 0.75;
+    margin-left: 5px;
+
+}
+.timeline .line .date {
+
+    margin-top: 50px;
+    margin-left: 4px;
+
+
+}
+.timeline .line .date li{
+    font-size: 1.4em;
+    color: #FFF;
+    font-weight: bolder;
+    margin-bottom: 25px;
+
+    list-style: none;
+
+}
+.timeline .line .date li:hover{
+
+    cursor: pointer;
+}
+.timeline .line .date .day{
+    border-bottom: 1px solid #CCC;
+    width : 20px;
+
+}
+.timeline .line .date p{
+    margin: 0px;
+
+}
+.timeline .line .date .impaire{
+    font-size: 1.3em;
+    opacity: 0.5;
+
+
+}
+.page{
+    display:none;
+    clear: both;
+    margin-left : -6px;
+
+}
+.page ul{
+    position: absolute;
+    z-index: 100;
+    margin-top: -1px;
+
+}
+.page li{
+    float:left ;
+    margin : 2px;
+
+
+    list-style: none;
+    width : 20px;
+    text-align: center;
+    background-color: #803A7F;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #FFF;
+    font-weight: bolder;
+    cursor : pointer;
+}
+
+.page li:hover ,.page li.active{
+
+    background-color: #3F0A3F;
+}
+
+#button {
+
+    width: 35px;
+    height: 28px;
+    display: block;
+    
+   
+    background-image:url("/bundles/hey/images/event/bout-send-off.png")
+}
+#button:hover{
+    cursor: pointer;
+    background-image:url("/bundles/hey/images/event/bout-send-roll.png");
+    background-repeat:no-repeat;/*background-position:left top;*/
+
+}
+
+
+
+
+/* Disposition mobile : 480px et moins. */
+
+@media only screen and (max-width: 480px) {
+
+    #content {
+
+        margin-bottom:100px;
+
+
+    }
+    #album{
+        height:400px;
+    }
+    .albumavec img{
+        width: 350px;
+    }
+    .timeline
+    {
+
+        height:400px;
+
+    }
+    .timeline .debut
+    {
+        display: none;    
+    }
+    .timeline .line
+    {
+
+        height : 332px;
+
+
+    }
+    .timeline .fin
+    {
+        display: none;  
+    }
+
+    .timeline .line .date {
+        margin-top: 5px;
+
+    }
+
+    .albumavec {
+        width:340px;
+
+    }
+
+    #picinsert1 {
+        height:400px;
+        background-image:url('/bundles/hey/images/profils/1/events/1/main_picture/352_400.jpg');
+        background-size:352px;
+    }
+    .page{
+        display: block;
+    }
+    #button {
+
+    /*    right:5px;
+        position: absolute;
+*/
+
+    }
+    .comenvoi {
+        opacity: 0.3;
+        margin-bottom:0px;
+    } 
+    .comenvoi:hover {
+        opacity: 0.95;
+    }
+
+
+    .mCustomScrollBox .mCSB_scrollTools{
+        width:350px !important;
+
+    }
+    
+    #options {
+    height:0px !important;
+    clear: both;
+    position:fixed;
+  
+}
+
+
+.comeautre,.comepub,.comesocial {
+    display:none; 
+}
+
+
+}
+
+/* Disposition tablette : 481px sur 768px. Hérite des styles de : Disposition mobile */
+
+@media only screen and (min-width: 480px ) and (max-width: 768px ) {
+    body {
+        background-image: url('/bundles/hey/images/event/bandeau_sm.jpg'), url('/bundles/hey/images/event/1pix.png');
+        background-repeat: repeat-x, repeat-y;
+    } 
+
+
+    .sizelogo {
+        width:86px
+    }
+    .gridContainer {
+        width: 100%;
+        /*padding-left: 1.1625%;
+        padding-right: 1.1625%;*/
+        min-width: 473px;
+
+    }
+    #header {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        height:34px;
+    }
+    #album {
+        clear: both;
+        margin:auto;
+        width: 473px;
+        height:241px;
+        display: block;
+        background-color:#3F0;
+        overflow:hidden;
+    }
+    #intro {
+        clear: both;
+        float: none;
+        margin:auto;
+        width: 90%;
+        min-width:473px;
+        display: block;
+        text-align:center;
+
+    }
+    #footer {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display:none;
+    }
+    #content {
+        clear: both;
+        float: none;
+        margin:auto;
+        /*min-width: 716px;*/
+        width:100%;
+        width: 352px;
+        display: block;
+        margin-bottom:12px;
+        /*background-color:#060*/
+    }
+    #options {
+        height:0px !important;
+        clear: both;
+        float:none;
+        margin:auto;
+        position:fixed;
+        z-index:100;
+        bottom:0px;
+        width: 100%;
+        margin-top:42px;
+    }
+    #myprofil {
+        clear: none;
+        /*float: right;*/
+        position:absolute;
+        right:12px;
+        top:0px;
+        margin-left: 1.2658%;
+        max-width: 250px;
+        height:34px;
+        line-height:34px;
+        display:inline-block;
+        vertical-align:bottom;
+        overflow:hidden;
+        color:#a78da7;                                       
+    }
+    #myprofil img {
+        padding-right:10px;
+        width:34px;
+        height:34px;
+    }
+    #separe {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        /*height:11px;*/
+        background-image:url('/bundles/hey/images/event/ombre.png');
+        background-repeat: no-repeat;
+        background-size:contain;
+        font-family:legende;
+        font-size:1.4em;
+        color:#723072;
+        border-bottom:dotted;
+        border-bottom-width:2px;
+        border-bottom-color:solid black;
+    }
+    #message {
+        clear: none;
+        margin:auto;
+        width: 87%;
+        display: block;
+    }
+    #testcol {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+   
+   .comenvoi {
+        width:100%;
+        margin-bottom:0px;
+        padding:10px;
+        float: none;
+        opacity: 0.3;
+    }
+      .comenvoi:hover {
+        opacity: 0.95;
+    }
+    .comenvoicentre {
+        width:90%;
+        margin:auto;
+       /* background:#803a7f;*/
+    }
+
+    .comesocial {
+        width:280px;
+        margin-bottom:12px;
+        background:#FF0;
+        padding:10px;
+        height:206px;
+        border: 1px solid #d9d9d9;
+        border-radius:5px;
+        box-shadow: 0px 0px 2px #DFDFDF;
+        float: none;
+        clear:both;
+        display:none;
+    }
+
+    .comepub{
+        width:280px;
+        margin-bottom:12px;
+        background-color:#999;
+        float: left;
+        display:none
+    }
+    .comeautre {
+        width:280px;
+        /*position:absolute;*/
+        margin-bottom:12px;
+        background:#ffffff;
+        padding:10px;
+        height:135px;
+        border: 1px solid #d9d9d9;
+        border-radius:5px;
+        box-shadow: 0px 0px 2px #DFDFDF;
+        float: left;
+        display:none;
+    }
+    #pave1 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 50%;
+        display: block;
+        background-color:#232323;
+        height:100%;
+        overflow: hidden;
+    }
+
+    #pave2 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 50%;
+        display: block;
+        background-color:#232323;
+        height:100%;
+        overflow: hidden;
+    }
+
+    #pave3 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 25%;
+        display: block;
+        background-color:#232323;
+        display:none;
+        overflow: hidden;
+    }
+
+    #pave4 {
+        clear: none;
+        float: left;
+        margin-left: 2.5641%;
+        width: 100%;
+        display: block;
+        display:none;
+        overflow: hidden;
+        background-color:#232323;
+    }
+
+
+    #picinsert1 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        display: block;
+        background-color:#232323;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:0px 0px;
+        background-size:485px;
+        display:block;
+    }
+    #picinsert2 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        display: block;
+        background-color:#232323;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:-236px 0px;
+        background-size:485px;
+        display:block;
+    }
+    #picinsert3 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        display: block;
+        background-color:#232323;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:-474px 0px;
+        background-size:485px;
+        display:none
+    }
+    #picinsert4 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        background-color:#232323;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:-715px 0px;
+        background-size:485px;
+        display:none
+    }
+
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+
+    body {
+        background-image: url(/bundles/hey/images/event/bandeau_sm.jpg), url(/bundles/hey/images/event/1pix.png);
+        background-repeat: repeat-x, repeat-y;
+    } 
+
+
+    .sizelogo {
+        width:86px
+    }
+    .gridContainer {
+      
+        width: 100%;
+        
+        min-width: 716px;
+    }
+    #header {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        height:34px;
+    }
+    #album {
+        clear: both;
+        margin: auto;
+        width: 716px;
+        height:366px;
+        display: block;
+        background-color:#000;
+        overflow:hidden;
+    }
+    #intro {
+        clear: both;
+        float: none;
+        margin:auto;
+        margin-top:12px;
+        width: 716px;
+        display: block;
+        text-align:center;
+    }
+    #footer {
+        clear: both;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        height:100px;
+        background-color:#e2e2e2;
+    }
+    #content {
+
+        clear: both;
+        margin:auto;
+        width: 716px;
+        margin-bottom:12px;
+    }
+    #options {
+        clear: both;
+        float:none;
+        marging:auto;
+        position:relative;
+        left:51px;
+        top:12px;
+        width: 716px;
+        margin-top:12px;
+        
+    }
+    #myprofil {
+        clear: none;
+        
+        position:absolute;
+        right:12px;
+        top:0px;
+        margin-left: 1.2658%;
+        max-width: 250px;
+        overflow:hidden;
+        height:34px;
+        line-height:34px;
+        display:inline-block;
+        vertical-align:bottom;
+        color:#a78da7;
+
+    }
+    #myprofil img {
+        padding-right:10px;
+        width:34px;
+        height:34px;
+    }
+    #separe {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+       
+        background-image:url(/bundles/hey/images/event/ombre.png);
+        background-repeat: no-repeat;
+        background-size:contain;
+        font-family:legende;
+        font-size:1.4em;
+        color:#723072;
+        border-bottom:dotted;
+        border-bottom-width:2px;
+        border-bottom-color:solid black;
+    }
+    #message {
+        clear: none;
+        margin:auto;
+        width: 716px;
+        display: block;
+    }
+    #testcol {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+    .comenvoi {
+        width:272px;
+        padding:10px;
+        border: 1px solid #481844;
+        border-radius:5px;
+        box-shadow: 0px 0px 2px #DFDFDF;
+        float: left;
+        
+    }
+    .comesocial {
+        width:275px;
+       /* margin-left:12px;
+        
+        margin-bottom:12px;*/
+        background:#ffffff;
+        padding:10px;
+        
+        border: 1px solid #d9d9d9;
+        border-radius:5px;
+        box-shadow: 0px 0px 2px #DFDFDF;
+        float: left;
+        clear:none;
+        display:block
+    }
+
+    .comepub{
+        width:231px;
+        height:212px;
+        margin-left:12px;
+        margin-bottom:12px;
+        background-color:#999;
+        float: left;
+        display:block;
+    }
+    .comeautre {
+
+        
+
+       
+       
+        clear:both;
+        float:left;
+        width:280px;
+        margin-left:0px;
+        padding:10px;
+        height:121px;
+        border: 1px solid #d9d9d9;
+        border-radius:5px;
+        box-shadow: 0px 0px 2px #DFDFDF;
+       
+        display:block;
+    }
+    #pave1 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 33.3333%;
+        display: block;
+        height:100%;
+        background-color:#232323;
+        overflow: hidden;
+    }
+
+    #pave2 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 33.3333%;
+        display: block;
+        background-color:#232323;
+        height:100%;
+
+        overflow: hidden;
+    }
+
+    #pave3 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 33.3333%;
+        display: block;
+        background-color:#232323;
+        height:100%;
+        overflow: hidden;
+    }
+
+    #pave4 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 25%;
+        display: block;
+        background-color:#232323;
+        display:none;
+        overflow: hidden;
+    }
+
+
+    #picinsert1 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        display: block;
+        background-color:#FF6;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:0px 0px;
+        background-size:729px;
+        display:block;
+    }
+    #picinsert2 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        display: block;
+        background-color:#FF6;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:-236px 0px;
+        background-size:729px;
+        display:block;
+    }
+    #picinsert3 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        display: block;
+        background-color:#09F;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:-474px 0px;
+        display:block;
+        background-size:729px;
+    }
+    #picinsert4 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        background-color:#0FF;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:-715px 0px;
+        display:none;
+        background-size:729px;
+    }
+
+}
+
+/* Disposition bureau : 769px à max. 1232px.  Hérite des styles de : Disposition mobile et disposition tablette */
+
+@media only screen and (min-width: 960px) {
+    body {
+        background-image: url(/bundles/hey/images/event/bandeau_big.jpg), url(/bundles/hey/images/event/1pix.png);
+        background-repeat: repeat-x, repeat-y;
+    } 
+
+    .sizelogo {
+        width:128px
+    }
+    .gridContainer {
+        width: 960px;
+        max-width: 960px;
+        /*padding-left: 0.625%;
+        padding-right: 0.625%;*/
+        margin: auto;
+    }
+    #header {
+        clear: both;
+        float: left;
+        margin-left: 10px;
+        width: 100%;
+        display: block;
+        height: 60px;
+    }
+    #header span {
+        height:60px;
+        line-height:60px;
+        vertical-align:middle;
+    }
+    #album {
+        clear: both;
+        margin:auto;
+        margin-left: 0;
+        width: 960px;
+        height:490px;
+        display: block;
+        background-color:#CC6;
+        overflow:hidden;
+    }
+    #intro {
+        clear: both;
+        float: none;
+        margin:auto;
+        width: 716px;
+        display: block;
+        text-align:center;
+    }
+    #footer {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        height:100px;
+        background-color:#e2e2e2;
+    }
+    #content {
+        clear: both;
+        float: left;
+        width: 716px;
+        display: block;
+        margin-bottom:12px;
+        /*background-color:#060*/
+    }
+    #options {
+       /* clear: none;*/
+        float: left;
+        margin-left: 1.2658%;
+        margin-top:12px;
+        width: 231px;
+        display: block;
+        left:0px;
+        top:0px;
+        margin-bottom:12px;
+    }
+    #myprofil {
+        clear: none;
+        position:absolute;
+        right:12px;
+        top:2px;
+        /*float:right;*/
+        margin-left: 1.2658%;
+        max-width: 250px;
+        overflow:hidden;
+        height:54px;
+        line-height:49px;
+        display:inline-block;
+        vertical-align:bottom;
+
+
+    }
+    #myprofil img {
+        padding-right:0px;
+        width:49px;
+        height:49px;
+        border: solid #a78da7  3px;
+    }
+    #separe {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        /*height:11px;*/
+        background-image:url(/bundles/hey/images/event/ombre.png);
+        background-repeat: no-repeat;
+        background-size:contain;
+        font-family:legende;
+        font-size:1.4em;
+        color:#723072;
+        border-bottom:dotted;
+        border-bottom-width:2px;
+        border-bottom-color:solid black;
+    }
+    
+   
+    #message {
+        clear: none;
+        margin:auto;
+        width: 100%;
+        display: block;
+    }
+    .comenvoi {
+        width:224px;
+      
+        margin-bottom:12px;
+        background:#803a7f;
+        padding:3px;
+      
+       
+        border: 1px solid #481844;
+        border-radius:5px;
+        box-shadow: 0px 0px 2px #DFDFDF;
+        float: left;
+    }
+    .comesocial {
+        width:221px;
+        margin-bottom:12px;
+        margin-left:0px;
+
+        background:#ffffff;
+        padding:0px;
+        padding-left:10px;
+        /*height:206px;*/
+        border: 1px solid #d9d9d9;
+        border-radius:5px;
+        box-shadow: 0px 0px 2px #DFDFDF;
+        float: left;
+    }
+
+    .comepub{
+        width:231px;
+        height:212px;
+        margin-bottom:12px;
+        margin-left:0px;
+        background-color:#999;
+        float: left;
+        display:block
+    }
+    .comeautre {
+        width:221px;
+        position:static;
+        margin-left:0px;
+        margin-bottom:12px;
+        background:#ffffff;
+        padding:0px;
+        padding-left:10px;
+        height:135px;
+        border: 1px solid #d9d9d9;
+        border-radius:5px;
+        box-shadow: 0px 0px 2px #DFDFDF;
+        float: left;
+    }
+    #pave1 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 25%;
+        height:100%;
+        display: block;
+        background-color:#232323;
+        overflow: hidden;
+    }
+
+    #pave2 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 25%;
+        height:100%;
+        display: block;
+        background-color:#232323;
+        overflow: hidden;
+    }
+
+    #pave3 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 25%;
+        height:100%;
+        display: block;
+        background-color:#232323;
+        overflow: hidden;
+    }
+
+    #pave4 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 25%;
+        height:100%;
+        display: block;
+        background-color:#232323;
+        overflow: hidden;
+    }
+
+    #picinsert1 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        display: block;
+        background-color:#232323;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:0px;
+        background-size:960px;
+        display:block;
+    }
+    #picinsert2 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        display: block;
+        background-color:#FF6;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:-236px;
+        display:block;
+        background-size:960px
+    }
+    #picinsert3 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        display: block;
+        background-color:#09F;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:-474px;
+        display:block;
+        background-size:960px;
+    }
+    #picinsert4 {
+        clear: none;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        height:490px;
+        background-color:#0FF;
+
+        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-repeat:no-repeat;
+        background-position:-715px;
+        display:block;
+        background-size:960px;
+    }
+
+}

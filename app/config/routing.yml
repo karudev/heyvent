@@ -1,0 +1,14 @@
+hey_site:
+    resource: "@HeySiteBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+hey_my_events:
+    resource: "@HeyMyEventsBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+# Internal routing configuration to handle ESI
+#_internal:
+#    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#    prefix:   /_internal

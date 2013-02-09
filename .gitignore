@@ -1,0 +1,28 @@
+.git
+nbproject
+
+
+# Bootstrap
+#app/bootstrap*
+
+# Symfony directories
+vendor/*
+
+app/logs/*
+app/cache/*
+
+#web/uploads/*
+#web/bundles/acmedemo*
+#web/bundles/framework*
+#web/bundles/sensiodistribution*
+#web/bundles/webprofiler*
+
+
+# Configuration files
+#Symfony/app/config/parameters.ini
+#Symfony/app/config/parameters.yml
+
+
+
+# Acme
+#src/Acme*
