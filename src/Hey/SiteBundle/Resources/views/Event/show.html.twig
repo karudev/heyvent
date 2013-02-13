@@ -134,11 +134,15 @@
         <div class="bloc comeautre">sss
         </div>
     </div>
+        
    {% render "HeySiteBundle:Event:footer" %}
 </div>
 {% endblock %}
 {% block javascripts %}
 <script>
 $('.date li').heyvent();
+
+// Animation sur textearea
+$('textarea.contribution').textarea(); 
 </script>
 {% endblock %}

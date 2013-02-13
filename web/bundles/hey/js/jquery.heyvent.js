@@ -1,6 +1,6 @@
 /**
  * Heyvent - jQuery plugin
- * @version: 0.1 (2012/02/05)
+ * @version: 0.1
  * @requires jQuery v1.4.3+
  * @author Dolyveen Renault
  * @modified by: Dolyveen Renault
@@ -12,6 +12,10 @@
  **/
 
 (function($) {
+    
+    /**
+     * Gère les pavés des events
+     **/
     $.fn.heyvent = function(params) {
         /* var params = {
             handler: null
@@ -23,7 +27,7 @@
             var val = new Array();
            
             if(ref)
-            val = ref.split(';');
+                val = ref.split(';');
          
             for(i=0;i<=4;i++)
             {
@@ -43,8 +47,41 @@
         });
     }
     
-     $.fn.contibution = function(params) {
-     }
+    /**
+     * Anime un textarea en hauteur
+     **/
+    $.fn.textarea = function(params) {
+         
+        if(!params)
+            var params = {};    
+         
+        //Valeur de la hauteur par default
+        if(!params.heightDefault)
+            params.heightDefault = '20px';
+     
+        //Valeur de la hauteur à fixer
+        if(!params.heightToFixe)
+            params.heightToFixe = '200px';
+     
+        //Vitesse
+        if(!params.duration)
+            params.duration = 500;
+     
+     
+        $(this).click(function()
+        { //console.debug($(this));
+            $(this).animate({
+                height :  params.heightToFixe
+                }, params.duration); 
+        });
+     
+        $(this).mouseout(function()
+        { //console.debug($(this));
+            $(this).animate({
+                height :  params.heightDefault
+                }, params.duration); 
+        });
+    }
      
      
 })(jQuery);
