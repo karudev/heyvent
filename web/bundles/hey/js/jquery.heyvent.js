@@ -48,7 +48,7 @@
     }
     
     /**
-     * Anime un textarea en hauteur
+     * Anime un textara en hauteur
      **/
     $.fn.textarea = function(params) {
          
@@ -74,13 +74,14 @@
                 height :  params.heightToFixe
                 }, params.duration); 
         });
-     
-        $(this).mouseout(function()
-        { //console.debug($(this));
+    
+       /* $(this).mouseout(function()
+        { 
             $(this).animate({
                 height :  params.heightDefault
                 }, params.duration); 
         });
+        */
     }
      
      
