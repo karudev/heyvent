@@ -638,16 +638,46 @@ img.albumseul {
         background-repeat: repeat-x, repeat-y;
     } 
 
+      .timeline
+    {
+
+        height:241px;
+
+    }
+    .timeline .debut
+    {
+        display: none;    
+    }
+    .timeline .line
+    {
+
+        height : 173px;
+
+
+    }
+    .timeline .fin
+    {
+        display: none;  
+    }
+
+    .timeline .line .date {
+        margin-top: 5px;
+
+    }
+    
+    .timeline .line .date li{
+        margin-bottom: 18px;
+    }
 
     .sizelogo {
         width:86px
     }
     .gridContainer {
-        width: 100%;
-        /*padding-left: 1.1625%;
-        padding-right: 1.1625%;*/
-        min-width: 473px;
-
+        
+        max-width: 480px;
+        /*padding-left: 0.625%;
+        padding-right: 0.625%;*/
+        margin: auto;
     }
     #header {
         clear: both;
@@ -922,15 +952,43 @@ img.albumseul {
         background-repeat: repeat-x, repeat-y;
     } 
 
+     .timeline
+    {
+
+        height:366px;
+
+    }
+   /* .timeline .debut
+    {
+        display: none;    
+    }*/
+    .timeline .line
+    {
+
+        height : 299px;
+
+
+    }
+   /* .timeline .fin
+    {
+        display: none;  
+    }
+
+    .timeline .line .date {
+        margin-top: 5px;
+
+    }
+    */
 
     .sizelogo {
         width:86px
     }
-    .gridContainer {
-      
-        width: 100%;
+   .gridContainer {
         
-        min-width: 716px;
+        max-width: 768px;
+        /*padding-left: 0.625%;
+        padding-right: 0.625%;*/
+        margin: auto;
     }
     #header {
         clear: both;
@@ -942,7 +1000,7 @@ img.albumseul {
     }
     #album {
         clear: both;
-        margin: auto;
+        margin: auto auto auto 0;
         width: 716px;
         height:366px;
         display: block;
