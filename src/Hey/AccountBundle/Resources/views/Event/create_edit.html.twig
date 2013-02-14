@@ -1,0 +1,20 @@
+{% extends "HeyAccountBundle::layout.html.twig" %}
+{% block body %}
+<form method="post" name="event">
+    <table>
+        <tr>
+            <td>Nom</td>
+            <td>{{ form_widget(formEvent.name,{ 'attr': {'class': 'input-xxlarge'} })}}</td>  
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>{{ form_widget(formEvent.description,{ 'attr': {'class': 'input-xxlarge'} })}}</td>  
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class="btn btn-success" type="submit">Enregistrer</button></td>  
+        </tr>
+    </table>
+
+</form>
+{% endblock %}

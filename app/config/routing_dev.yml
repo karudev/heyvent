@@ -1,6 +1,14 @@
-_events_show:
+_event_show:
     pattern:  /event/show
     defaults: { _controller: HeySiteBundle:Event:show }
+
+_account_event_create:
+    pattern:  /account/event/create
+    defaults: { _controller: HeyAccountBundle:Event:create } 
+
+_account_event_edit:
+    pattern:  /account/event/edit/{id}
+    defaults: { _controller: HeyAccountBundle:Event:edit } 
     
 _wdt:
     resource: "@WebProfilerBundle/Resources/config/routing/wdt.xml"

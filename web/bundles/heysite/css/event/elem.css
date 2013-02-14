@@ -7,7 +7,7 @@ img, object, embed, video {
     max-width: 100%;
 }
 body {
-    background-image: url("/bundles/hey/images/event/bandeau_sm.jpg"), url("/bundles/hey/images/event/1pix.png");
+    background-image: url("/bundles/heysite/images/event/bandeau_sm.jpg"), url("/bundles/heysite/images/event/1pix.png");
     background-repeat: repeat-x, repeat-y;
     background-color:#f2f2f2;
 } 
@@ -236,7 +236,7 @@ img.albumseul {
     width: 100%;
     /*height:11px;*/
     display: block;
-    background-image:url("/bundles/hey/images/event/ombre.png");
+    background-image:url("/bundles/heysite/images/event/ombre.png");
     background-size:contain;
     background-repeat:no-repeat;
     background-position:bottom;
@@ -329,7 +329,7 @@ img.albumseul {
     display: block;
     background-color:#FF6;
 
-    background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+    background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
     background-repeat:no-repeat;
     background-position:0px 0px;
     background-size:352px;
@@ -344,7 +344,7 @@ img.albumseul {
     display: block;
     background-color:#FF6;
 
-    background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+    background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
     background-repeat:no-repeat;
     background-position:-236px 0px;
     background-size:352px;
@@ -359,7 +359,7 @@ img.albumseul {
     display: block;
     background-color:#09F;
 
-    background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+    background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
     background-repeat:no-repeat;
     background-position:-474px 0px;
     background-size:352px;
@@ -373,7 +373,7 @@ img.albumseul {
     height:490px;
     background-color:#0FF;
 
-    background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+    background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
     background-repeat:no-repeat;
     background-position:-715px 0px;;
     background-size:352px;
@@ -393,7 +393,7 @@ img.albumseul {
 
 .timeline .precedent
 {
-    background-image:url('/bundles/hey/images/event/ascensseur/fleche_haut.png');
+    background-image:url('/bundles/heysite/images/event/ascensseur/fleche_haut.png');
     width : 40px;
     height : 34px;
     cursor: pointer;
@@ -414,7 +414,7 @@ img.albumseul {
 
 .timeline .suivant
 {
-    background-image:url('/bundles/hey/images/event/ascensseur/fleche_bas.png');
+    background-image:url('/bundles/heysite/images/event/ascensseur/fleche_bas.png');
     width : 40px;
     height : 34px;   
     cursor: pointer;
@@ -430,7 +430,7 @@ img.albumseul {
 
 .timeline .line .debut
 {
-    background-image:url('/bundles/hey/images/event/ascensseur/status_start.png');
+    background-image:url('/bundles/heysite/images/event/ascensseur/status_start.png');
     position: absolute;
     height : 34px;
     width : 29px;
@@ -441,7 +441,7 @@ img.albumseul {
 }
 .timeline .line .fin
 {
-    background-image:url('/bundles/hey/images/event/ascensseur/status_end.png');
+    background-image:url('/bundles/heysite/images/event/ascensseur/status_end.png');
     position: absolute;
     height : 34px;
     width : 29px;
@@ -526,11 +526,11 @@ img.albumseul {
     display: block;
     
    
-    background-image:url("/bundles/hey/images/event/bout-send-off.png")
+    background-image:url("/bundles/heysite/images/event/bout-send-off.png")
 }
 #button:hover{
     cursor: pointer;
-    background-image:url("/bundles/hey/images/event/bout-send-roll.png");
+    background-image:url("/bundles/heysite/images/event/bout-send-roll.png");
     background-repeat:no-repeat;/*background-position:left top;*/
 
 }
@@ -588,7 +588,7 @@ img.albumseul {
 
     #picinsert1 {
         height:400px;
-        background-image:url('/bundles/hey/images/profils/1/events/1/main_picture/352_400.jpg');
+        background-image:url('/bundles/heysite/images/profils/1/events/1/main_picture/352_400.jpg');
         background-size:352px;
     }
     .page{
@@ -634,7 +634,7 @@ img.albumseul {
 
 @media only screen and (min-width: 480px ) and (max-width: 768px ) {
     body {
-        background-image: url('/bundles/hey/images/event/bandeau_sm.jpg'), url('/bundles/hey/images/event/1pix.png');
+        background-image: url('/bundles/heysite/images/event/bandeau_sm.jpg'), url('/bundles/heysite/images/event/1pix.png');
         background-repeat: repeat-x, repeat-y;
     } 
 
@@ -762,7 +762,7 @@ img.albumseul {
         width: 100%;
         display: block;
         /*height:11px;*/
-        background-image:url('/bundles/hey/images/event/ombre.png');
+        background-image:url('/bundles/heysite/images/event/ombre.png');
         background-repeat: no-repeat;
         background-size:contain;
         font-family:legende;
@@ -890,7 +890,7 @@ img.albumseul {
         display: block;
         background-color:#232323;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:0px 0px;
         background-size:485px;
@@ -905,7 +905,7 @@ img.albumseul {
         display: block;
         background-color:#232323;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:-236px 0px;
         background-size:485px;
@@ -920,7 +920,7 @@ img.albumseul {
         display: block;
         background-color:#232323;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:-474px 0px;
         background-size:485px;
@@ -934,7 +934,7 @@ img.albumseul {
         height:490px;
         background-color:#232323;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:-715px 0px;
         background-size:485px;
@@ -948,7 +948,7 @@ img.albumseul {
 @media only screen and (min-width: 768px) and (max-width: 960px) {
 
     body {
-        background-image: url(/bundles/hey/images/event/bandeau_sm.jpg), url(/bundles/hey/images/event/1pix.png);
+        background-image: url(/bundles/heysite/images/event/bandeau_sm.jpg), url(/bundles/heysite/images/event/1pix.png);
         background-repeat: repeat-x, repeat-y;
     } 
 
@@ -1070,7 +1070,7 @@ img.albumseul {
         width: 100%;
         display: block;
        
-        background-image:url(/bundles/hey/images/event/ombre.png);
+        background-image:url(/bundles/heysite/images/event/ombre.png);
         background-repeat: no-repeat;
         background-size:contain;
         font-family:legende;
@@ -1200,7 +1200,7 @@ img.albumseul {
         display: block;
         background-color:#FF6;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:0px 0px;
         background-size:729px;
@@ -1215,7 +1215,7 @@ img.albumseul {
         display: block;
         background-color:#FF6;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:-236px 0px;
         background-size:729px;
@@ -1230,7 +1230,7 @@ img.albumseul {
         display: block;
         background-color:#09F;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:-474px 0px;
         display:block;
@@ -1244,7 +1244,7 @@ img.albumseul {
         height:490px;
         background-color:#0FF;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:-715px 0px;
         display:none;
@@ -1257,7 +1257,7 @@ img.albumseul {
 
 @media only screen and (min-width: 960px) {
     body {
-        background-image: url(/bundles/hey/images/event/bandeau_big.jpg), url(/bundles/hey/images/event/1pix.png);
+        background-image: url(/bundles/heysite/images/event/bandeau_big.jpg), url(/bundles/heysite/images/event/1pix.png);
         background-repeat: repeat-x, repeat-y;
     } 
 
@@ -1359,7 +1359,7 @@ img.albumseul {
         width: 100%;
         display: block;
         /*height:11px;*/
-        background-image:url(/bundles/hey/images/event/ombre.png);
+        background-image:url(/bundles/heysite/images/event/ombre.png);
         background-repeat: no-repeat;
         background-size:contain;
         font-family:legende;
@@ -1488,7 +1488,7 @@ img.albumseul {
         display: block;
         background-color:#232323;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:0px;
         background-size:960px;
@@ -1503,7 +1503,7 @@ img.albumseul {
         display: block;
         background-color:#FF6;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:-236px;
         display:block;
@@ -1518,7 +1518,7 @@ img.albumseul {
         display: block;
         background-color:#09F;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:-474px;
         display:block;
@@ -1532,7 +1532,7 @@ img.albumseul {
         height:490px;
         background-color:#0FF;
 
-        background-image:url(/bundles/hey/images/event/base/bigpic.jpg);
+        background-image:url(/bundles/heysite/images/event/base/bigpic.jpg);
         background-repeat:no-repeat;
         background-position:-715px;
         display:block;

@@ -3,7 +3,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-   	<title>{% block title %}Heyvent{% endblock %}</title>
+   	<title>{% block title %}Heyvent : Compte{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -15,7 +15,8 @@
     <link href="{{ asset('bundles/heysite/css/event/elem.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('bundles/heysite/css/event/custom.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('bundles/heysite/css/webfonts/titre/stylesheet.css') }}" rel="stylesheet" type="text/css">
-     <link href="{{ asset('bundles/heysite/css/scrollbar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/heysite/css/scrollbar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/heyaccount/css/base.css') }}" rel="stylesheet" type="text/css">
     {% block stylesheets %}{% endblock %}
    <!-- stylesheet for demo and examples -->
 	<style type="text/css">
@@ -37,12 +38,16 @@
   </head>
 
   <body>
-
-
+<div class="gridContainer clearfix">
+    <header id="header"><span><img src="{{ asset('bundles/heysite/images/event/logo_heyvent.png') }}" alt="logo" class="sizelogo"/></span> 
+        <div id="myprofil"><img src="{{ asset('bundles/heysite/images/event/base/people10.jpg') }}"/> Daniely Fanon</div>
+    </header>
+    <div class="container_account" >
       {% block body %}
 	
       {% endblock %}
-     
+    </div>
+  </div>   
 
   
 
@@ -52,32 +57,10 @@
  
  	<script src="{{ asset('bundles/heysite/js/jquery-1.7.2.min.js') }}" ></script>
         <script src="{{ asset('bundles/heysite/js/jquery-ui-1.9.1.custom.min.js') }}" ></script> 
-        <script src="{{ asset('bundles/heysite/js/jquery.iphone-slide.min.js') }}" ></script>
         <script src="{{ asset('bundles/heysite/js/respond.min.js') }}" ></script>
-        <script src="{{ asset('bundles/heysite/js/jquery.mousewheel.min.js') }}"></script>
-        <script src="{{ asset('bundles/heysite/js/scrollbar/jquery.mCustomScrollbar.js') }}"></script>
-        <script src="{{ asset('bundles/heysite/js/masonry/jquery.masonry.js') }}"></script>
         <script src="{{ asset('bundles/heysite/js/jquery.heyvent.js') }}"></script>
-        <script>
-		(function($){
-			
-				$("#pave1,#pave2,#pave3,#pave4").mCustomScrollbar();
-                             $('#content').masonry({
-                                // options
-                                itemSelector : '.paveposter',
-                                columnWidth : 356
-                              });
-                              
-                              $('#options').masonry({
-                                // options
-                                itemSelector : '.bloc',
-                                columnWidth : 356
-                              });
-                              
-        
-		})(jQuery);
-	</script>
+      
         {% block javascripts %}
-         {% endblock %}
+        {% endblock %}
   </body>
 </html>

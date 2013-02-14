@@ -66,7 +66,7 @@ p.envoi {
 	color:#9e9e9e;
 }
 p.envoi:before {
-	content: url(/bundles/hey/images/event/picto-heure.png) " ";
+	content: url(/bundles/heysite/images/event/picto-heure.png) " ";
 	position:relative;
 	top:2px;
 	
@@ -77,19 +77,19 @@ ul {
 }
 
 li.like{
-list-style-image:url(/bundles/hey/images/event/picto_like.png);
+list-style-image:url(/bundles/heysite/images/event/picto_like.png);
 list-style-position:inside;
 
 }
 	
 
 li.tweet{
-list-style-image:url(/bundles/hey/images/event/picto_tweet.png);
+list-style-image:url(/bundles/heysite/images/event/picto_tweet.png);
 list-style-position:inside;
 }
 
 li.view{
-list-style-image:url(/bundles/hey/images/event/picto-eye.png);
+list-style-image:url(/bundles/heysite/images/event/picto-eye.png);
 list-style-position:inside;
 }
 a.linkunder {
@@ -127,7 +127,7 @@ h4.lieu{
 	
 }
 h4.lieu:before{
-	content: url(/bundles/hey/images/event/picto-lieu.png)" ";
+	content: url(/bundles/heysite/images/event/picto-lieu.png)" ";
 	position:relative;
 	top:7px
 }
