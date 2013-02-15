@@ -3,6 +3,8 @@
 namespace Hey\AccountBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Hey\AccountBundle\Models\Dt;
 
 /**
  * Event
@@ -51,7 +53,7 @@ class Event
 
     /**
      * @var integer
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="date_begin", type="bigint")
      */
     private $date_begin;
@@ -59,20 +61,27 @@ class Event
     /**
      * @var integer
      *
-     * @ORM\Column(name="date_end", type="bigint")
+     * @ORM\Column(name="date_end", type="bigint", nullable = true)
      */
     private $date_end;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+    
+    /**
+     * @var string
+     * @Assert\NotBlank()
+     * @ORM\Column(name="presentation", type="string", length=255)
+     */
+    private $presentation;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="description", type="text")
      */
     private $description;
@@ -197,12 +206,12 @@ class Event
     /**
      * Set date_begin
      *
-     * @param integer $dateBegin
+     * @param string $dateBegin
      * @return Event
      */
     public function setDateBegin($dateBegin)
     {
-        $this->date_begin = $dateBegin;
+        $this->date_begin = Dt::getTimeStamps($dateBegin);
     
         return $this;
     }
@@ -330,5 +339,28 @@ class Event
     public function getIsActive()
     {
         return $this->is_active;
+    }
+
+    /**
+     * Set presentation
+     *
+     * @param string $presentation
+     * @return Event
+     */
+    public function setPresentation($presentation)
+    {
+        $this->presentation = $presentation;
+    
+        return $this;
+    }
+
+    /**
+     * Get presentation
+     *
+     * @return string 
+     */
+    public function getPresentation()
+    {
+        return $this->presentation;
     }
 }

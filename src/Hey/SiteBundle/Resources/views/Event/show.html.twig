@@ -62,9 +62,7 @@
     <div id="intro">
 
         <div class="introstatus"><img src="{{ asset('bundles/heysite/images/event/status-end.png') }}" alt="status"/></div>
-        <p class="titre">Jazz Gwada Style</p><p class="titresous">Souvenirs de vacances en guadeloupe</p><p class="textstand">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam 
-            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dictarem  
-            sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut ipsam voluptatem</p></div>
+        <p title="{{event.name}}" class="titre">{{event.name}}</p><p class="titresous">{{event.presentation}}</p><p class="textstand">{{event.description|nl2br}}</p></div>
     <div id="separe">
         <div id="message">24 Messages </div>
     </div>

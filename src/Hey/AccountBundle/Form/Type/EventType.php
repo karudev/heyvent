@@ -12,6 +12,9 @@ class EventType extends AbstractType
     {
   
    	$builder->add('name', 'text');
+        $builder->add('presentation', 'text');
+        $builder->add('dateBegin', 'text');
+        $builder->add('dateEnd', 'text',array('required'=>false));
    	$builder->add('description', 'textarea');
    	
     }

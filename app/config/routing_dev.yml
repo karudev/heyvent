@@ -1,5 +1,5 @@
 _event_show:
-    pattern:  /event/show
+    pattern:  /event/show/{id}
     defaults: { _controller: HeySiteBundle:Event:show }
 
 _account_event_create:

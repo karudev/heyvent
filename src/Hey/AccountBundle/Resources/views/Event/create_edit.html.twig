@@ -1,5 +1,8 @@
 {% extends "HeyAccountBundle::layout.html.twig" %}
 {% block body %}
+
+<h3>{{title}}</h3>
+
 <form method="post" name="event">
     <table>
         <tr>
@@ -7,14 +10,34 @@
             <td>{{ form_widget(formEvent.name,{ 'attr': {'class': 'input-xxlarge'} })}}</td>  
         </tr>
         <tr>
+            <td>Phrase de présentation</td>
+            <td>{{ form_widget(formEvent.presentation,{ 'attr': {'class': 'input-xxlarge'} })}}</td>  
+        </tr>
+        <tr>
+            <td>Date de début</td>
+            <td>{{ form_widget(formEvent.dateBegin,{ 'attr': {'class': 'input-small'} })}}</td>  
+        </tr>
+        <tr>
+            <td>Date de fin</td>
+            <td>{{ form_widget(formEvent.dateEnd,{ 'attr': {'class': 'input-small'} })}}</td>  
+        </tr>
+        <tr>
             <td>Description</td>
             <td>{{ form_widget(formEvent.description,{ 'attr': {'class': 'input-xxlarge'} })}}</td>  
         </tr>
         <tr>
-            <td></td>
-            <td><button class="btn btn-success" type="submit">Enregistrer</button></td>  
+            <td>Accès</td>
+            <td><p><input type="radio" name="test" checked="checked" /> Public</p>
+                <p><input type="radio" name="test" /> Privé</p></td>  
         </tr>
-    </table>
+        <tr>
+            <td></td>
+            <td>
+                {{ form_rest(formEvent) }}
+                    <button class="btn btn-success" type="submit">Enregistrer</button>
+                </td>  
+            </tr>
+        </table>
 
-</form>
+    </form>
 {% endblock %}
