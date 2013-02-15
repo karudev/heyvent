@@ -206,7 +206,7 @@ class Event
     /**
      * Set date_begin
      *
-     * @param string $dateBegin
+     * @param integer $dateBegin
      * @return Event
      */
     public function setDateBegin($dateBegin)
@@ -223,7 +223,7 @@ class Event
      */
     public function getDateBegin()
     {
-        return $this->date_begin;
+        return Dt::getDate($this->date_begin);
     }
 
     /**
@@ -234,7 +234,8 @@ class Event
      */
     public function setDateEnd($dateEnd)
     {
-        $this->date_end = $dateEnd;
+ 
+        $this->date_end =  Dt::getTimeStamps($dateEnd);
     
         return $this;
     }
@@ -246,7 +247,7 @@ class Event
      */
     public function getDateEnd()
     {
-        return $this->date_end;
+        return Dt::getDate($this->date_end);
     }
 
     /**

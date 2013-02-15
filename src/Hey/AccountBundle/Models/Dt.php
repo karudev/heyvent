@@ -9,8 +9,18 @@ class Dt
 {
 	public static function getTimeStamps($date,$separateur="/",$multiplicateur=1,$addition=0,$gmt = false)
 	{
-		
-		list($d,$h) = explode(" ",$date);
+		if($date == null)
+                return 0;
+                
+		$date_array = explode(" ",$date);
+               
+                $d = $date_array[0];
+               
+                if(isset($date_array[1]))
+                $h = $date_array[1];
+                else
+                $h =  "00:00";
+                
 		list($heure,$min) = explode(":",$h);
 		
 		if(!is_numeric($heure))
@@ -35,5 +45,12 @@ class Dt
 
 		return $tps;
 	}
+        public static function getDate($tps,$synthax="d/m/Y")
+        {
+            if($tps == 0 || $tps == null)
+            return null;
+            else
+            return date($synthax,$tps);    
+        }
 	
 }

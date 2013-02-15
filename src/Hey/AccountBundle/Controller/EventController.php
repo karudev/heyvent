@@ -30,9 +30,9 @@ class EventController extends Controller
             {
     		
     		$em = $this->getDoctrine()->getManager();
-                $event->setDateBegin();
+               // $event->setDateBegin();
                 $event->setDateCreated(time());
-                $event->setDateEnd(time());
+                //$event->setDateEnd(time());
                 $event->setDateLastModified(time());
                 $event->setIdModified(1);
                 $event->setIdOwner(1);

@@ -25,11 +25,11 @@
             <td>Description</td>
             <td>{{ form_widget(formEvent.description,{ 'attr': {'class': 'input-xxlarge'} })}}</td>  
         </tr>
-        <tr>
+       <!-- <tr>
             <td>Accès</td>
             <td><p><input type="radio" name="test" checked="checked" /> Public</p>
                 <p><input type="radio" name="test" /> Privé</p></td>  
-        </tr>
+        </tr>-->
         <tr>
             <td></td>
             <td>
@@ -40,4 +40,11 @@
         </table>
 
     </form>
+{% endblock %}
+{% block javascripts %}
+<script>
+   $(function() {
+        $('#event_dateBegin,#event_dateEnd').datepicker({'dateFormat' : 'dd/mm/yy'});
+    });
+</script>
 {% endblock %}
