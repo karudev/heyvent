@@ -22,6 +22,7 @@ class EventController extends Controller
         $request = $this->get('request');
     	$event = new Event();
     	$formEvent = $this->createForm(new EventType(),$event);
+        $user = $this->get('security.context')->getToken()->getUser();
     	if($request->getMethod() == 'POST')
     	{
             $formEvent->bindRequest($request);
@@ -34,12 +35,18 @@ class EventController extends Controller
                 $event->setDateCreated(time());
                 //$event->setDateEnd(time());
                 $event->setDateLastModified(time());
-                $event->setIdModified(1);
-                $event->setIdOwner(1);
+                $event->setIdModified($user->getId());
+                $event->setIdOwner($user);
                 $event->setIsActive(1);
                 $event->setIsPrivate(0);
     		$em->persist($event);
     		$em->flush();
+                
+                # Récupération des évènements de l'utilisateur
+                $events_user = $this->getDoctrine()->getRepository('HeyAccountBundle:Event')->findBy(array('id_owner'=>$user->getId()));
+ 
+                # Mise en session
+                $this->container->get('request')->getSession()->set('events_user', $events_user);
             }
     	}
        

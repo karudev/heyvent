@@ -15,10 +15,10 @@
     <link href="{{ asset('bundles/heysite/css/event/elem.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('bundles/heysite/css/event/custom.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('bundles/heysite/css/webfonts/titre/stylesheet.css') }}" rel="stylesheet" type="text/css">
-     <link href="{{ asset('bundles/heysite/css/scrollbar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/heysite/css/scrollbar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" type="text/css">
     {% block stylesheets %}{% endblock %}
    <!-- stylesheet for demo and examples -->
-	<style type="text/css">
+   <style type="text/css">
       
 		
 		
@@ -37,12 +37,54 @@
   </head>
 
   <body>
+      <div class="navbar navbar-inverse  nav-collapse collapse">
+<div class="gridContainer clearfix">
+          <header id="header">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+         {% block nav %}
+                        <a class="brand" href="#"><span><img src="{{ asset('bundles/heysite/images/event/logo_heyvent.png') }}" alt="logo" class="sizelogo"/></span> </a>
+                       {% if(app.user|length >0 ) %}
+                        <div class="nav-collapse collapse">
+                            <ul class="nav">
+                               
+                                <li class="dropdown">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Mes Heyvents ({{app.session.get('events_user')|length}})<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        {% for event in app.session.get('events_user') %}
+                                             <li><a href="{{ path('_event_show', { 'id': event.id }) }}"><i class="icon-time"></i> {{event.name}}</a></li>
+                                        {% endfor %}   
+                                       
 
 
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><img src="{{ asset('bundles/heysite/images/event/base/people10.jpg') }}"/>  <b>{{ app.user.firstname}} {{app.user.lastname}}</b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ path('_account_dashboard') }}"><i class="icon-th"></i> Mon tableau de bord</a></li>
+                                        <li><a href="{{ path('_account_event_create') }}"><i class="icon-plus-sign"></i> Créer un Heyvent</a></li>
+                                        <li><a href="{{ path('_account_profil_edit') }}"><i class="icon-user"></i> Mon profil</a></li>
+                                        <li><a href="{{ path('_account_logout') }}"><i class="icon-off"></i> Se déconnecter</a></li>
+
+
+                                    </ul>
+                                </li>
+                                
+
+
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                        {% endif %}
+     	{% endblock %}
+                    </header>
       {% block body %}
 	
       {% endblock %}
-     
+    </div> </div>
 
   
 
@@ -58,6 +100,7 @@
         <script src="{{ asset('bundles/heysite/js/scrollbar/jquery.mCustomScrollbar.js') }}"></script>
         <script src="{{ asset('bundles/heysite/js/masonry/jquery.masonry.js') }}"></script>
         <script src="{{ asset('bundles/heysite/js/jquery.heyvent.js') }}"></script>
+        <script src="{{ asset('bundles/heysite/js/bootstrap.js') }}"></script>
         <script>
 		(function($){
 			

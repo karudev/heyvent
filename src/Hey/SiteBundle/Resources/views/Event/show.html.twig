@@ -1,9 +1,5 @@
 {% extends "HeySiteBundle::layout.html.twig" %}
 {% block body %}
-<div class="gridContainer clearfix">
-    <header id="header"><span><img src="{{ asset('bundles/heysite/images/event/logo_heyvent.png') }}" alt="logo" class="sizelogo"/></span> 
-        <div id="myprofil"><img src="{{ asset('bundles/heysite/images/event/base/people10.jpg') }}"/> Daniely Fanon</div>
-    </header>
     <section style="clear:both" >
         <div class="timeline">
             <div class="precedent"></div>
@@ -134,7 +130,6 @@
     </div>
         
    {% render "HeySiteBundle:Event:footer" %}
-</div>
 {% endblock %}
 {% block javascripts %}
 <script>

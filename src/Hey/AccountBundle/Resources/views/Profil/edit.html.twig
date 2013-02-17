@@ -1,0 +1,30 @@
+{% extends "HeyAccountBundle::layout.html.twig" %}
+{% block body %}
+<h3>Modifier votre profil</h3>
+<form name="profil" method="post">
+    <table>
+        <tr>
+            <td>Identifiant</td>
+            <td><b>{{app.user.username}}</b></td>
+        </tr>
+        <tr>
+            <td>Nom</td>
+            <td>{{form_widget(formAccount.lastname)}}</td>
+        </tr>
+        <tr>
+            <td>Prénom</td>
+            <td>{{form_widget(formAccount.firstname)}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{form_widget(formAccount.email)}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="btn btn-success" type="submit">Enregistrer</button></td>
+        </tr>
+    </table>
+
+</form>
+{% endblock %}

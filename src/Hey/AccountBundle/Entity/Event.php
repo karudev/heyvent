@@ -5,7 +5,6 @@ namespace Hey\AccountBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Hey\AccountBundle\Models\Dt;
-
 /**
  * Event
  *
@@ -17,7 +16,7 @@ class Event
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id_event", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -39,8 +38,8 @@ class Event
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_owner", type="integer")
+     * @ORM\ManyToOne(targetEntity="Account", inversedBy="Event")
+     * @ORM\JoinColumn(name="id_owner", referencedColumnName="id_account")
      */
     private $id_owner;
 
@@ -100,7 +99,7 @@ class Event
      */
     private $is_active;
 
-
+   
     /**
      * Get id
      *

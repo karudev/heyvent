@@ -14,6 +14,8 @@ class EventController extends Controller
      */
     public function showAction(Event $event = null)
     {
+         //\Doctrine\Common\Util\Debug::dump(  $this->container->get('request')->getSession()->get('account'),2);die();
+      
       
         return array( 'event'   => $event);
     }

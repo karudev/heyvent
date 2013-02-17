@@ -807,6 +807,9 @@ ol ul {
 li {
   line-height: 20px;
 }
+.nav li {
+  line-height: 50px;
+}
 
 ul.unstyled,
 ol.unstyled {
@@ -2252,7 +2255,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("../img/glyphicons-halflings.png");
+  background-image: url("../images/glyphicons-halflings.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -2272,7 +2275,7 @@ table th[class*="span"],
 .dropdown-menu > .active > a > [class*=" icon-"],
 .dropdown-submenu:hover > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"] {
-  background-image: url("../img/glyphicons-halflings-white.png");
+  background-image: url("../images/glyphicons-halflings-white.png");
 }
 
 .icon-glass {
@@ -2924,12 +2927,12 @@ table th[class*="span"],
 .dropdown-submenu:hover > a {
   color: #ffffff;
   text-decoration: none;
-  background-color: #0081c2;
-  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
-  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-color: #351937;
+  background-image: -moz-linear-gradient(top, #672A6D, #75337D);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#672A6D), to(#75337D));
+  background-image: -webkit-linear-gradient(top, #672A6D, #75337D);
+  background-image: -o-linear-gradient(top, #672A6D, #75337D);
+  background-image: linear-gradient(to bottom, #672A6D, #75337D);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
@@ -2939,11 +2942,11 @@ table th[class*="span"],
   color: #ffffff;
   text-decoration: none;
   background-color: #0081c2;
-  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
-  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-image: -moz-linear-gradient(top, #672A6D, #75337D);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#672A6D), to(#75337D));
+  background-image: -webkit-linear-gradient(top, #672A6D, #75337D);
+  background-image: -o-linear-gradient(top, #672A6D, #75337D);
+  background-image: linear-gradient(to bottom, #672A6D, #75337D);
   background-repeat: repeat-x;
   outline: 0;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
@@ -4339,7 +4342,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .brand {
   display: block;
   float: left;
-  padding: 10px 20px 10px;
+ /* padding: 10px 20px 10px;*/
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
@@ -4533,7 +4536,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li > a {
   float: none;
-  padding: 10px 15px 10px;
+  padding: 5px 15px 5px;
   color: #777777;
   text-decoration: none;
   text-shadow: 0 1px 0 #ffffff;
@@ -4771,6 +4774,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
   color: #ffffff;
   background-color: #111111;
+  opacity: 0.5;
 }
 
 .navbar-inverse .nav li.dropdown > a:hover .caret {

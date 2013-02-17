@@ -1,0 +1,33 @@
+{% extends "HeySiteBundle::layout.html.twig" %}
+{% block stylesheets %}
+<link href="{{ asset('bundles/heysite/css/login/base.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block profil %}
+{% endblock %}
+{% block body %}
+<section class="login">
+
+    <div>
+
+        <form name="login" method="post" action="{{ path('_account_logincheck') }}" class="form-signin">
+
+            {% if error.message is defined %}
+            {{error.message}}
+            {% endif %}
+            <h4>Accédez à votre compte</h4>
+            <input type="text" placeholder="Identifiant" class="input-block-level" id="username" name="_username" value="{{ last_username }}" required="required">
+            <input  id="password"  name="_password" type="password" placeholder="Mot de passe" required="required" class="input-block-level">
+            <label class="checkbox">
+                <input type="checkbox" value="1"> Se souvenir de moi
+            </label>
+            <button type="submit" class="btn btn-large btn">Se connecter</button>
+
+
+        </form>
+    </div>
+    <div  style="margin-top:20px" class="form-signin">
+        <center> <h5>Vous n'avez pas encore de compte ?</h5></center>
+        <button type="submit" class="btn btn-large btn">Créer votre compte en <b>1 min</b> !</button>
+    </div>
+</section> 
+{% endblock %}
