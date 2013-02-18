@@ -8,7 +8,7 @@ use Hey\AccountBundle\Models\Dt;
 /**
  * Event
  *
- * @ORM\Table()
+ * @ORM\Table(name="event")
  * @ORM\Entity(repositoryClass="Hey\AccountBundle\Entity\EventRepository")
  */
 class Event

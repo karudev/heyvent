@@ -22,9 +22,13 @@ if (!$con)
     $retour ="Could not connect: <br/>";
   }
 
+  if (mysql_query("DROP DATABASE IF EXISTS heyvent",$con))
+  {
+    $retour .="Base de donnée heyvent supprimée<br/>";
+  }
 if (mysql_query("CREATE DATABASE IF NOT EXISTS heyvent",$con))
   {
-    $retour .="Base de donnée OK<br/>";
+    $retour .="Base de donnee heyvent crée<br/>";
   }
 
 
@@ -107,7 +111,9 @@ ALTER TABLE `event`
         $stmt = $this->getDoctrine()->getConnection()->prepare($sql);
         $stmt->execute();
         
-        die($retour.'Installation des tables OK<br/>Vous pouvez vous logger à cette adresse : <a href="http://'.$_SERVER['SERVER_NAME'].'/app_dev.php/account/login">'.$_SERVER['SERVER_NAME'].'/app_dev.php/account/login</a>');
+        return array('retour'=>$retour.'Installation des tables OK<br/>Vous pouvez vous logger à cette adresse : <a href="http://'.$_SERVER['SERVER_NAME'].'/app_dev.php/account/login">'.$_SERVER['SERVER_NAME'].'/app_dev.php/account/login</a>');
+    
+    
     }
 
 }

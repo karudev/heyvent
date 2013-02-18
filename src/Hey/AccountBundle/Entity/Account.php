@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Karudev\AppsBundle\Entity\Compte
  *
- * @ORM\Table(name="Account")
+ * @ORM\Table(name="account")
  * @ORM\Entity
  */
 class Account implements UserInterface {
