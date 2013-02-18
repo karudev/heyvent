@@ -16,7 +16,7 @@ class InstallController extends Controller {
     public function defaultAction() {
 
         $retour = 'Installation du site Heyvent<br/>------------------</br/>';
-$con = mysql_connect("localhost","root","");
+$con = mysql_connect("localhost","root","root");
 if (!$con)
   {
     $retour ="Could not connect: <br/>";

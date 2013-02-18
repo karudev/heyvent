@@ -1,6 +1,33 @@
+_contact:
+    pattern:  /contact
+    defaults: { _controller: HeySiteBundle:Contact:index }
+
+_install:
+    pattern:  /install
+    defaults: { _controller: HeyAccountBundle:Install:default }
+    
 _event_show:
     pattern:  /event/show/{id}
     defaults: { _controller: HeySiteBundle:Event:show }
+
+_account_login:
+    pattern:  /account/login
+    defaults: { _controller: HeySiteBundle:Login:login }
+
+_account_logout:
+    pattern:  /account/logout
+    defaults: { _controller: HeySiteBundle:Login:logout }
+
+_account_dashboard:
+    pattern:  /account/dashboard
+    defaults: { _controller: HeyAccountBundle:Dashboard:index }
+    
+_account_profil_edit:
+    pattern:  /account/profil
+    defaults: { _controller: HeyAccountBundle:Profil:edit }
+
+_account_logincheck:
+    pattern:  /account/logincheck
 
 _account_event_create:
     pattern:  /account/event/create
