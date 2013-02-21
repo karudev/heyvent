@@ -11,6 +11,10 @@ body {
     background-repeat: repeat-x, repeat-y;
     background-color:#f2f2f2;
 } 
+ .nav-collapse, .nav-collapse.collapse {
+    
+    overflow: visible !important;
+    }
 .sizelogo {
     width:86px
 }
@@ -541,6 +545,8 @@ img.albumseul {
 /* Disposition mobile : 480px et moins. */
 
 @media only screen and (max-width: 480px) {
+
+   
 
     #content {
 
