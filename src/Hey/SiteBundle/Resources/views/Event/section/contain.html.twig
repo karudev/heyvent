@@ -1,0 +1,59 @@
+<div id="separe">
+    <div id="message">{{comments|length}} Message(s) </div>
+</div>
+<div id="content">
+
+  {% for comment in comments %}
+    <div class="paveposter">
+        <img src="{{ asset('bundles/heysite/images/event/picto-fleche.png') }}" class="insert" alt=""/> 
+        <img src="{{ asset('bundles/heysite/images/event/base/people2.jpg') }}" class="people" alt=""/>
+        <div class="poster">
+            <h4 class="personne">Pierrette Mona</h4>
+            <h4 class="lieu" style="display:inline-block" >gwada</h4>
+            <img src="{{ asset('bundles/heysite/images/event/note_3.png') }}" class="notepose"/>
+            <p>{{comment.comment|nl2br}}</p>
+            <p class="envoi">envoyé le {{comment.dateCreated|date('d/m/Y à H:i')}}</p>
+        </div>
+    </div>
+  {% endfor %}
+</div>
+<div id="options" >
+        {% if(app.user|length >0 ) %}
+        <div class="bloc comenvoi">
+
+            <div class="comenvoicentre">
+                <form name="comment" method="post" action="{{path('_event_section_contain')}}">
+                    <section>
+                        {{form_widget(commentForm.idEvent)}}
+                        {{form_widget(commentForm.comment,{'attr':{'class':'contribution input-large','placeholder':'Postez votre contribution'}} )}}
+                        {{ form_errors(commentForm.comment) }}
+                        {{ form_rest(commentForm) }}
+                        </section>
+                        <section class="button" ><button type="submit" id="button"></button></section>
+                    </form>
+                </div>
+
+            </div>
+        {% else %}
+            <div style="margin-bottom : 20px;"  >
+                <a class="btn btn-mini" href="{{path('_account_login')}}"><i class="icon-user"></i>Connectez pour poster un commentaire !</a>   
+            </div>
+        {% endif %}
+            <div class="bloc comesocial">
+                <ul>
+                    <li class="like">5 likes</li>
+                    <hr style="height: 1px; color: #e3e3e3; background-color: #e3e3e3; width: 90%; border: none;">
+                    <li class="view">5 likes</li>
+                    <hr style="height: 1px; color: #e3e3e3; background-color: #e3e3e3; width: 90%; border: none;">
+                    <li class="tweet">5 likes</li>
+                    <hr style="height: 1px; color: #e3e3e3; background-color: #e3e3e3; width: 90%; border: none;">
+
+                </ul>
+                <a class="linkunder">Lien : Http://heysitev/Jazz</a>
+            </div>
+            <div class="bloc comepub"><img src="{{ asset('bundles/heysite/images/event/pub.jpg') }}" alt="pub">
+            </div>
+            <div class="bloc comeautre">sss
+            </div>
+</div>
+

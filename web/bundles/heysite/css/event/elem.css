@@ -528,11 +528,14 @@ img.albumseul {
     width: 35px;
     height: 28px;
     display: block;
+    border: none;
+    background: none;
     
    
     background-image:url("/bundles/heysite/images/event/bout-send-off.png")
 }
 #button:hover{
+   
     cursor: pointer;
     background-image:url("/bundles/heysite/images/event/bout-send-roll.png");
     background-repeat:no-repeat;/*background-position:left top;*/

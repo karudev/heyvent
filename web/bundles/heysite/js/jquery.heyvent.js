@@ -45,44 +45,23 @@
                     });
             }
         });
-    }
+    };
     
-    /**
-     * Anime un textara en hauteur
-     **/
-    $.fn.textarea = function(params) {
-         
-        if(!params)
-            var params = {};    
-         
-        //Valeur de la hauteur par default
-        if(!params.heightDefault)
-            params.heightDefault = '20px';
-     
-        //Valeur de la hauteur à fixer
-        if(!params.heightToFixe)
-            params.heightToFixe = '200px';
-     
-        //Vitesse
-        if(!params.duration)
-            params.duration = 500;
-     
-     
-        $(this).click(function()
-        { //console.debug($(this));
-            $(this).animate({
-                height :  params.heightToFixe
-                }, params.duration); 
-        });
-    
-       /* $(this).mouseout(function()
-        { 
-            $(this).animate({
-                height :  params.heightDefault
-                }, params.duration); 
-        });
-        */
-    }
+    $.fn.mosaique = function()
+    {
+        // Mosaique
+  $(this).masonry({
+                                // options
+                                itemSelector : '.paveposter',
+                                columnWidth : 356
+                              });
+                              
+                              $('#options').masonry({
+                                // options
+                                itemSelector : '.bloc',
+                                columnWidth : 356
+                              });
+    };
      
      
 })(jQuery);

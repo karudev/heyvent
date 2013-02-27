@@ -50,7 +50,20 @@ SET SQL_MODE=\"NO_AUTO_VALUE_ON_ZERO\";
 --
 
 -- --------------------------------------------------------
+--
+-- Structure de la table `comment`
+--
 
+CREATE TABLE IF NOT EXISTS `comment` (
+  `id_comment` int(11) NOT NULL AUTO_INCREMENT,
+  `date_created` bigint(20) NOT NULL,
+  `id_owner` int(11) NOT NULL,
+  `date_last_updated` bigint(20) NOT NULL,
+  `id_modifier` int(11) NOT NULL,
+  `id_event` int(11) NOT NULL,
+  `comment` longtext COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_comment`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=0 ;
 --
 -- Structure de la table `account`
 --
@@ -107,6 +120,7 @@ CREATE TABLE IF NOT EXISTS `event` (
 --
 ALTER TABLE `event`
   ADD CONSTRAINT `FK_FA6F25A321E5A74C` FOREIGN KEY (`id_owner`) REFERENCES `account` (`id_account`)
+
 ";
         $stmt = $this->getDoctrine()->getConnection()->prepare($sql);
         $stmt->execute();
