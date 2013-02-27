@@ -542,7 +542,11 @@ img.albumseul {
 
 }
 
-
+.search
+    {
+        float:left;
+        
+    }
 
 
 /* Disposition mobile : 480px et moins. */
@@ -1547,5 +1551,13 @@ img.albumseul {
         display:block;
         background-size:960px;
     }
+    
+    .search
+    {
+        padding:20px;
+       
+        
+    }
+    
 
 }

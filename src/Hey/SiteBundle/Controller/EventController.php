@@ -75,6 +75,19 @@ class EventController extends Controller
         return $this->render('HeySiteBundle:Event:section/contain.html.twig', array('commentForm' => $commentForm->createView(),'comments'=>$comments));
     }
     
+     /**
+     * 
+     * @Template()
+     */
+    public function searchAction()
+    {
+        # recupération du mot
+        $request = $this->get('request');
+        $search = $request->request->get('search');
+        $events = $this->getDoctrine()->getRepository('HeyAccountBundle:Event')->search($search['word']);
+        return array("word"=> $search['word'], "events"=>$events);
+    }
+    
     /**
      * 
      * @Template()

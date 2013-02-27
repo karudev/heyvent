@@ -1,0 +1,26 @@
+{% extends "HeySiteBundle::layout.html.twig" %}
+{% block stylesheets %}
+<link href="{{ asset('bundles/heysite/css/event/search.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block body %}
+<div class="container_main">
+    <section>
+        <p> 
+        <h3>{{events|length}} Résultat(s) sur la recherche " {{word}} "</h3>
+        </p>
+    </section>
+    <section class="result_search">
+        {% for event in events %}
+        <ul>
+            <li><a href="{{path('_event_show',{'id': event.id} ) }}">
+                <h4>{{event.name}}</h4>
+                <p>{{event.presentation}}</p>
+                <p class="envoi">Crée le {{event.dateCreated|date('d/m/Y à H:i')}}</p>
+                </a>
+            </li>
+        </ul>
+        {% endfor %}
+    </section>
+</div>
+ {% render "HeySiteBundle:Event:footer" %}
+{% endblock %}
