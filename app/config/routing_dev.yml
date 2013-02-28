@@ -9,6 +9,14 @@ _install:
 _event_show:
     pattern:  /event/show/{id}
     defaults: { _controller: HeySiteBundle:Event:show }
+    
+_event_section_contain:
+    pattern:  /event/section/contain
+    defaults: { _controller: HeySiteBundle:Event:contain }
+
+_event_search:
+    pattern:  /event/search
+    defaults: { _controller: HeySiteBundle:Event:search }    
 
 _account_login:
     pattern:  /account/login
