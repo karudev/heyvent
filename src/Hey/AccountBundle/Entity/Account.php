@@ -4,7 +4,7 @@ namespace Hey\AccountBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Karudev\AppsBundle\Entity\Compte
  *
@@ -38,6 +38,14 @@ class Account implements UserInterface {
      * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="civility", type="string", length=128)
+     * @Assert\NotNull()
+     */
+    private $civility;
     
     /**
      * @var string
@@ -94,6 +102,69 @@ class Account implements UserInterface {
      * @ORM\Column(name="salt", type="string", length=255)
      */
     private $salt;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="statut", type="string")
+     */
+    private $statut;
+    
+    /**
+     * @var date_of_birth
+     *
+     * @ORM\Column(name="date_of_birth", type="date")
+     */
+    private $date_of_birth;
+    
+    /**
+     * @var allow_mailling_invitation
+     *
+     * @ORM\Column(name="allow_mailling_invitation", type="boolean")
+     */
+    private $allow_mailling_invitation;
+        
+    /**
+     * @var allow_ads_heyvent
+     *
+     * @ORM\Column(name="allow_ads_heyvent", type="boolean")
+     */
+    private $allow_ads_heyvent;
+    
+    /**
+     * @var tel
+     *
+     * @ORM\Column(name="tel",  type="string", length=64)
+     */
+    private $tel;
+    
+    /**
+     * @var cp
+     *
+     * @ORM\Column(name="cp",  type="string", length=32)
+     */
+    private $cp;
+    
+    /**
+     * @var city
+     *
+     * @ORM\Column(name="city",  type="string", length=128)
+     */
+    private $city;
+    
+    /**
+     * @var district
+     *
+     * @ORM\Column(name="district",  type="string", length=128)
+     */
+    private $district;
+    
+    /**
+     * @var country
+     *
+     * @ORM\Column(name="country",  type="string", length=128)
+     */
+    private $country;
 
     /**
      * @inheritDoc
@@ -332,5 +403,258 @@ class Account implements UserInterface {
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set civility
+     *
+     * @param string $civility
+     * @return Account
+     */
+    public function setCivility($civility)
+    {
+        $this->civility = $civility;
+    
+        return $this;
+    }
+
+    /**
+     * Get civility
+     *
+     * @return string 
+     */
+    public function getCivility()
+    {
+        return $this->civility;
+    }
+
+    /**
+     * Set id_account_statut
+     *
+     * @param integer $idAccountStatut
+     * @return Account
+     */
+    public function setIdAccountStatut($idAccountStatut)
+    {
+        $this->id_account_statut = $idAccountStatut;
+    
+        return $this;
+    }
+
+    /**
+     * Get id_account_statut
+     *
+     * @return integer 
+     */
+    public function getIdAccountStatut()
+    {
+        return $this->id_account_statut;
+    }
+
+    /**
+     * Set date_of_birth
+     *
+     * @param \DateTime $dateOfBirth
+     * @return Account
+     */
+    public function setDateOfBirth($dateOfBirth)
+    {
+        $this->date_of_birth = $dateOfBirth;
+    
+        return $this;
+    }
+
+    /**
+     * Get date_of_birth
+     *
+     * @return \DateTime 
+     */
+    public function getDateOfBirth()
+    {
+        return $this->date_of_birth;
+    }
+
+    /**
+     * Set allow_mailling_invitation
+     *
+     * @param boolean $allowMaillingInvitation
+     * @return Account
+     */
+    public function setAllowMaillingInvitation($allowMaillingInvitation)
+    {
+        $this->allow_mailling_invitation = $allowMaillingInvitation;
+    
+        return $this;
+    }
+
+    /**
+     * Get allow_mailling_invitation
+     *
+     * @return boolean 
+     */
+    public function getAllowMaillingInvitation()
+    {
+        return $this->allow_mailling_invitation;
+    }
+
+    /**
+     * Set allow_ads_heyvent
+     *
+     * @param boolean $allowAdsHeyvent
+     * @return Account
+     */
+    public function setAllowAdsHeyvent($allowAdsHeyvent)
+    {
+        $this->allow_ads_heyvent = $allowAdsHeyvent;
+    
+        return $this;
+    }
+
+    /**
+     * Get allow_ads_heyvent
+     *
+     * @return boolean 
+     */
+    public function getAllowAdsHeyvent()
+    {
+        return $this->allow_ads_heyvent;
+    }
+
+    /**
+     * Set tel
+     *
+     * @param string $tel
+     * @return Account
+     */
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+    
+        return $this;
+    }
+
+    /**
+     * Get tel
+     *
+     * @return string 
+     */
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * Set cp
+     *
+     * @param string $cp
+     * @return Account
+     */
+    public function setCp($cp)
+    {
+        $this->cp = $cp;
+    
+        return $this;
+    }
+
+    /**
+     * Get cp
+     *
+     * @return string 
+     */
+    public function getCp()
+    {
+        return $this->cp;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     * @return Account
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+    
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string 
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set district
+     *
+     * @param string $district
+     * @return Account
+     */
+    public function setDistrict($district)
+    {
+        $this->district = $district;
+    
+        return $this;
+    }
+
+    /**
+     * Get district
+     *
+     * @return string 
+     */
+    public function getDistrict()
+    {
+        return $this->district;
+    }
+
+    /**
+     * Set country
+     *
+     * @param string $country
+     * @return Account
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+    
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string 
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set statut
+     *
+     * @param string $statut
+     * @return Account
+     */
+    public function setStatut($statut)
+    {
+        $this->statut = $statut;
+    
+        return $this;
+    }
+
+    /**
+     * Get statut
+     *
+     * @return string 
+     */
+    public function getStatut()
+    {
+        return $this->statut;
     }
 }

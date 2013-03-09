@@ -22,13 +22,15 @@ class ProfilController extends Controller
        
        if($request->getMethod() == "POST")
        {
-           
            $formAccount->bindRequest($request);
-           $em = $this->getDoctrine()->getManager();
-           $user->setUsername($username);
-           $user->setDateLastUpdated(new \DateTime());
-           $em->persist($user);
-           $em->flush();
+           if($formAccount->isValid())
+           {
+            $em = $this->getDoctrine()->getManager();
+            $user->setUsername($username);
+            $user->setDateLastUpdated(new \DateTime());
+            $em->persist($user);
+            $em->flush();
+           }
            
        }
        return array('formAccount'=>$formAccount->createView());

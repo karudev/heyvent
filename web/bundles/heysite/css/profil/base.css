@@ -1,0 +1,20 @@
+#account_dateOfBirth select {
+    width : 70px;
+}
+form[name="profil"] table td
+{
+    padding: 10px !important;
+}
+.information_complementaire {
+    padding: 10px;
+}
+.information_complementaire a{
+    background: url('/bundles/heysite/images/event/picto-contrib-plus.png') no-repeat left;
+    text-decoration: none;
+    padding-left: 20px;
+    color: #793580;
+    
+}
+.information_complementaire a:hover{
+    text-decoration: underline;
+}
