@@ -62,7 +62,9 @@ $.fn.loadHtml = function(div,method,rel) {
         var thisBis = this;
         var href;
         
-        if(rel)
+        if($(thisBis).attr('data-url'))
+         href = $(thisBis).attr('data-url');
+        else if(rel)
          href = $(thisBis).attr('rel');
         else
          href = $(thisBis).attr('href');

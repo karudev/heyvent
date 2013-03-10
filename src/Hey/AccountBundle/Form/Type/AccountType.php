@@ -7,6 +7,14 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Doctrine\ORM\EntityRepository;
 
 class AccountType extends AbstractType {
+   
+    public $params = array('champPassword'=>'password');
+    
+    public function __construct($params = null) {
+        
+        if($params!=null)
+        $this->params = $params;
+    }
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder->add('civility', 'choice', array(
@@ -26,6 +34,7 @@ class AccountType extends AbstractType {
         $builder->add('country', 'text',array('required'=>false));
         $builder->add('email', 'email');
         $builder->add('username', 'hidden');
+        $builder->add('password', $this->params['champPassword']);
         $builder->add('dateOfBirth', 'date');
         $builder->add('allowMaillingInvitation', 'checkbox',array('required'=>false));
         $builder->add('allowAdsHeyvent', 'checkbox',array('required'=>false));

@@ -2,6 +2,10 @@ _contact:
     pattern:  /contact
     defaults: { _controller: HeySiteBundle:Contact:index }
 
+_quicksign:
+    pattern:  /quicksign
+    defaults: { _controller: HeySiteBundle:Login:quicksign }
+
 _install:
     pattern:  /install
     defaults: { _controller: HeyAccountBundle:Install:default }

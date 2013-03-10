@@ -42,8 +42,8 @@ class Account implements UserInterface {
     /**
      * @var string
      *
-     * @ORM\Column(name="civility", type="string", length=128)
-     * @Assert\NotNull()
+     * @ORM\Column(name="civility", type="string", length=128, nullable=true)
+     * 
      */
     private $civility;
     
@@ -106,14 +106,14 @@ class Account implements UserInterface {
     /**
      * @var integer
      *
-     * @ORM\Column(name="statut", type="string")
+     * @ORM\Column(name="statut", type="string", nullable=true)
      */
     private $statut;
     
     /**
      * @var date_of_birth
      *
-     * @ORM\Column(name="date_of_birth", type="date")
+     * @ORM\Column(name="date_of_birth", type="date",  nullable=true)
      */
     private $date_of_birth;
     
@@ -134,35 +134,35 @@ class Account implements UserInterface {
     /**
      * @var tel
      *
-     * @ORM\Column(name="tel",  type="string", length=64)
+     * @ORM\Column(name="tel",  type="string", length=64, nullable=true)
      */
     private $tel;
     
     /**
      * @var cp
      *
-     * @ORM\Column(name="cp",  type="string", length=32)
+     * @ORM\Column(name="cp",  type="string", length=32, nullable=true)
      */
     private $cp;
     
     /**
      * @var city
      *
-     * @ORM\Column(name="city",  type="string", length=128)
+     * @ORM\Column(name="city",  type="string", length=128, nullable=true)
      */
     private $city;
     
     /**
      * @var district
      *
-     * @ORM\Column(name="district",  type="string", length=128)
+     * @ORM\Column(name="district",  type="string", length=128, nullable=true)
      */
     private $district;
     
     /**
      * @var country
      *
-     * @ORM\Column(name="country",  type="string", length=128)
+     * @ORM\Column(name="country",  type="string", length=128, nullable=true)
      */
     private $country;
 

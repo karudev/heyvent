@@ -25,9 +25,14 @@
 
         </form>
     </div>
-    <div  style="margin-top:20px" class="form-signin">
+    <div  style="margin-top:20px" id="contain_quicksign" class="form-signin">
         <center> <h5>Vous n'avez pas encore de compte ?</h5></center>
-        <button type="submit" class="btn btn-large btn">Créer votre compte en <b>1 min</b> !</button>
+        <button data-url="{{path('_quicksign')}}" id="quicksign" type="submit" class="btn btn-large btn">Créer votre compte en <b>30s</b> !</button>
     </div>
 </section> 
+{% endblock %}
+{% block javascripts %}
+<script>
+   $('#quicksign').loadHtml('#contain_quicksign','get');
+</script>
 {% endblock %}

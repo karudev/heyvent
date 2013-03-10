@@ -18,7 +18,7 @@ class ProfilController extends Controller
        $request = $this->get('request');
        $user = $this->get('security.context')->getToken()->getUser();
        $username = $user->getUsername();
-       $formAccount = $this->createForm(new AccountType(),$user);
+       $formAccount = $this->createForm(new AccountType(array('champPassword'=>'hidden')),$user);
        
        if($request->getMethod() == "POST")
        {
@@ -27,12 +27,14 @@ class ProfilController extends Controller
            {
             $em = $this->getDoctrine()->getManager();
             $user->setUsername($username);
+            
             $user->setDateLastUpdated(new \DateTime());
             $em->persist($user);
             $em->flush();
            }
            
        }
+    
        return array('formAccount'=>$formAccount->createView());
     }
 }

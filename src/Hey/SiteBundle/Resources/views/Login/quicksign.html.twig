@@ -1,0 +1,10 @@
+<h4>Création de votre compte</h4>
+<form name="quicksign" method="post" action="{{path('_quicksign')}}">
+{{ form_widget(form.lastname,{ 'attr': {'class': 'span3','placeholder':'Nom'} })}}
+{{ form_widget(form.firstname,{ 'attr': {'class': 'span3','placeholder':'Prénom'} })}}
+{{ form_widget(form.email,{ 'attr': {'class': 'span3','placeholder':'Email'} })}}
+{{ form_widget(form.password,{ 'attr': {'class': 'span3','placeholder':'Mot de passe'} })}}
+<input type="submit" class="btn btn-success" value="S'incrire maintenant" >
+<input type="reset" class="btn" value="Annuler" >
+{{ form_rest(form)}}
+</form>
