@@ -34,6 +34,14 @@ _account_dashboard:
     pattern:  /account/dashboard
     defaults: { _controller: HeyAccountBundle:Dashboard:index }
     
+_account_picture:
+    pattern:  /account/picture
+    defaults: { _controller: HeyAccountBundle:Picture:index }
+
+_account_picture_crop:
+    pattern:  /account/picture/crop
+    defaults: { _controller: HeyAccountBundle:Picture:crop }
+    
 _account_profil_edit:
     pattern:  /account/profil
     defaults: { _controller: HeyAccountBundle:Profil:edit }

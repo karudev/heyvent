@@ -1,0 +1,142 @@
+{% extends "HeyAccountBundle::layout.html.twig" %}
+{% block stylesheets %}
+ <link href="{{ asset('bundles/heysite/css/picture/base.css') }}" rel="stylesheet" type="text/css">
+ <link href="{{ asset('bundles/heysite/css/imgareaselect/imgareaselect-default.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block body %}
+<section class="arborescence">
+    <div><h4>Votre dossier d'images</h4></div>
+    <div class="files">
+        <ul>
+            <li>
+                <span class="dir">avatar</span>
+                <ul>
+                    <li class="png">avatar.png</li>
+                    <li class="png">avatar_crop.png</li>
+                </ul>
+            </li>
+            <li>
+                <span class="dir">Heyvents</span>
+                <ul>
+                {% for key,heyvent in heyvents %}
+                
+                 <li>
+                        <span class="dir">{{key}}</span>
+                        {% for key2,value2 in heyvent %}
+                         <ul>
+                            <li>
+                                <span class="dir">{{key2}}</span>
+                                <ul>
+                                {% for key3,value3 in value2 %}
+                                  <li class="png">{{value3}}</li>
+                                {% endfor %}
+                                </ul>
+                            </li>
+                         </ul>
+                        {% endfor %}
+                 </li>
+                
+                {% endfor %}
+                 </ul>
+               <!-- <ul>
+                    <li>
+                        <span class="dir">Vacance en Guadeloupe</span>
+                        <ul>
+                            <li>
+                                <span class="dir">20120417</span>
+                                <ul>
+                                    <li class="png">1.png</li>
+                                    <li class="png">1_crop.png</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="dir">20120419</span>
+                                <ul>
+                                    <li class="png">1.png</li>
+                                    <li class="png">1_crop.png</li>
+                                    <li class="png">2.png</li>
+                                    <li class="png">2_crop.png</li>
+                                </ul>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    
+                </ul>-->
+            </li> 
+        </ul>
+   </div>
+</section>
+<section class="originale_picture">
+      <div><h4>Avatar original</h4></div>
+      <div class="figure">
+          <figure>
+              <img id="avatar" src="{{ asset('bundles/heysite/images/profils/1/Avatar/avatar.jpg') }}"  alt="" />
+          </figure>
+      </div>
+      <div>
+          <form name="file" action="#" >
+              <div><input type="file" name="file"  /></div>
+              <div><input class="btn btn-success" type="submit" name="submit" value="Changer d'image" /> </div>
+             
+          </form>
+      </div>
+ </section>
+ <section class="crop_picture">
+      <div><h4>Avatar découpé</h4></div>
+      <div   class="figure">
+          <figure >
+              <img style="width:49px" id="crop"  src="{{ asset('bundles/heysite/images/profils/1/Avatar/avatar_crop.jpg') }}"  alt="" />
+          </figure>
+      </div>
+      <div>
+          <form name="crop" action="{{path('_account_picture_crop')}}" method="post">
+              <input type="hidden" required="required" name="file[x1]" value="" />
+              <input type="hidden" required="required" name="file[y1]" value="" />
+              <input type="hidden" required="required" name="file[x2]" value="" />
+              <input type="hidden" required="required" name="file[y2]" value="" />
+              <input type="hidden" required="required" name="file[w]" value="" />
+              <input type="hidden" required="required" name="file[h]" value="" />
+              <input type="hidden" name="file[filePath]" value="Avatar/avatar.jpg" />
+              <input class="btn btn-success" type="submit" name="submit" value="Découper l'image" />
+          </form>
+         
+      </div>
+ </section>
+
+{% endblock %}
+ 
+{% block javascripts %}
+  <script src="{{ asset('bundles/heysite/js/imgareaselect/jquery.imgareaselect.pack.js') }}"></script>
+  <script>
+  $(document).ready(function () {
+    $('img#avatar').imgAreaSelect({
+        aspectRatio: '1:1',
+        handles: true,
+        onSelectEnd: preview
+    });
+});
+
+function preview(img, selection) {
+   /* if (!selection.width || !selection.height)
+    return;
+
+    var scaleX = 60 / (selection.width || 1);
+    var scaleY = 60 / (selection.height || 1);
+  
+    $('img#crop').css({
+     width: Math.round(scaleX * 500),
+     height: Math.round(scaleY * 500),
+     marginLeft: -Math.round(scaleX * selection.x1 ),
+     marginTop: -Math.round(scaleY * selection.y1)
+    });*/
+            $('input[name="file[x1]"]').val(selection.x1);
+            $('input[name="file[y1]"]').val(selection.y1);
+            $('input[name="file[x2]"]').val(selection.x2);
+            $('input[name="file[y2]"]').val(selection.y2);
+            $('input[name="file[w]"]').val(selection.width);
+            $('input[name="file[h]"]').val(selection.height); 
+}
+      </script>
+{% endblock %}

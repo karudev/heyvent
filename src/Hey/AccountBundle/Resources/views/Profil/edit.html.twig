@@ -4,10 +4,11 @@
 {% endblock %}
 {% block body %}
 <h3>Modifier votre profil</h3>
-<form name="profil" method="post">
+<form name="profil" method="post" enctype="multipart/form-data">
 {{ form_errors(formAccount) }}
    <section> 
        <table>
+      
         <tr>
             <td>Identifiant</td>
             <td><b>{{app.user.username}}</b>{{form_widget(formAccount.password)}}</td>
