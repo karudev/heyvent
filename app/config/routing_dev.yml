@@ -1,7 +1,10 @@
 _contact:
     pattern:  /contact
     defaults: { _controller: HeySiteBundle:Contact:index }
-
+    
+_footer:
+    pattern:  /footer
+    defaults: { _controller: HeySiteBundle:Event:footer }
 _quicksign:
     pattern:  /quicksign
     defaults: { _controller: HeySiteBundle:Login:quicksign }
