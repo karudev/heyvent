@@ -5,69 +5,7 @@
 {% endblock %}
 
 {% block body %}
-<section class="arborescence">
-    <div><h4>Votre dossier d'images</h4></div>
-    <div class="files">
-        <ul>
-            <li>
-                <span class="dir">avatar</span>
-                <ul>
-                    <li class="png">avatar.png</li>
-                    <li class="png">avatar_crop.png</li>
-                </ul>
-            </li>
-            <li>
-                <span class="dir">Heyvents</span>
-                <ul>
-                {% for key,heyvent in heyvents %}
-                
-                 <li>
-                        <span class="dir">{{key}}</span>
-                        {% for key2,value2 in heyvent %}
-                         <ul>
-                            <li>
-                                <span class="dir">{{key2}}</span>
-                                <ul>
-                                {% for key3,value3 in value2 %}
-                                  <li class="png">{{value3}}</li>
-                                {% endfor %}
-                                </ul>
-                            </li>
-                         </ul>
-                        {% endfor %}
-                 </li>
-                
-                {% endfor %}
-                 </ul>
-               <!-- <ul>
-                    <li>
-                        <span class="dir">Vacance en Guadeloupe</span>
-                        <ul>
-                            <li>
-                                <span class="dir">20120417</span>
-                                <ul>
-                                    <li class="png">1.png</li>
-                                    <li class="png">1_crop.png</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span class="dir">20120419</span>
-                                <ul>
-                                    <li class="png">1.png</li>
-                                    <li class="png">1_crop.png</li>
-                                    <li class="png">2.png</li>
-                                    <li class="png">2_crop.png</li>
-                                </ul>
-                            </li>
-                           
-                        </ul>
-                    </li>
-                    
-                </ul>-->
-            </li> 
-        </ul>
-   </div>
-</section>
+
 <section class="originale_picture">
       <div><h4>Avatar original</h4></div>
       <div class="figure">

@@ -14,6 +14,45 @@ class PictureController extends Controller {
      * @Template()
      */
     public function indexAction() {
+      /*<section class="arborescence">
+    <div><h4>Votre dossier d'images</h4></div>
+    <div class="files">
+        <ul>
+            <li>
+                <span class="dir">avatar</span>
+                <ul>
+                    <li class="png">avatar.png</li>
+                    <li class="png">avatar_crop.png</li>
+                </ul>
+            </li>
+            <li>
+                <span class="dir">Heyvents</span>
+                <ul>
+                {% for key,heyvent in heyvents %}
+                
+                 <li>
+                        <span class="dir">{{key}}</span>
+                        {% for key2,value2 in heyvent %}
+                         <ul>
+                            <li>
+                                <span class="dir">{{key2}}</span>
+                                <ul>
+                                {% for key3,value3 in value2 %}
+                                  <li class="png">{{value3}}</li>
+                                {% endfor %}
+                                </ul>
+                            </li>
+                         </ul>
+                        {% endfor %}
+                 </li>
+                
+                {% endfor %}
+                 </ul>
+              
+            </li> 
+        </ul>
+   </div>
+</section>
         $base = $_SERVER['DOCUMENT_ROOT'] . "/bundles/heysite/images/profils/1/";
         $heyvents = new Arborescence();
         $heyvents_data = $heyvents->get($base . "Heyvents");
@@ -27,9 +66,9 @@ class PictureController extends Controller {
                 $heyvents_data3[$value][$value2] = $heyvent->get($base . "/" . $value . "/" . $value2);
             }
         }
-        /*  print_r($heyvents_data3);
-          die(); */
-        return array('heyvents' => $heyvents_data3);
+       
+        return array('heyvents' => $heyvents_data3);*/
+        return array();
     }
 
     /**

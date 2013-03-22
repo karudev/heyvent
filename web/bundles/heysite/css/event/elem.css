@@ -11,16 +11,16 @@ body {
     background-repeat: repeat-x, repeat-y;
     background-color:#f2f2f2;
 } 
- .nav-collapse, .nav-collapse.collapse {
-    
+.nav-collapse, .nav-collapse.collapse {
+
     overflow: visible !important;
-    }
+}
 .sizelogo {
     width:86px
 }
 
 textarea.contribution{
-height: 18px;
+    height: 18px;
 }
 section.button{
     margin-top: 4px;
@@ -143,10 +143,10 @@ img.albumseul {
 }
 #options {
 
-  /*clear: both;*/
+    /*clear: both;*/
     float:none;
     margin:auto;
-   /* position:fixed;*/
+    /* position:fixed;*/
     z-index:100;
     bottom:0px;
     width: 100%;
@@ -161,9 +161,9 @@ img.albumseul {
     margin-bottom:12px;
 }
 .comenvoicentre {
-   /* width:59%;
-    margin:auto;*/
-   /* background:#803a7f;*/
+    /* width:59%;
+     margin:auto;*/
+    /* background:#803a7f;*/
 }
 .comesocial {
     width:280px;
@@ -171,7 +171,7 @@ img.albumseul {
     background:#ffffff;
     padding:10px;
     height:206px;
-   /* display:none;*/
+    /* display:none;*/
     border: 1px solid #d9d9d9;
     border-radius:5px;
     box-shadow: 0px 0px 2px #DFDFDF;
@@ -193,7 +193,7 @@ img.albumseul {
     margin-bottom:12px;
     background:#ffffff;
     /*margin-left:12px;*/
-   /* display:none;*/
+    /* display:none;*/
     padding:10px;
     height:135px;
     border: 1px solid #d9d9d9;
@@ -202,7 +202,7 @@ img.albumseul {
     float: left;
 }
 
-#footer {
+footer {
     clear: both;
     float: none;
     margin-left: 0;
@@ -210,6 +210,7 @@ img.albumseul {
     display:none;
     background-color:#0F0;
     margin-top:20px;
+
 }
 
 
@@ -530,12 +531,12 @@ img.albumseul {
     display: block;
     border: none;
     background: none;
-    
-   
+
+
     background-image:url("/bundles/heysite/images/event/bout-send-off.png")
 }
 #button:hover{
-   
+
     cursor: pointer;
     background-image:url("/bundles/heysite/images/event/bout-send-roll.png");
     background-repeat:no-repeat;/*background-position:left top;*/
@@ -543,17 +544,17 @@ img.albumseul {
 }
 
 .search
-    {
-        float:left;
-        
-    }
+{
+    float:left;
+
+}
 
 
 /* Disposition mobile : 480px et moins. */
 
 @media only screen and (max-width: 480px) {
 
-   
+
 
     #content {
 
@@ -609,9 +610,9 @@ img.albumseul {
     }
     #button {
 
-    /*    right:5px;
-        position: absolute;
-*/
+        /*    right:5px;
+            position: absolute;
+        */
 
     }
     .comenvoi {
@@ -627,18 +628,18 @@ img.albumseul {
         width:350px !important;
 
     }
-    
+
     #options {
-    height:0px !important;
-    clear: both;
-    position:fixed;
-  
-}
+        height:0px !important;
+        clear: both;
+        position:fixed;
+
+    }
 
 
-.comeautre,.comepub,.comesocial {
-    display:none; 
-}
+    .comeautre,.comepub,.comesocial {
+        display:none; 
+    }
 
 
 }
@@ -651,7 +652,7 @@ img.albumseul {
         background-repeat: repeat-x, repeat-y;
     } 
 
-      .timeline
+    .timeline
     {
 
         height:241px;
@@ -677,7 +678,7 @@ img.albumseul {
         margin-top: 5px;
 
     }
-    
+
     .timeline .line .date li{
         margin-bottom: 18px;
     }
@@ -686,7 +687,7 @@ img.albumseul {
         width:86px
     }
     .gridContainer {
-        
+
         max-width: 480px;
         /*padding-left: 0.625%;
         padding-right: 0.625%;*/
@@ -719,7 +720,7 @@ img.albumseul {
         text-align:center;
 
     }
-    #footer {
+    footer {
         clear: both;
         float: left;
         margin-left: 0;
@@ -798,21 +799,21 @@ img.albumseul {
         width: 100%;
         display: block;
     }
-   
-   .comenvoi {
+
+    .comenvoi {
         width:100%;
         margin-bottom:0px;
         padding:10px;
         float: none;
         opacity: 0.3;
     }
-      .comenvoi:hover {
+    .comenvoi:hover {
         opacity: 0.95;
     }
     .comenvoicentre {
         width:90%;
         margin:auto;
-       /* background:#803a7f;*/
+        /* background:#803a7f;*/
     }
 
     .comesocial {
@@ -965,16 +966,16 @@ img.albumseul {
         background-repeat: repeat-x, repeat-y;
     } 
 
-     .timeline
+    .timeline
     {
 
         height:366px;
 
     }
-   /* .timeline .debut
-    {
-        display: none;    
-    }*/
+    /* .timeline .debut
+     {
+         display: none;    
+     }*/
     .timeline .line
     {
 
@@ -982,22 +983,22 @@ img.albumseul {
 
 
     }
-   /* .timeline .fin
-    {
-        display: none;  
-    }
-
-    .timeline .line .date {
-        margin-top: 5px;
-
-    }
+    /* .timeline .fin
+     {
+         display: none;  
+     }
+ 
+     .timeline .line .date {
+         margin-top: 5px;
+ 
+     }
     */
 
     .sizelogo {
         width:86px
     }
-   .gridContainer {
-        
+    .gridContainer {
+
         max-width: 768px;
         /*padding-left: 0.625%;
         padding-right: 0.625%;*/
@@ -1029,7 +1030,7 @@ img.albumseul {
         display: block;
         text-align:center;
     }
-    #footer {
+    footer {
         clear: both;
         margin-left: 0;
         width: 100%;
@@ -1053,11 +1054,11 @@ img.albumseul {
         top:12px;
         width: 716px;
         margin-top:12px;
-        
+
     }
     #myprofil {
         clear: none;
-        
+
         position:absolute;
         right:12px;
         top:0px;
@@ -1082,7 +1083,7 @@ img.albumseul {
         margin-left: 0;
         width: 100%;
         display: block;
-       
+
         background-image:url(/bundles/heysite/images/event/ombre.png);
         background-repeat: no-repeat;
         background-size:contain;
@@ -1113,16 +1114,16 @@ img.albumseul {
         border-radius:5px;
         box-shadow: 0px 0px 2px #DFDFDF;
         float: left;
-        
+
     }
     .comesocial {
         width:275px;
-       /* margin-left:12px;
-        
-        margin-bottom:12px;*/
+        /* margin-left:12px;
+         
+         margin-bottom:12px;*/
         background:#ffffff;
         padding:10px;
-        
+
         border: 1px solid #d9d9d9;
         border-radius:5px;
         box-shadow: 0px 0px 2px #DFDFDF;
@@ -1142,10 +1143,10 @@ img.albumseul {
     }
     .comeautre {
 
-        
 
-       
-       
+
+
+
         clear:both;
         float:left;
         width:280px;
@@ -1155,7 +1156,7 @@ img.albumseul {
         border: 1px solid #d9d9d9;
         border-radius:5px;
         box-shadow: 0px 0px 2px #DFDFDF;
-       
+
         display:block;
     }
     #pave1 {
@@ -1315,14 +1316,16 @@ img.albumseul {
         display: block;
         text-align:center;
     }
-    #footer {
+    footer {
         clear: both;
         float: left;
         margin-left: 0;
-        width: 100%;
+
         display: block;
-        height:100px;
-        background-color:#e2e2e2;
+
+        background:  url("/bundles/heysite/images/footer/fond.jpg") no-repeat;
+        width: 970px;
+        height: 150px;
     }
     #content {
         clear: both;
@@ -1333,7 +1336,7 @@ img.albumseul {
         /*background-color:#060*/
     }
     #options {
-       /* clear: none;*/
+        /* clear: none;*/
         float: left;
         margin-left: 1.2658%;
         margin-top:12px;
@@ -1382,8 +1385,8 @@ img.albumseul {
         border-bottom-width:2px;
         border-bottom-color:solid black;
     }
-    
-   
+
+
     #message {
         clear: none;
         margin:auto;
@@ -1392,17 +1395,17 @@ img.albumseul {
     }
     .comenvoi {
         width:224px;
-      
+
         margin-bottom:12px;
         background:#803a7f;
         padding:3px;
-      
-       
+
+
         border: 1px solid #481844;
         border-radius:5px;
         box-shadow: 0px 0px 2px #DFDFDF;
         float: left;
-         position: relative !important;
+        position: relative !important;
     }
     .comesocial {
         width:221px;
@@ -1551,13 +1554,13 @@ img.albumseul {
         display:block;
         background-size:960px;
     }
-    
+
     .search
     {
         padding:20px;
-       
-        
+
+
     }
-    
+
 
 }

@@ -1,0 +1,110 @@
+/* 
+    Document   : base
+    Created on : 22 mars 2013, 23:35:28
+    Author     : Karudev
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+footer,footer a{
+    color : #AC8FAC;
+}
+footer a:hover{
+    color : #AC8FAC;
+   text-decoration: underline;
+}
+
+footer .logo_lien .heyvent { 
+   background: url("/bundles/heysite/images/footer/mini-logo.png") no-repeat;
+   width: 118px;
+  /* height: 34px;*/
+   margin-top: -12px;
+   float: right;
+   margin-right: 15px;
+   padding-top: 36px;
+   font-weight: bolder;
+   font-size: 0.9em;
+}
+footer .logo_lien .facebook
+{
+   background: url("/bundles/heysite/images/footer/ico-facebook.png") no-repeat;
+   width: 23px;
+   height: 23px;
+   float: left;
+   padding-left: 30px;
+   padding-top : 5px;
+   margin-left: 50px;
+}
+footer .logo_lien .twitter
+{
+   background: url("/bundles/heysite/images/footer/ico-twitter.png") no-repeat;
+   width: 23px;
+   height: 23px;
+   float: left;
+   padding-left: 30px;
+   padding-top : 5px;
+   margin-left: 50px;
+}
+footer .logo_lien .google
+{
+   background: url("/bundles/heysite/images/footer/ico-google.png") no-repeat;
+   width: 23px;
+   height: 23px;
+   float: left;
+   padding-left: 30px;
+   padding-top : 5px;
+   margin-left: 50px;
+}
+footer .logo_lien .flickr
+{
+   background: url("/bundles/heysite/images/footer/ico-flickr.png") no-repeat;
+   width: 23px;
+   height: 23px;
+   float: left;
+   padding-left: 30px;
+   padding-top : 5px;
+   margin-left: 50px;
+}
+footer .noborder {
+    border: none !important;
+}
+footer .first-margin-left {
+    margin-left : 26px !important;
+}
+footer ul.titlefoot {
+    color: #C2B1C2;
+    display: inline-block;
+    font-weight: bolder;
+    list-style-image: url("/bundles/heysite/images/footer/point.png");
+    list-style-position: inside;
+    margin-right: 45px;
+    margin-top: 0;
+    border-left: 2px solid #5A395A;
+}
+
+footer ul.titlefoot li {
+    color: #AB90AB;
+    font-weight: normal;
+    padding-left: 5px;
+}
+footer ul.dernieres_entrees
+{
+   margin-right: 0px !important;
+   border: none !important;
+    
+}
+footer ul.dernieres_entrees li
+{
+    float:left;
+    list-style-image: none;
+  
+    list-style: none;
+}
+section.lien{
+    margin: 17px;
+    margin-bottom: 12px;
+}
+section.logo_lien{
+    clear: both;
+}
+

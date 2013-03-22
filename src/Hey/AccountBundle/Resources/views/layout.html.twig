@@ -18,7 +18,7 @@
         <link href="{{ asset('bundles/heysite/css/scrollbar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('bundles/heyaccount/css/base.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('bundles/heyaccount/css/ui-heyvent/jquery-ui-1.10.0.custom.css') }}" rel="stylesheet" type="text/css">
-
+        <link href="{{ asset('bundles/heysite/css/footer/base.css') }}" rel="stylesheet" type="text/css">
     {% block stylesheets %}{% endblock %}
         <!-- stylesheet for demo and examples -->
         <style type="text/css">
@@ -87,7 +87,9 @@
 
           {% block body %}
           {% endblock %}
+          
                     </div>
+                    {% render "HeySiteBundle:Event:footer" %}
                 </div>
 
             </div>
