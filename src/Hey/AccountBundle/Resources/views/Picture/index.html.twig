@@ -10,14 +10,16 @@
       <div><h4>Avatar original</h4></div>
       <div class="figure">
           <figure>
-              <img id="avatar" src="{{ asset('bundles/heysite/images/profils/1/Avatar/avatar.jpg') }}"  alt="" />
+              <img id="avatar" src="{{ asset('bundles/heysite/images/profils/1/Avatar/avatar.jpg?') }}{{"now"|date("Ymdhis")}}"  alt="" />
           </figure>
       </div>
       <div>
-          <form name="file" action="#" >
-              <div><input type="file" name="file"  /></div>
-              <div><input class="btn btn-success" type="submit" name="submit" value="Changer d'image" /> </div>
-             
+          <form name="file" method="post" enctype="multipart/form-data" action="{{path('_account_picture')}}" >
+              <div>
+                    <input type="file" name="file"  />
+                    <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+                    <input class="btn btn-success" type="submit" name="submit" value="Changer d'image" /> 
+              </div>
           </form>
       </div>
  </section>
@@ -25,7 +27,7 @@
       <div><h4>Avatar découpé</h4></div>
       <div   class="figure">
           <figure >
-              <img style="width:49px" id="crop"  src="{{ asset('bundles/heysite/images/profils/1/Avatar/avatar_crop.jpg') }}"  alt="" />
+              <img style="width:49px" id="crop"  src="{{ asset('bundles/heysite/images/profils/1/Avatar/avatar_crop.jpg?') }} {{"now"|date("Ymdhis")}}"  alt="" />
           </figure>
       </div>
       <div>

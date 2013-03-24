@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Hey\AccountBundle\Models\Arborescence;
+use Hey\AccountBundle\Models\Fichier;
 
 class PictureController extends Controller {
 
@@ -14,6 +15,16 @@ class PictureController extends Controller {
      * @Template()
      */
     public function indexAction() {
+        $request = $this->get('request');
+        
+        if($request->getMethod() == "POST")
+        {
+            //$fichier = $request->request->get('file');
+          //  print_r($_FILES); die();
+           $fichier =  new Fichier(array('fichier'=>$_FILES['file'],'fileName'=>'avatar'));
+           $retour = $fichier->upload();
+           // die('tes'.$retour);
+        }
       /*<section class="arborescence">
     <div><h4>Votre dossier d'images</h4></div>
     <div class="files">

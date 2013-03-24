@@ -15,26 +15,19 @@ class Fichier
 	
 	public $extension = array('png', 'gif', 'jpg', 'jpeg');
 	public $objet = array();
-	public $doResize = true;
-	
+	public $doResize = false;
+	public $fileName;
 	public function __construct($params = array())
 	{
-		//print_r($this->getUploadRootDir());die();
 		if(!isset($params["dossier"]))
-		$this->dossier = $_SERVER['DOCUMENT_ROOT']."/bundles/freelancedom/photo";
+		$this->dossier = $_SERVER['DOCUMENT_ROOT']."/bundles/heysite/images/profils/1/Avatar";
 		else 
 		$this->dossier = $params['dossier'];
 		
-		
 		$this->file = $params['fichier'];
 	
-		//$this->file['taille'] = filesize($this->file['tmp_name']);
 		$ext = substr(strtolower(strrchr(basename($this->file['name']), ".")), 1);
 		$this->file['extension'] = $ext;
-		//$this->fichier['name'] =  basename($this->file->getClientOriginalName());
-		//$this->fichier['tmp_name'] = $params['fichier']->getUploadRootDir();
-		//$this->fichier['taille'] = $this->file->getClientSize();
-		//$this->fichier['extension'] = $this->file->guessExtension();
 		
 		if(isset($params['tailleMax']))
 		$this->tailleMax = $params['tailleMax'];
@@ -43,23 +36,26 @@ class Fichier
 		$this->extension = $params['extension'];
 		
 		if(isset($params['objet']))
-		{
-		$this->objet = $params['objet'];
-		$this->file['name'] = $this->objet->getId().'.'.$this->file['extension'];
-		$this->file['path'] = $this->dossier.'/'.$this->objet->getId().'.'.$this->file['extension'];
-		}
+                {
+		$this->fileName = $params['objet']->getId();
+                
+                }
+                
+                if(isset($params['fileName']))
+                {
+		$this->fileName = $params['fileName'];
+                
+                }
+                
+		$this->file['name'] = $this->fileName.'.'.$this->file['extension'];
+		$this->file['path'] = $this->dossier.'/'.$this->fileName.'.'.$this->file['extension'];
+		
 	}
 	public function upload()
 	{
+            
 		$erreur = null;
-		//$fichier = basename($_FILES['avatar']['name']);
-		//$taille_maxi = 100000;
-		//$taille = filesize($_FILES['avatar']['tmp_name']);
-		//$extensions = array('.png', '.gif', '.jpg', '.jpeg');
-		//$extension = strrchr($_FILES['avatar']['name'], '.'); 
-		//Début des vérifications de sécurité...
-		//print_r($this->extension);
-		//print_r($this->file['extension']);die();
+	
 		if(!in_array($this->file['extension'], $this->extension)) //Si l'extension n'est pas dans le tableau
 		{
 		     $erreur = 'Vous devez uploader un fichier de type';
@@ -77,43 +73,16 @@ class Fichier
 		
 		if($erreur == null) //S'il n'y a pas d'erreur, on upload
 		{
-		     //On formate le nom du fichier ici...
-		     /*$this->file['name'] = strtr($this->file['name'], 
-		          'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-		          'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-		     $this->file['name'] = preg_replace('/([^.a-z0-9]+)/i', '-', $this->file['name']);
-*/	//die($this->dossier.'/'.$this->file['name']);
+		     
 		   if(is_dir($this->dossier)) 
 		   {
-		    // if($this->file->move($this->dossier, $this->compte->getIdCompte().'.'.$this->fichier['extension'])) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
-		
-		   /*	if(move_uploaded_file($this->file['tmp_name'],$this->dossier.'/'.$this->file['name']))
-		    {
-		    	if($this->doResize)
-		    	{
-		    		
-		    		$this->resizeThumb(100,100);
-		    		$this->resizeThumb(50,50);
-		    		//Suppression du fichier d'origine
-		    		$file = $this->dossier."/".$this->file['name'];
-		    		unset( $file );
-		    		die("tzst".$file);
-		    	}
-		    	//$this->resize();
-		         // return 'Upload effectué avec succès dans le dossier '.$this->dossier.' !';
-		         return 'OK';
-		     }
-		     else //Sinon (la fonction renvoie FALSE).
-		     {
-		          return 'Echec de l\'upload !';
-		     }*/
-		   	
+		    
 		 
 		    	if($this->doResize)
 		    	{
 		    		try {
-			    		$erreur =$this->resizeThumb(100,100);
-			    		$erreur =$this->resizeThumb(50,50);
+			    		//$erreur =$this->resizeThumb(400,400);
+			    		//$erreur =$this->resizeThumb(50,50);
 			    		
 			    		if($erreur==null)
 			    		return 'OK';
@@ -146,7 +115,7 @@ class Fichier
 		    return 'Le dossier '.$this->dossier.' n\'existe pas';
 		}
 		else
-		{//die($erreur);
+		{
 		     return $erreur;
 		}
 	}
@@ -184,7 +153,7 @@ class Fichier
 					
 			    	$thumb = \PhpThumbFactory::create($file);
 					$thumb->adaptiveResize($w, $h);
-					$thumb->save($this->dossier.'/'.$width.'_'.$height.'/'.$this->objet->getId().'.png','png');
+					$thumb->save($this->dossier.'/'.$this->fileName.'.png','png');
 	}
 	public function resize()
 	{
