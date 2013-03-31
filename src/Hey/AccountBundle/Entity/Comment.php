@@ -31,8 +31,8 @@ class Comment
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_owner", type="integer")
+     * @ORM\ManyToOne(targetEntity="Account", inversedBy="Comment")
+     * @ORM\JoinColumn(name="id_owner", referencedColumnName="id_account")
      */
     private $id_owner;
 
@@ -45,8 +45,8 @@ class Comment
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_modifier", type="integer")
+     * @ORM\ManyToOne(targetEntity="Account", inversedBy="Comment")
+     * @ORM\JoinColumn(name="id_modifier", referencedColumnName="id_account"))
      */
     private $id_modifier;
 

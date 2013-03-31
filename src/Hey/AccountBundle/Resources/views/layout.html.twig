@@ -65,7 +65,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><img src="{{ asset('bundles/heysite/images/event/base/people10.jpg') }}"/> <b>{{ app.user.firstname}} {{app.user.lastname}}</b> <b class="caret"></b></a>
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><img src="{{ asset('bundles/heysite/images/profils/'~app.user.id~'/Avatar/avatar_crop.jpg?') }} {{"now"|date("Ymdhis")}}"/> <b>{{ app.user.firstname}} {{app.user.lastname}}</b> <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ path('_account_dashboard') }}"><i class="icon-th"></i> Mon tableau de bord</a></li>
                                         <li><a href="{{ path('_account_event_create') }}"><i class="icon-plus-sign"></i> Créer un Heyvent</a></li>

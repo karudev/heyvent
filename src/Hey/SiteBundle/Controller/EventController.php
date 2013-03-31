@@ -54,8 +54,8 @@ class EventController extends Controller
                $em = $this->getDoctrine()->getManager();
                $comment->setDateCreated(time());
                $comment->setDateLastUpdated(time());
-               $comment->setIdOwner($user->getId());
-               $comment->setIdModifier($user->getId());
+               $comment->setIdOwner($user);
+               $comment->setIdModifier($user);
                $em->persist($comment);
                $em->flush();
                
@@ -70,7 +70,8 @@ class EventController extends Controller
         }
         # Récupération de la liste des commentaires
        $comments = $this->getDoctrine()->getRepository('HeyAccountBundle:Comment')->findBy(array('id_event'=>$id_event));
-       
+       // \Doctrine\Common\Util\Debug::dump( $comments[0].id_owner,3);die();
+      
       
         return $this->render('HeySiteBundle:Event:section/contain.html.twig', array('commentForm' => $commentForm->createView(),'comments'=>$comments));
     }

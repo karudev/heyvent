@@ -18,11 +18,12 @@ class DashboardController extends Controller
        # Récupération des évènements de l'utilisateur
        $events_user = $this->getDoctrine()->getRepository('HeyAccountBundle:Event')->findBy(array('id_owner'=>$this->get('security.context')->getToken()->getUser()->getId()));
       
-       
+      
        # Mise en session
-       $this->container->get('request')->getSession()->set('events_user', $events_user);
+      //$this->container->get('request')->getSession()->remove('events_user');
+    $this->container->get('request')->getSession()->set('events_user', $events_user);
        
-       
-       return array();
+       // \Doctrine\Common\Util\Debug::dump(  \serialize($events_user),2);die();
+        return array();
     }
 }

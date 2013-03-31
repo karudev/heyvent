@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Hey\AccountBundle\Entity\Event;
 use Hey\AccountBundle\Form\Type\EventType;
+use Hey\AccountBundle\Models\Fichier;
 
 
 class EventController extends Controller
@@ -20,11 +21,28 @@ class EventController extends Controller
        
         
         $request = $this->get('request');
+      
     	$event = new Event();
     	$formEvent = $this->createForm(new EventType(),$event);
         $user = $this->get('security.context')->getToken()->getUser();
     	if($request->getMethod() == 'POST')
     	{
+          
+         if(isset($_FILES["image"]))
+         {
+           $fichier =  new Fichier(array(
+                'fichier'   =>  $_FILES['image'],
+                'dossier'   =>  $_SERVER['DOCUMENT_ROOT']."/bundles/heysite/images/event/base",
+                'fileName'  =>  'bigpic',
+                'newExtension'=>'jpg',
+                'doResize'  =>  true,
+                'x'         =>  960,
+                'y'         =>  490,
+                ''));
+           $retour = $fichier->upload();
+          //  print_r($retour); die();
+         }
+         
             $formEvent->bindRequest($request);
             
             if($formEvent->isValid())

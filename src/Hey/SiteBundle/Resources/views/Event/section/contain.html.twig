@@ -6,9 +6,9 @@
   {% for comment in comments %}
     <div class="paveposter">
         <img src="{{ asset('bundles/heysite/images/event/picto-fleche.png') }}" class="insert" alt=""/> 
-        <img src="{{ asset('bundles/heysite/images/event/base/people2.jpg') }}" class="people" alt=""/>
+        <img src="{{ asset('bundles/heysite/images/profils/'~comment.idOwner.id~'/Avatar/avatar_crop.jpg?') }}" class="people" alt=""/>
         <div class="poster">
-            <h4 class="personne">Pierrette Mona</h4>
+            <h4 class="personne">{{comment.idOwner.firstName}} {{comment.idOwner.lastName}}</h4>
             <h4 class="lieu" style="display:inline-block" >gwada</h4>
             <img src="{{ asset('bundles/heysite/images/event/note_3.png') }}" class="notepose"/>
             <p>{{comment.comment|nl2br}}</p>

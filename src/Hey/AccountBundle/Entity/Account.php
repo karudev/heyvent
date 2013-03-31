@@ -19,10 +19,11 @@ class Account implements UserInterface {
      * @ORM\Column(name="id_account", type="integer")
      * @ORM\Id
      * @ORM\OneToMany(targetEntity="Event", mappedBy="Account")
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="Account")
      * @ORM\GeneratedValue(strategy="AUTO")
      *
      */
-    private $id;
+    protected $id;
 
     
     /**
@@ -30,14 +31,14 @@ class Account implements UserInterface {
      *
      * @ORM\Column(name="username", type="string", length=255)
      */
-    private $username;
+    protected $username;
 
     /**
      * @var string $password
      *
      * @ORM\Column(name="password", type="string", length=255)
      */
-    private $password;
+    protected $password;
     
     /**
      * @var string
@@ -45,126 +46,126 @@ class Account implements UserInterface {
      * @ORM\Column(name="civility", type="string", length=128, nullable=true)
      * 
      */
-    private $civility;
+    protected $civility;
     
     /**
      * @var string
      *
      * @ORM\Column(name="firstname", type="string", length=255)
      */
-    private $firstname;
+    protected $firstname;
     
     /**
      * @var string
      *
      * @ORM\Column(name="lastname", type="string", length=255)
      */
-    private $lastname;
+    protected $lastname;
 
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
      */
-    private $email;
+    protected $email;
     
     /**
      * @var \DateTime $date_created
      *
      * @ORM\Column(name="date_created", type="datetime")
      */
-    private $date_created;
+    protected $date_created;
 
     /**
      * @var \DateTime $date_last_updated
      *
      * @ORM\Column(name="date_last_updated", type="datetime")
      */
-    private $date_last_updated;
+    protected $date_last_updated;
 
     /**
      * @var boolean $is_active
      *
      * @ORM\Column(name="is_active", type="boolean")
      */
-    private $is_active;
+    protected $is_active;
 
     /**
      * @var string
      *
      * @ORM\Column(name="ip", type="string", length=32)
      */
-    private $ip;
+    protected $ip;
 
     /**
      * @var string
      *
      * @ORM\Column(name="salt", type="string", length=255)
      */
-    private $salt;
+    protected $salt;
     
     /**
      * @var integer
      *
      * @ORM\Column(name="statut", type="string", nullable=true)
      */
-    private $statut;
+    protected $statut;
     
     /**
      * @var date_of_birth
      *
      * @ORM\Column(name="date_of_birth", type="date",  nullable=true)
      */
-    private $date_of_birth;
+    protected $date_of_birth;
     
     /**
      * @var allow_mailling_invitation
      *
      * @ORM\Column(name="allow_mailling_invitation", type="boolean")
      */
-    private $allow_mailling_invitation;
+    protected $allow_mailling_invitation;
         
     /**
      * @var allow_ads_heyvent
      *
      * @ORM\Column(name="allow_ads_heyvent", type="boolean")
      */
-    private $allow_ads_heyvent;
+    protected $allow_ads_heyvent;
     
     /**
      * @var tel
      *
      * @ORM\Column(name="tel",  type="string", length=64, nullable=true)
      */
-    private $tel;
+    protected $tel;
     
     /**
      * @var cp
      *
      * @ORM\Column(name="cp",  type="string", length=32, nullable=true)
      */
-    private $cp;
+    protected $cp;
     
     /**
      * @var city
      *
      * @ORM\Column(name="city",  type="string", length=128, nullable=true)
      */
-    private $city;
+    protected $city;
     
     /**
      * @var district
      *
      * @ORM\Column(name="district",  type="string", length=128, nullable=true)
      */
-    private $district;
+    protected $district;
     
     /**
      * @var country
      *
      * @ORM\Column(name="country",  type="string", length=128, nullable=true)
      */
-    private $country;
+    protected $country;
 
     /**
      * @inheritDoc

@@ -27,78 +27,84 @@ class Event
      *
      * @ORM\Column(name="date_created", type="bigint")
      */
-    private $date_created;
+    protected $date_created;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="date_last_modified", type="bigint")
      */
-    private $date_last_modified;
+    protected $date_last_modified;
 
     /**
      * @var integer
      * @ORM\ManyToOne(targetEntity="Account", inversedBy="Event")
      * @ORM\JoinColumn(name="id_owner", referencedColumnName="id_account")
      */
-    private $id_owner;
+    protected $id_owner;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="id_modified", type="integer")
      */
-    private $id_modified;
+    protected $id_modified;
 
     /**
      * @var integer
      * @Assert\NotBlank()
      * @ORM\Column(name="date_begin", type="bigint")
      */
-    private $date_begin;
+    protected $date_begin;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="date_end", type="bigint", nullable = true)
      */
-    private $date_end;
+    protected $date_end;
 
     /**
      * @var string
      * @Assert\NotBlank()
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    protected $name;
     
     /**
      * @var string
      * @Assert\NotBlank()
      * @ORM\Column(name="presentation", type="string", length=255)
      */
-    private $presentation;
+    protected $presentation;
 
     /**
      * @var string
      * @Assert\NotBlank()
      * @ORM\Column(name="description", type="text")
      */
-    private $description;
+    protected $description;
 
     /**
      * @var boolean
      *
      * @ORM\Column(name="is_private", type="boolean")
      */
-    private $is_private;
+    protected $is_private;
 
     /**
      * @var boolean
      *
      * @ORM\Column(name="is_active", type="boolean")
      */
-    private $is_active;
+    protected $is_active;
 
+     /**
+     * @var integer
+     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="Event")
+     * @ORM\JoinColumn(name="id_categorie", referencedColumnName="id_categorie")
+     */
+    protected $id_categorie;
    
     /**
      * Get id
@@ -362,5 +368,28 @@ class Event
     public function getPresentation()
     {
         return $this->presentation;
+    }
+
+    /**
+     * Set id_categorie
+     *
+     * @param \Hey\AccountBundle\Entity\Categorie $idCategorie
+     * @return Event
+     */
+    public function setIdCategorie(\Hey\AccountBundle\Entity\Categorie $idCategorie = null)
+    {
+        $this->id_categorie = $idCategorie;
+    
+        return $this;
+    }
+
+    /**
+     * Get id_categorie
+     *
+     * @return \Hey\AccountBundle\Entity\Categorie 
+     */
+    public function getIdCategorie()
+    {
+        return $this->id_categorie;
     }
 }

@@ -10,13 +10,14 @@ class Fichier
 	//public $fichier = array('name','tmp_name','taille','extension');
 	public $tailleMax = 10000000;
 	public $x = 150;
-	//public $y = 150;
+	public $y = 150;
 	public $deltaY = 0;
 	
 	public $extension = array('png', 'gif', 'jpg', 'jpeg');
 	public $objet = array();
 	public $doResize = false;
 	public $fileName;
+        public $newExtension = 'png';
 	public function __construct($params = array())
 	{
 		if(!isset($params["dossier"]))
@@ -46,6 +47,19 @@ class Fichier
 		$this->fileName = $params['fileName'];
                 
                 }
+                
+                if(isset($params['x']))
+		$this->x = $params['x'];
+                
+                 if(isset($params['y']))
+		$this->y = $params['y'];
+                 
+                if(isset($params['doResize']))
+		$this->doResize = $params['doResize'];
+                
+                if(isset($params['newExtension']))
+		$this->newExtension = $params['newExtension'];
+
                 
 		$this->file['name'] = $this->fileName.'.'.$this->file['extension'];
 		$this->file['path'] = $this->dossier.'/'.$this->fileName.'.'.$this->file['extension'];
@@ -81,7 +95,7 @@ class Fichier
 		    	if($this->doResize)
 		    	{
 		    		try {
-			    		//$erreur =$this->resizeThumb(400,400);
+			    		$erreur = $this->resizeThumb($this->x,$this->y);
 			    		//$erreur =$this->resizeThumb(50,50);
 			    		
 			    		if($erreur==null)
@@ -152,8 +166,9 @@ class Fichier
 					require_once __DIR__.'/phpthumb/ThumbLib.inc.php';
 					
 			    	$thumb = \PhpThumbFactory::create($file);
+                               // $thumb->resize($w, $h);
 					$thumb->adaptiveResize($w, $h);
-					$thumb->save($this->dossier.'/'.$this->fileName.'.png','png');
+					$thumb->save($this->dossier.'/'.$this->fileName.'.'.$this->newExtension,$this->newExtension);
 	}
 	public function resize()
 	{
