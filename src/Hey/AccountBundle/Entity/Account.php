@@ -430,29 +430,6 @@ class Account implements UserInterface {
     }
 
     /**
-     * Set id_account_statut
-     *
-     * @param integer $idAccountStatut
-     * @return Account
-     */
-    public function setIdAccountStatut($idAccountStatut)
-    {
-        $this->id_account_statut = $idAccountStatut;
-    
-        return $this;
-    }
-
-    /**
-     * Get id_account_statut
-     *
-     * @return integer 
-     */
-    public function getIdAccountStatut()
-    {
-        return $this->id_account_statut;
-    }
-
-    /**
      * Set date_of_birth
      *
      * @param \DateTime $dateOfBirth

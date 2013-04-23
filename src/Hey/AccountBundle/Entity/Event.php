@@ -19,8 +19,9 @@ class Event
      * @ORM\Column(name="id_event", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="Event")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var integer
@@ -52,8 +53,8 @@ class Event
 
     /**
      * @var integer
-     * @Assert\NotBlank()
-     * @ORM\Column(name="date_begin", type="bigint")
+     * 
+     * @ORM\Column(name="date_begin", type="bigint", nullable = true)
      */
     protected $date_begin;
 
@@ -105,6 +106,27 @@ class Event
      * @ORM\JoinColumn(name="id_categorie", referencedColumnName="id_categorie")
      */
     protected $id_categorie;
+    
+     /**
+     * @var integer
+     * @ORM\ManyToOne(targetEntity="Typography", inversedBy="Event")
+     * @ORM\JoinColumn(name="typography_id", referencedColumnName="typography_id")
+     */
+    protected $typography_id;
+    
+     /**
+     * @var integer
+     * @ORM\ManyToOne(targetEntity="Language", inversedBy="Event")
+     * @ORM\JoinColumn(name="language_id", referencedColumnName="language_id")
+     */
+    protected $language_id;
+    
+     /**
+     * @var integer
+     * @ORM\ManyToOne(targetEntity="Statut", inversedBy="Event")
+     * @ORM\JoinColumn(name="statut_id", referencedColumnName="statut_id")
+     */
+    protected $statut_id;
    
     /**
      * Get id
@@ -391,5 +413,74 @@ class Event
     public function getIdCategorie()
     {
         return $this->id_categorie;
+    }
+
+    /**
+     * Set typography_id
+     *
+     * @param \Hey\AccountBundle\Entity\Typography $typographyId
+     * @return Event
+     */
+    public function setTypographyId(\Hey\AccountBundle\Entity\Typography $typographyId = null)
+    {
+        $this->typography_id = $typographyId;
+    
+        return $this;
+    }
+
+    /**
+     * Get typography_id
+     *
+     * @return \Hey\AccountBundle\Entity\Typography 
+     */
+    public function getTypographyId()
+    {
+        return $this->typography_id;
+    }
+
+    /**
+     * Set statut_id
+     *
+     * @param \Hey\AccountBundle\Entity\Statut $statutId
+     * @return Event
+     */
+    public function setStatutId(\Hey\AccountBundle\Entity\Statut $statutId = null)
+    {
+        $this->statut_id = $statutId;
+    
+        return $this;
+    }
+
+    /**
+     * Get statut_id
+     *
+     * @return \Hey\AccountBundle\Entity\Statut 
+     */
+    public function getStatutId()
+    {
+        return $this->statut_id;
+    }
+
+    /**
+     * Set language_id
+     *
+     * @param \Hey\AccountBundle\Entity\Language $languageId
+     * @return Event
+     */
+    public function setLanguageId(\Hey\AccountBundle\Entity\Language $languageId = null)
+    {
+        $this->language_id = $languageId;
+    
+        return $this;
+    }
+
+    /**
+     * Get language_id
+     *
+     * @return \Hey\AccountBundle\Entity\Language 
+     */
+    public function getLanguageId()
+    {
+        return $this->language_id;
     }
 }

@@ -24,7 +24,8 @@
             <div class="comenvoicentre">
                 <form name="comment" method="post" action="{{path('_event_section_contain')}}">
                     <section>
-                        {{form_widget(commentForm.idEvent)}}
+                       
+                         <input type="hidden" name="comment[idEvent]"  value="{{idEvent}}"/>
                         {{form_widget(commentForm.comment,{'attr':{'class':'contribution input-large','placeholder':'Postez votre contribution'}} )}}
                         {{ form_errors(commentForm.comment) }}
                         {{ form_rest(commentForm) }}

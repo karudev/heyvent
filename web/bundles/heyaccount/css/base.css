@@ -7,3 +7,55 @@
 .container_account td{
     padding : 5px;
 }
+.radiobutton input
+{
+    float : left;
+}
+.radiobutton label
+{
+    float : left;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+#event_isPrivate input[type="radio"] {
+    display:none;
+}
+#event_isPrivate label
+{
+    font-size: 0.9em;
+    padding : 2px;
+    width:100px;
+    border: 1px solid #CCC;
+    text-align: center;
+     -moz-border-radius: 5px; /* FF1+ */
+  -webkit-border-radius: 5px; /* Saf3+, Chrome */
+          border-radius: 5px; /* Opera 10.5, IE 9 */
+}
+
+.heyvent_form
+{
+    clear: both;
+    background-color: #FFF;
+    padding: 5px;
+     -moz-border-radius: 2px; /* FF1+ */
+  -webkit-border-radius: 2px; /* Saf3+, Chrome */
+          border-radius: 2px; /* Opera 10.5, IE 9 */
+}
+.etape li{
+    padding:5px;
+    width : 100px;
+    height : 50px;
+    text-align: center;
+    border: 1px solid #CCC;
+    float:left;
+    margin-left:10px;
+    list-style: none;
+   
+}
+.etape li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.disabled{
+    opacity: 0.2;
+}

@@ -20,49 +20,49 @@ class Comment
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="date_created", type="bigint")
      */
-    private $date_created;
+    protected $date_created;
 
     /**
      * @var integer
      * @ORM\ManyToOne(targetEntity="Account", inversedBy="Comment")
      * @ORM\JoinColumn(name="id_owner", referencedColumnName="id_account")
      */
-    private $id_owner;
+    protected $id_owner;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="date_last_updated", type="bigint")
      */
-    private $date_last_updated;
+    protected $date_last_updated;
 
     /**
      * @var integer
      * @ORM\ManyToOne(targetEntity="Account", inversedBy="Comment")
      * @ORM\JoinColumn(name="id_modifier", referencedColumnName="id_account"))
      */
-    private $id_modifier;
+    protected $id_modifier;
 
-    /**
+     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_event", type="integer")
+     * @ORM\ManyToOne(targetEntity="Event", inversedBy="Comment")
+     * @ORM\JoinColumn(name="id_event", referencedColumnName="id_event"))
      */
-    private $id_event;
+    protected $id_event;
 
     /**
      * @var string
      * @Assert\NotNull()
      * @ORM\Column(name="comment", type="text")
      */
-    private $comment;
+    protected $comment;
 
 
     /**
@@ -167,29 +167,7 @@ class Comment
         return $this->id_modifier;
     }
 
-    /**
-     * Set id_event
-     *
-     * @param integer $idEvent
-     * @return Comment
-     */
-    public function setIdEvent($idEvent)
-    {
-        $this->id_event = $idEvent;
-    
-        return $this;
-    }
-
-    /**
-     * Get id_event
-     *
-     * @return integer 
-     */
-    public function getIdEvent()
-    {
-        return $this->id_event;
-    }
-
+   
     /**
      * Set comment
      *
@@ -211,5 +189,28 @@ class Comment
     public function getComment()
     {
         return $this->comment;
+    }
+
+    /**
+     * Set id_event
+     *
+     * @param \Hey\AccountBundle\Entity\Event $idEvent
+     * @return Comment
+     */
+    public function setIdEvent(\Hey\AccountBundle\Entity\Event $idEvent = null)
+    {
+        $this->id_event = $idEvent;
+    
+        return $this;
+    }
+
+    /**
+     * Get id_event
+     *
+     * @return \Hey\AccountBundle\Entity\Event 
+     */
+    public function getIdEvent()
+    {
+        return $this->id_event;
     }
 }

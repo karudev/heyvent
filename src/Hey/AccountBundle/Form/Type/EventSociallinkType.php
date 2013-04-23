@@ -6,16 +6,16 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Doctrine\ORM\EntityRepository;
 
-class CommentType extends AbstractType {
+class EventsoociallinkType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
 
        
-        $builder->add('comment', 'textarea');
+        $builder->add('url', 'text');
     }
 
     public function getName() {
-        return 'comment';
+        return 'eventsociallink';
     }
 
 }

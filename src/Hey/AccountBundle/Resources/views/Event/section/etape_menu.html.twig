@@ -1,0 +1,8 @@
+<div class="etape">
+<ul>
+    <li {% if url.presentation is defined %}data-href="{{url.presentation}}" {% else %}class="disabled"{% endif %}>Présentation</li>
+    <li {% if url.definir_periode is defined %}data-href="{{url.definir_periode}}" {% else %}class="disabled"{% endif %}>Définir une période</li>
+    <li class="disabled">Gérer le contenu</li>  
+    <li class="disabled">Publier</li>
+</ul>
+</div>

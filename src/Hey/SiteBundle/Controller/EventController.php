@@ -35,12 +35,12 @@ class EventController extends Controller
         $com = $request->request->get('comment');
         $id_event = $com['idEvent'];
         }
-        
+       // print_r($com); die();
             
         
         $comment = new Comment();
         
-        $comment->setIdEvent($id_event);
+       //$comment->setIdEvent($this->getDoctrine()->getRepository('HeyAccountBundle:Event')->find($id_event));
         
         # Appel du formulaire Comment
         $commentForm = $this->createForm(new CommentType(),$comment);
@@ -49,23 +49,24 @@ class EventController extends Controller
         if($request->getMethod() == "POST")
         {
            $commentForm->bindRequest($request);
-           if($commentForm->isValid())
-           {
+          
                $em = $this->getDoctrine()->getManager();
                $comment->setDateCreated(time());
                $comment->setDateLastUpdated(time());
                $comment->setIdOwner($user);
                $comment->setIdModifier($user);
+               $comment->setIdEvent( $this->getDoctrine()->getRepository('HeyAccountBundle:Event')->find($id_event));
+              
                $em->persist($comment);
                $em->flush();
                
                #on vide le formulaire
                unset($commentForm);
                $comment2 = new Comment();
-               $comment2->setIdEvent($id_event);
+               $comment2->setIdEvent( $this->getDoctrine()->getRepository('HeyAccountBundle:Event')->find($id_event));
                $commentForm = $this->createForm(new CommentType(),$comment2);
                
-           }
+           
            
         }
         # Récupération de la liste des commentaires
@@ -73,7 +74,7 @@ class EventController extends Controller
        // \Doctrine\Common\Util\Debug::dump( $comments[0].id_owner,3);die();
       
       
-        return $this->render('HeySiteBundle:Event:section/contain.html.twig', array('commentForm' => $commentForm->createView(),'comments'=>$comments));
+        return $this->render('HeySiteBundle:Event:section/contain.html.twig', array('idEvent' => $id_event,'commentForm' => $commentForm->createView(),'comments'=>$comments));
     }
     
      /**

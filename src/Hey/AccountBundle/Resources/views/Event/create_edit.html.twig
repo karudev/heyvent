@@ -1,37 +1,52 @@
 {% extends "HeyAccountBundle::layout.html.twig" %}
 {% block body %}
-
+<div class="heyvent_contain_step">
+{% render 'HeyAccountBundle:Event:etapemenu' %}
+<div class="heyvent_form">
 <h3>{{title}}</h3>
 
-<form method="post" enctype="multipart/form-data" name="event">
+<form method="post" action="{{ path('_account_event_create')}}" enctype="multipart/form-data" name="heyvent">
     <table>
         <tr>
             <td>Image de présentation</td>
             <td><input type="file" name="image" /> <input type="hidden" name="MAX_FILE_SIZE" value="10000000"><i>( Inférieur à 10Mo )</i> </td>  
         </tr>
+       
         <tr>
+            <td>Nom</td>
+            <td>{{ form_widget(formEvent.name,{ 'attr': {'class': 'input-xxlarge'} })}}</td>  
+        </tr>
+         <tr>
             <td>Catégorie</td>
             <td>{{ form_widget(formEvent.idCategorie) }}</td>  
         </tr>
         <tr>
-            <td>Nom</td>
-            <td>{{ form_widget(formEvent.name,{ 'attr': {'class': 'input-xxlarge'} })}}</td>  
+            <td>Choix de la police</td>
+            <td class="radiobutton">{{ form_widget(formEvent.typographyId)}}</td>  
         </tr>
         <tr>
             <td>Phrase de présentation</td>
             <td>{{ form_widget(formEvent.presentation,{ 'attr': {'class': 'input-xxlarge'} })}}</td>  
         </tr>
-        <tr>
+       <!-- <tr>
             <td>Date de début</td>
             <td>{{ form_widget(formEvent.dateBegin,{ 'attr': {'class': 'input-small'} })}}</td>  
         </tr>
         <tr>
             <td>Date de fin</td>
             <td>{{ form_widget(formEvent.dateEnd,{ 'attr': {'class': 'input-small'} })}}</td>  
-        </tr>
+        </tr>-->
         <tr>
             <td>Description</td>
             <td>{{ form_widget(formEvent.description,{ 'attr': {'class': 'input-xxlarge'} })}}</td>  
+        </tr>
+         <tr class="radiobutton">
+            <td>Langue</td>
+            <td>{{ form_widget(formEvent.languageId) }}</td>  
+        </tr>
+        <tr>
+            <td>Définir un statut</td>
+            <td>{{ form_widget(formEvent.isPrivate) }}</td>  
         </tr>
        <!-- <tr>
             <td>Accès</td>
@@ -48,11 +63,15 @@
         </table>
 
     </form>
+</div>
+</div>
 {% endblock %}
 {% block javascripts %}
 <script>
    $(function() {
-        $('#event_dateBegin,#event_dateEnd').datepicker({'dateFormat' : 'dd/mm/yy'});
+        /*$('#event_dateBegin,#event_dateEnd').datepicker({'dateFormat' : 'dd/mm/yy'});*/
+        $('form[name="heyvent"]').submitFormAndReturnHtml('.heyvent_contain_step',null); 
+        
     });
 </script>
 {% endblock %}

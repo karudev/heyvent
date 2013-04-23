@@ -134,7 +134,7 @@ $.fn.loadHtml = function(div,method,rel) {
   
   
     
-     $.fn.submitFormAndReturnHtml = function(div,option) {
+     $.fn.submitFormAndReturnHtml = function(div,callBack,option) {
         var thisBis = this;
         $(this).submit(function()
         {
@@ -150,6 +150,9 @@ $.fn.loadHtml = function(div,method,rel) {
                 success: function(html) {
 				  
                   $(div).html(html);  
+                  
+                  if(callBack)
+                      callBack();
                   
                   if(option =='mosaique')
                       {

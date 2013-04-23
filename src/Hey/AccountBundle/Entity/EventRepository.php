@@ -16,6 +16,7 @@ class EventRepository extends EntityRepository {
        
         $dql = "SELECT e FROM HeyAccountBundle:Event e
 		where e.name like '%".$word."%' or e.presentation like '%".$word."%'
+                and e.statut_id = 2
         	order by e.date_created desc";
 
 
