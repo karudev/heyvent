@@ -12,8 +12,8 @@ class AccountType extends AbstractType {
     
     public function __construct($params = null) {
         
-        if($params!=null)
-        $this->params = $params;
+       /* if($params!=null)
+        $this->params = $params;*/
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options) {

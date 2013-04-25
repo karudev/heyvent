@@ -18,3 +18,47 @@ form[name="profil"] table td
 .information_complementaire a:hover{
     text-decoration: underline;
 }
+
+.background-left-nav{
+    background-color: #e0e0e0;
+    /*min-height: 500px !important;*/
+   
+   
+}
+.background-right-nav{
+    
+   
+}
+.container-fluid-bg{
+    background-color: #FFF;
+  
+}
+input.lastName
+{
+    border: none;
+    border-bottom: 1px solid #CCC;
+    font-size: 2em;
+    color: #000 !important;
+    width: 98%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+  
+}
+input.firstName
+{
+    border: none;
+    border-bottom: 1px solid #CCC;
+    font-size: 1.5em;
+    color: #000 !important;
+    width: 98%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+input.commonInputLine
+{
+    border: none;
+    border-bottom: 1px solid #CCC;
+     width: 98%;
+     font-size: 0.9em;
+}

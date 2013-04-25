@@ -1,0 +1,73 @@
+{% extends "HeyAccountBundle::layout.html.twig" %}
+{% block stylesheets %}
+<link href="{{ asset('bundles/heysite/css/profil/base.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block body %}
+<h3>Modifier votre profil</h3>
+<form name="profil" method="post" enctype="multipart/form-data">
+{{ form_errors(formAccount) }}
+   <section> 
+       <table>
+      
+        <tr>
+            <td>Identifiant</td>
+            <td><b>{{app.user.username}}</b>{{form_widget(formAccount.password)}}</td>
+        </tr>
+        <tr>
+            <td>Civilité</td>
+            <td>{{form_widget(formAccount.civility)}}</td>
+            <td>Statut</td>
+            <td>{{form_widget(formAccount.statut)}}</td>
+        </tr>
+        <tr>
+            <td>Nom</td>
+            <td>{{form_widget(formAccount.lastname)}}</td>
+             <td>Prénom</td>
+            <td>{{form_widget(formAccount.firstname)}}</td>
+        </tr>
+        <tr>
+            <td>Date de naissance</td>
+            <td>{{form_widget(formAccount.dateOfBirth)}}</td>
+        </tr>
+        <tr>
+            <td>Téléphone</td>
+            <td>{{form_widget(formAccount.tel)}}</td>
+            <td>Email</td>
+            <td>{{form_widget(formAccount.email)}}</td>
+        </tr>
+        <tr>
+            <td>Code postal</td>
+            <td>{{form_widget(formAccount.cp)}}</td>
+            <td>Ville</td>
+            <td>{{form_widget(formAccount.city)}}</td>
+        </tr>
+         <tr>
+            <td>Région</td>
+            <td>{{form_widget(formAccount.district)}}</td>
+            <td>Pays</td>
+            <td>{{form_widget(formAccount.country)}}</td>
+        </tr>
+        
+    </table>
+   </section> 
+   <section class="information_complementaire" > 
+       <a href="javascript:void(0)">Informations complémentaires</a>
+   </section> 
+   <section>     
+        <table style="margin-top:20px;margin-bottom:20px;">
+            <tr>
+                <td>Je souhaite recevoir des maillings d'invitation amis</td>
+                <td>{{form_widget(formAccount.allowMaillingInvitation)}}</td>
+            </tr>
+             <tr>
+                <td>Je souhaite recevoir des annonces Heyvent</td>
+                <td>{{form_widget(formAccount.allowAdsHeyvent)}}</td>
+            </tr>
+        </table>
+  </section>      
+         <button class="btn btn-success" type="submit">Enregistrer</button>
+         <button class="btn btn" type="reset">Annuler</button>
+{{ form_rest(formAccount) }}
+
+</form>
+{% endblock %}

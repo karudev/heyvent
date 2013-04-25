@@ -1,7 +1,8 @@
 .container_account{
    
     clear: both;
-    margin-top: 80px;
+    width: 101%;
+    margin-top: 65px;
     
 }
 .container_account td{
@@ -59,3 +60,5 @@
 .disabled{
     opacity: 0.2;
 }
+
+
