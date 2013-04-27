@@ -37,4 +37,46 @@ class ProfilController extends Controller
     
        return array('formAccount'=>$formAccount->createView());
     }
+     /**
+     *
+     * @Template()
+     */
+    public function addHobbiesAction()
+    {
+       $form = $this->createForm(new \Hey\AccountBundle\Form\Type\AccounthobbiesType());
+       $request = $this->get('request');
+       $user = $this->get('security.context')->getToken()->getUser();
+       
+     
+       if($request->getMethod() == "POST")
+       {
+            $value = $request->request->get('value');
+            $hob = new \Hey\AccountBundle\Entity\Accounthobbies();
+            $hob->setValue($value);
+            $hob->setAccountId($user);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($hob);
+            $em->flush();
+
+       }
+        $hobbies = $this->getDoctrine()->getManager()->getRepository('HeyAccountBundle:AccountHobbies')
+                ->findBy(array('account_id'=>$user->getId()));
+        return $this->render('HeyAccountBundle:Profil:section\add_hobbies.html.twig',array('hobbies'=> $hobbies,'form'=>$form->createView()));
+    }
+     /**
+     *
+     * @Template()
+     */
+    public function delHobbiesAction(\Hey\AccountBundle\Entity\Accounthobbies $h)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($h);
+        $em->flush();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $form = $this->createForm(new \Hey\AccountBundle\Form\Type\AccounthobbiesType());
+        $hobbies = $this->getDoctrine()->getManager()->getRepository('HeyAccountBundle:AccountHobbies')
+                ->findBy(array('account_id'=>$user->getId()));
+        return $this->render('HeyAccountBundle:Profil:section\add_hobbies.html.twig',array('hobbies'=> $hobbies,'form'=>$form->createView()));
+  
+    }
 }

@@ -12,9 +12,9 @@
 
  /*                           {toggle rule off} */
 .box_round {
-     -moz-border-radius: 12px; /* FF1+ */
-  -webkit-border-radius: 12px; /* Saf3+, Chrome */
-          border-radius: 12px; /* Opera 10.5, IE 9 */
+     -moz-border-radius: 5px; /* FF1+ */
+  -webkit-border-radius: 5px; /* Saf3+, Chrome */
+          border-radius: 5px; /* Opera 10.5, IE 9 */
 }
   
 /*                           {toggle rule off} */

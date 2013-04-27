@@ -20,6 +20,7 @@ class Account implements UserInterface {
      * @ORM\Id
      * @ORM\OneToMany(targetEntity="Event", mappedBy="Account")
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="Account")
+     * @ORM\OneToMany(targetEntity="Accounthobbies", mappedBy="Account")
      * @ORM\GeneratedValue(strategy="AUTO")
      *
      */
@@ -43,10 +44,10 @@ class Account implements UserInterface {
     /**
      * @var string
      *
-     * @ORM\Column(name="civility", type="string", length=128, nullable=true)
+     * @ORM\Column(name="sex", type="string", length=64)
      * 
      */
-    protected $civility;
+    protected $sex;
     
     /**
      * @var string
@@ -406,28 +407,6 @@ class Account implements UserInterface {
         return $this->email;
     }
 
-    /**
-     * Set civility
-     *
-     * @param string $civility
-     * @return Account
-     */
-    public function setCivility($civility)
-    {
-        $this->civility = $civility;
-    
-        return $this;
-    }
-
-    /**
-     * Get civility
-     *
-     * @return string 
-     */
-    public function getCivility()
-    {
-        return $this->civility;
-    }
 
     /**
      * Set date_of_birth
@@ -634,5 +613,28 @@ class Account implements UserInterface {
     public function getStatut()
     {
         return $this->statut;
+    }
+
+    /**
+     * Set sex
+     *
+     * @param string $sex
+     * @return Account
+     */
+    public function setSex($sex)
+    {
+        $this->sex = $sex;
+    
+        return $this;
+    }
+
+    /**
+     * Get sex
+     *
+     * @return string 
+     */
+    public function getSex()
+    {
+        return $this->sex;
     }
 }

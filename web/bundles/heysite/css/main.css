@@ -3,6 +3,9 @@ body {
 	counter-reset: sections;
 	
 }
+#load{
+    margin :5px;
+}
 
 h2:before {
 	content: "Section " counter(sections) ". ";

@@ -1,0 +1,4 @@
+{% for row in hobbies %}
+<span class="hobbies box_round">{{row.value}} <span data-id="{{row.id}}" class="croix hobbies box_round">X</span></span>
+{% endfor %}
+{{form_widget(form.value,{ 'attr': {'class': 'input-mini'} })}}<span id="load"></span>

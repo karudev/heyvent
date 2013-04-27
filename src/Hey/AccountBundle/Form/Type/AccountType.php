@@ -17,8 +17,8 @@ class AccountType extends AbstractType {
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
-        $builder->add('civility', 'choice', array(
-            'choices' => array(''=>'','Monsieur'=>'Monsieur', 'Madame'=>'Madame'),
+        $builder->add('sex', 'choice', array(
+            'choices' => array(''=>'','Homme'=>'Homme', 'Femme'=>'Femme'),
             'required' => true
         ));
         $builder->add('statut', 'choice', array(

@@ -62,3 +62,29 @@ input.commonInputLine
      width: 98%;
      font-size: 0.9em;
 }
+span.hobbies
+{
+    padding: 3px;
+    font-size: 0.8em;
+    background-color: #e7e2e8;
+    color : #705870;
+    border: 1px solid #705870;
+    margin : 2px;
+     
+}
+span.croix{
+
+    padding: 2px;
+    font-size: 0.8em;
+    background-color: #e7e2e8;
+    color : #705870;
+    border: 1px solid #705870;
+    margin : 0px;
+    margin-right: -2px;
+    
+}
+span.croix:hover{
+    cursor: pointer;
+    font-weight: bolder;
+  
+}

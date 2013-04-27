@@ -48,6 +48,14 @@ _account_picture_crop:
 _account_profil_edit:
     pattern:  /account/profil
     defaults: { _controller: HeyAccountBundle:Profil:edit }
+    
+_account_profil_hobbies_add:
+    pattern:  /account/profil/hobbies/add
+    defaults: { _controller: HeyAccountBundle:Profil:addHobbies }
+    
+_account_profil_hobbies_del:
+    pattern:  /account/profil/hobbies/del/{id}
+    defaults: { _controller: HeyAccountBundle:Profil:delHobbies }
 
 _account_logincheck:
     pattern:  /account/logincheck

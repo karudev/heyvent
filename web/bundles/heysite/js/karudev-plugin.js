@@ -167,5 +167,21 @@ $.fn.loadHtml = function(div,method,rel) {
 
         });
     };
+      
+     send = function(data,url,callBack) {
+   
+            $.ajax({
+                url: url,
+                type : "POST",
+                data : data,
+                success: function(data) {
+		
+                  if(callBack)
+                      callBack(data);
+               
+                }
+            });
+         
+    };
  
 })( jQuery );

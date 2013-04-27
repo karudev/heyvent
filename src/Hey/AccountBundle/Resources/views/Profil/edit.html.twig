@@ -27,7 +27,7 @@
                         <div style="text-align: right"  class="span2">Mail :</div>
                         <div class="span9">{{form_widget(formAccount.email,{ 'attr': {'class': 'commonInputLine'} })}}</div>
                     </div>
-                     <div class="row-fluid">
+                    <div class="row-fluid">
                         <div style="text-align: right"  class="span2">Tél :</div>
                         <div class="span9">{{form_widget(formAccount.tel,{ 'attr': {'class': 'commonInputLine'} })}}</div>
                     </div>
@@ -47,10 +47,52 @@
                         <div style="text-align: right"  class="span2">Statut :</div>
                         <div class="span9">{{form_widget(formAccount.statut)}}</div>
                     </div>
-
+                    <div class="row-fluid">
+                        <div style="text-align: right"  class="span2">Sexe :</div>
+                        <div class="span9">{{form_widget(formAccount.sex)}}</div>
+                    </div>
+                    <div class="row-fluid">
+                        <div style="text-align: right"  class="span2">Hobbies :</div>
+                        <div id="hobbies" class="span9">{% render 'HeyAccountBundle:Profil:AddHobbies' %}</div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="offset9">
+                            <button class="btn btn-success" type="submit">Enregistrer</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </form>
     </div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(function() {
+            hobbies();
+            
+        });
+        function hobbies() {
+            $('#accounthobbies_value').focusout(function() {
+                 $('#load').html('<img src="{{ asset('bundles/heysite/images/divers/load.gif') }}" />');
+                 send({value: $('#accounthobbies_value').val()}, './profil/hobbies/add', function(data) {
+                    $('#hobbies').html(data);
+                    hobbies();
+                    $('#load').html('');
+                });
+            });
+            observeDelHobbies();
+        }
+        function observeDelHobbies(){
+        $('.croix').click(function() {
+                        $('#load').html('<img src="{{ asset('bundles/heysite/images/divers/load.gif') }}" />');
+                        send(null, './profil/hobbies/del/'+$(this).attr('data-id'),function(data){
+                            $('#hobbies').html(data);
+                            hobbies();
+                            $('#load').html('');
+                        });
+                    });
+        }
+
+        </script>
 {% endblock %}
