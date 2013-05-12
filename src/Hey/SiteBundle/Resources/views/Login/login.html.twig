@@ -26,13 +26,91 @@
         </form>
     </div>
     <div  style="margin-top:20px" id="contain_quicksign" class="form-signin">
-        <center> <h5>Vous n'avez pas encore de compte ?</h5></center>
-        <button data-url="{{path('_quicksign')}}" id="quicksign" type="submit" class="btn btn-large btn">Créer votre compte en <b>30s</b> !</button>
+        <div id="info">
+            <center> <h5>Vous n'avez pas encore de compte ?</h5></center>
+            <button id="quicksign" class="btn btn-large btn">Créer votre compte en <b>30s</b> !</button>
+        </div>
+        <div style="display:none" id="form">
+            {% render 'HeySiteBundle:Login:quicksign' %}
+        </div>
     </div>
 </section> 
 {% endblock %}
 {% block javascripts %}
 <script>
-   $('#quicksign').loadHtml('#contain_quicksign','get');
+    var boolUsername = true;
+    var boolEmail = true;
+    var boolPassword = true;
+    
+    $("form[name='quicksign'] input").keypress(function(e){
+    return e.keyCode != 13;
+     });
+    
+   $('#quicksign').click(function(){
+       $('#info').hide();
+       $('#form').show();
+   });
+   $('#account_username').change(function(){
+       
+       var url = '{{ path('_ajax_is_username_exist',{ 'username' : 'username_value' } ) }}';
+       url = url.replace("username_value", $('#account_username').val());
+       send(null,url ,function(retour){
+         if(!retour){
+            $('#etat_username').html('<img title="Ce pseudo est disponible" src="{{asset('bundles/heysite/images/divers/ok.png')}}" />');
+             boolUsername = true;
+             if(boolUsername && boolPassword && boolEmail)$('#btn-sign').show();
+           
+        }
+         else{
+            $('#etat_username').html('<img title="Ce pseudo est indisponible ou non conforme" src="{{asset('bundles/heysite/images/divers/ko.png')}}" />');
+           
+            $('#btn-sign').hide();
+             boolUsername = false;
+             
+            }
+         
+     }) ; 
+   });
+   
+    $('#account_email').change(function(){
+       
+       var url = '{{ path('_ajax_is_email_exist',{ 'email' : 'email_value' } ) }}';
+       url = url.replace("email_value", $('#account_email').val());
+       send(null,url ,function(retour){
+         if(!retour){
+            $('#etat_email').html('<img title="Cet email est disponible" src="{{asset('bundles/heysite/images/divers/ok.png')}}" />');
+             boolEmail = true;
+             if(boolUsername && boolPassword && boolEmail) $('#btn-sign').show();
+             
+        }
+         else{
+            $('#etat_email').html('<img title="Cet email est indisponible ou non conforme" src="{{asset('bundles/heysite/images/divers/ko.png')}}" />');
+            $('#btn-sign').hide();
+             boolEmail = false;
+            }
+         
+     }) ; 
+   });
+   
+    $('#account_password').change(function(){
+       
+       var url = '{{ path('_ajax_is_valid_mdp',{ 'password' : 'password_value' } ) }}';
+       url = url.replace("password_value", $('#account_password').val());
+       send(null,url ,function(retour){
+         if(!retour){
+            $('#etat_password').html('<img title="Ce mot de passe est valide" src="{{asset('bundles/heysite/images/divers/ok.png')}}" />');
+             boolPassword = true;
+             if(boolUsername && boolPassword && boolEmail) $('#btn-sign').show();
+           
+        }
+         else{
+            $('#etat_password').html('<img title="Cet mot de passe n\'est pas valide" src="{{asset('bundles/heysite/images/divers/ko.png')}}" />');
+            $('#btn-sign').hide();
+            boolPassword = false;
+            }
+         
+     }) ; 
+   });
+  
 </script>
 {% endblock %}

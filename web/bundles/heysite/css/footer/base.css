@@ -5,9 +5,11 @@
     Description:
         Purpose of the stylesheet follows.
 */
-
+footer{
+    margin-bottom: 50px;
+}
 footer,footer a{
-    color : #AC8FAC;
+    color : #AC8FAC !important;
 }
 footer a:hover{
     color : #AC8FAC;
@@ -16,14 +18,14 @@ footer a:hover{
 
 footer .logo_lien .heyvent { 
    background: url("/bundles/heysite/images/footer/mini-logo.png") no-repeat;
-   width: 118px;
+   width: 146px;
   /* height: 34px;*/
    margin-top: -12px;
    float: right;
    margin-right: 15px;
    padding-top: 36px;
    font-weight: bolder;
-   font-size: 0.9em;
+   font-size: 0.75em;
 }
 footer .logo_lien .facebook
 {

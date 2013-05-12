@@ -167,8 +167,7 @@ $.fn.loadHtml = function(div,method,rel) {
 
         });
     };
-      
-     send = function(data,url,callBack) {
+    send = function(data,url,callBack) {
    
             $.ajax({
                 url: url,
@@ -183,5 +182,87 @@ $.fn.loadHtml = function(div,method,rel) {
             });
          
     };
+     $.fn.submitForm = function(callBack) {
+        var thisBis = this;
+        $(this).submit(function()
+        {
+           // $(div).html('<div style="margin:90px" ><img src="'+domaine+'/bundles/lea/images/divers/load.gif" /></div>');
+		var form = $(this).serializeArray();	  
+                
+            $.ajax({
+                url: $(thisBis).attr('action'),
+                type : "POST",
+                dataType :"html",
+                data : form,
+                success: function(data) {
+		
+                  if(callBack)
+                      callBack(data);
+
+              
+                }
+            });
+            return false;
+
+        });
+    };
+    
+   $.fn.myAutoCompleteCp = function(prefixe) {
+	  
+	  var thisBis = $(this);
+	  var val="";
+	 
+		$(this).autocomplete({
+			source: function( request, response ) {
+				$.ajax({
+					url: "./ajax/cp",
+					dataType: "json",
+					type : "POST",
+					data: {
+						
+						maxRows: 12,
+						string : request.term
+					},
+					success: function( data ) {
+						
+						
+						response( $.map(data, function( item ) {
+						//console.debug(data);
+							
+							 if(thisBis.attr('id')==""+prefixe+"cp")
+								  val =item.cp
+							  else if(thisBis.attr('id')==""+prefixe+"city")
+								  val = item.city
+							 
+								  
+							return {
+								label: item.cp +', '+ item.city,
+								value: val,
+								cp: item.cp,
+								city: item.city,
+								/*departement: item.departement,*/
+								district: item.district,
+								country : item.country
+								
+							}
+						}));
+						
+					}
+				});
+			},
+			minLength: 2,
+			select: function( event, ui ) {
+				
+				$('#'+prefixe+'cp').val( ui.item.cp);
+				$('#'+prefixe+'city').val( ui.item.city);
+				//$('#'+prefixe+'departement').val( ui.item.departement);
+				$('#'+prefixe+'district').val( ui.item.district);
+				$('#'+prefixe+'country').val( ui.item.country);
+			
+			}
+			
+			
+		});
+	};
  
 })( jQuery );

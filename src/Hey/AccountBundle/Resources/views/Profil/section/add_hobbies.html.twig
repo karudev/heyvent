@@ -1,4 +1,13 @@
 {% for row in hobbies %}
 <span class="hobbies box_round">{{row.value}} <span data-id="{{row.id}}" class="croix hobbies box_round">X</span></span>
 {% endfor %}
-{{form_widget(form.value,{ 'attr': {'class': 'input-mini'} })}}<span id="load"></span>
+
+<div style="margin-top : 2px;" class="row-fluid">
+
+<div class="span2">{{form_widget(form.value,{ 'attr': {'class': 'input-small'} })}}</div>
+<div class="span4"><span id="load"></span> <span  class="offset1 add"></span></div>
+</div>
+
+
+
+

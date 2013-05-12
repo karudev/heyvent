@@ -12,8 +12,8 @@ class AccountType extends AbstractType {
     
     public function __construct($params = null) {
         
-       /* if($params!=null)
-        $this->params = $params;*/
+        if($params!=null)
+        $this->params = $params;
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
@@ -33,9 +33,17 @@ class AccountType extends AbstractType {
         $builder->add('district', 'text',array('required'=>false));
         $builder->add('country', 'text',array('required'=>false));
         $builder->add('email', 'email');
-        $builder->add('username', 'hidden');
+        $builder->add('username', 'text');
         $builder->add('password', $this->params['champPassword']);
-        $builder->add('dateOfBirth', 'date');
+        
+        for($i=date('Y')-10;$i>=date('Y')-100;$i--):
+        $dates[] = $i;
+        endfor;
+        
+        $builder->add('dateOfBirth', 'birthday',array(
+        'years'	=>	$dates,
+        'format' => 'dd/MM/yyyy'));
+      
         $builder->add('allowMaillingInvitation', 'checkbox',array('required'=>false));
         $builder->add('allowAdsHeyvent', 'checkbox',array('required'=>false));
         

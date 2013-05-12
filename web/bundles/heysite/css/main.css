@@ -118,3 +118,23 @@ button {
     margin-top: 80px;
 }
 
+button.btn-heyvent{
+     background: url('/bundles/heysite/images/common/bout-valid-off.png') no-repeat;
+     width: 235px;
+     height: 37px;
+     border: none;
+}
+button.btn-heyvent:hover{
+    cursor: pointer;
+    background: url('/bundles/heysite/images/common/bout-valid-roll.png') no-repeat;
+}
+.btn-heyvent2{
+     background: url('/bundles/heysite/images/common/bout-valider-off.png') no-repeat;
+     width: 132px;
+     height: 37px;
+     border: none;
+}
+.btn-heyvent2:hover{
+    cursor: pointer;
+    background: url('/bundles/heysite/images/common/bout-valider-roll.png') no-repeat;
+}

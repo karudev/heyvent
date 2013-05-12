@@ -1,3 +1,7 @@
+/*input[type="checkbox"]{
+    display: none;
+}*/
+
 #account_dateOfBirth select {
     width : 70px;
 }
@@ -13,54 +17,64 @@ form[name="profil"] table td
     text-decoration: none;
     padding-left: 20px;
     color: #793580;
-    
+
 }
 .information_complementaire a:hover{
     text-decoration: underline;
 }
 
 .background-left-nav{
+    background: url('/bundles/heysite/images/profils/fond-profil.png') no-repeat bottom left;
+    min-height: 565px !important;
     background-color: #e0e0e0;
-    /*min-height: 500px !important;*/
    
-   
+
+
 }
 .background-right-nav{
-    
-   
+
+
 }
-.container-fluid-bg{
-    background-color: #FFF;
-  
+/*.container-fluid-bg{
+    background-color:#e0e0e0;
+}*/
+#profil_form,#picture_module{
+    background-color:#FFF; 
+    height: 100%;
 }
 input.lastName
-{
-    border: none;
-    border-bottom: 1px solid #CCC;
-    font-size: 2em;
-    color: #000 !important;
-    width: 98%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    
-  
+{background: url('/bundles/heysite/images/common/pencil-off.png') no-repeat right; 
+ border: none;
+ border-bottom: 1px solid #CCC;
+ font-size: 2em;
+ color: #000 !important;
+ width: 98%;
+ margin-bottom: 10px;
+ margin-top: 10px;
+
+
 }
 input.firstName
-{
-    border: none;
-    border-bottom: 1px solid #CCC;
-    font-size: 1.5em;
-    color: #000 !important;
-    width: 98%;
-    margin-bottom: 20px;
-    margin-top: 10px;
+{background: url('/bundles/heysite/images/common/pencil-off.png') no-repeat right; 
+ border: none;
+ border-bottom: 1px solid #CCC;
+ font-size: 1.5em;
+ color: #000 !important;
+ width: 98%;
+ margin-bottom: 20px;
+ margin-top: 10px;
 }
 input.commonInputLine
 {
     border: none;
     border-bottom: 1px solid #CCC;
-     width: 98%;
-     font-size: 0.9em;
+    width: 98%;
+    background: url('/bundles/heysite/images/common/pencil-off.png') no-repeat right; 
+}
+input.commonInputLine:hover,input.lastName:hover,input.firstName:hover
+{
+
+    background: url('/bundles/heysite/images/common/pencil-roll.png') no-repeat right; 
 }
 span.hobbies
 {
@@ -70,7 +84,7 @@ span.hobbies
     color : #705870;
     border: 1px solid #705870;
     margin : 2px;
-     
+
 }
 span.croix{
 
@@ -81,10 +95,139 @@ span.croix{
     border: 1px solid #705870;
     margin : 0px;
     margin-right: -2px;
-    
+
 }
 span.croix:hover{
     cursor: pointer;
     font-weight: bolder;
+
+}
+.cadre_photo{
+    background: url('/bundles/heysite/images/profils/cadre-photo-off.png') no-repeat;
+    width: 112px;
+    height: 91px;
+   /* margin-top: 10px;*/
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.cadre_photo figure{
   
+    margin-top: 20px;
+    
+
+
+}
+.cadre_photo:hover{
+    background: url('/bundles/heysite/images/profils/cadre-photo-roll.png') no-repeat;
+    cursor: pointer;
+}
+.cadre_photo img{
+
+    -webkit-border-radius:  59px 55px 63px 62px;
+    -moz-border-radius:  59px 55px 63px 62px;
+    border-radius:   59px 55px 63px 62px;
+    padding: 5px;
+}
+.cadre_photo figure figcaption{
+    font-size: 0.8em;  
+    font-weight: bolder;
+}
+.inscris{
+    margin-top: 50px;
+    text-align: center;
+}
+.inscris p{
+    margin: 1px;
+}
+.inscris p:nth-child(2){
+
+    font-size: 2.1em;
+    border-top : 1px solid #262626;
+    border-bottom : 1px solid #262626;
+
+    padding: 5px;
+}
+.social_link{
+    margin-top: 100px;
+}
+.social_link li{
+    list-style: none;
+    float: left;
+    margin:15px;
+
+
+}
+.social_link .flickr{
+    background: url('/bundles/heysite/images/profils/social-flickr-off.png') no-repeat;
+    width: 39px;
+    height: 39px;
+}
+.social_link .flickr:hover{
+    background: url('/bundles/heysite/images/profils/social-flickr-roll.png') no-repeat;
+    cursor: pointer;
+}
+
+.social_link .linkedin{
+    background: url('/bundles/heysite/images/profils/social-linkedin-off.png') no-repeat;
+    width: 39px;
+    height: 39px;
+}
+.social_link .linkedin:hover{
+    background: url('/bundles/heysite/images/profils/social-linkedin-roll.png') no-repeat;
+    cursor: pointer;
+}
+.social_link .twitter{
+    background: url('/bundles/heysite/images/profils/social-twitter-off.png') no-repeat;
+    width: 39px;
+    height: 39px;
+}
+.social_link .twitter:hover{
+    background: url('/bundles/heysite/images/profils/social-twitter-roll.png') no-repeat;
+    cursor: pointer;
+}
+.social_link .facebook{
+    background: url('/bundles/heysite/images/profils/social-facebook-off.png') no-repeat;
+    width: 39px;
+    height: 39px;
+}
+.social_link .facebook:hover{
+    background: url('/bundles/heysite/images/profils/social-facebook-roll.png') no-repeat;
+    cursor: pointer;
+}
+.social_link .youtube{
+    background: url('/bundles/heysite/images/profils/social-youtube-off.png') no-repeat;
+    width: 39px;
+    height: 39px;
+}
+.social_link .youtube:hover{
+    background: url('/bundles/heysite/images/profils/social-youtube-roll.png') no-repeat;
+    cursor: pointer;
+}
+.social_link .daylimotion{
+    background: url('/bundles/heysite/images/profils/social-daylimotion-off.png') no-repeat;
+    width: 39px;
+    height: 39px;
+}
+.social_link .daylimotion:hover{
+    background: url('/bundles/heysite/images/profils/social-daylimotion-roll.png') no-repeat;
+    cursor: pointer;
+}
+.social_link h6{
+    text-align: center;
+
+}
+.add{
+    background: url('/bundles/heysite/images/common/champ-plus-off.png') no-repeat;
+    width: 21px;
+    height : 21px;
+    display: block;
+    float: left;
+}
+.add:hover{
+    background: url('/bundles/heysite/images/common/champ-plus-roll.png') no-repeat; 
+    cursor: pointer;
+}
+.input-small{
+    font-size: 0.8em !important;
 }

@@ -11,7 +11,7 @@ class AccounthobbiesType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
 
        
-        $builder->add('value', 'text');
+        $builder->add('value', 'text',array('required' => false));
     }
 
     public function getName() {

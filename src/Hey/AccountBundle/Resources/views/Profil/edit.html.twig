@@ -1,18 +1,51 @@
 {% extends "HeyAccountBundle::layout.html.twig" %}
 {% block stylesheets %}
 <link href="{{ asset('bundles/heysite/css/profil/base.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('bundles/heysite/css/picture/base.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('bundles/heysite/css/imgareaselect/imgareaselect-default.css') }}" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block body %}
-<div  class="container-fluid container-fluid-bg">
-    <form name="profil" method="post" enctype="multipart/form-data">
-{{ form_errors(formAccount) }}
 
-            <div class="row-fluid">
-                <div class="span3 background-left-nav">
-                    <!--Sidebar content-->
-                    test
-                </div>
-                <div class="span9 background-right-nav">
+<div  class="container-fluid container-fluid-bg">
+
+
+
+
+    <div style="background-color:#FFF" class="row-fluid">
+        <div  class="span3 background-left-nav">
+            <div class="cadre_photo">
+                <figure id="fig_avatar_crop2"  >
+                    <img src="{{ asset(crop2) }}"/>
+                    <figcaption>Changer ma photo</figcaption>
+                </figure>
+            </div>
+            <div class="inscris">
+
+                <p>INSCRIT DEPUIS LE</p>
+                <p>{{app.user.dateCreated|date('d M')}}</p>
+                <p>- {{app.user.dateCreated|date('Y')}} -</p>
+
+            </div>
+            <div class="social_link">
+                <h6>Mes liens sociaux</h6>
+                <ul>
+                    <li title="Twitter" class="twitter"></li>
+                    <li title="Flickr" class="flickr"></li>
+                    <li title="Facebook" class="facebook"></li>
+                    <li title="Linkedin" class="linkedin"></li>
+                    <li title="Daylimotion" class="daylimotion"></li>
+                    <li title="Youtube" class="youtube"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="picture_module"  style="padding: 5px;display:none" class="span9 background-right-nav">
+                    {% render "HeyAccountBundle:Picture:index" %}
+            </div>
+            <div id="profil_form" style="padding: 12px;" class="span9 background-right-nav">
+                <form name="profil" method="post" enctype="multipart/form-data">
+                    <div class="row-fluid"> {{ form_errors(formAccount) }}
+                    </div>
                     <div class="row-fluid">
                         <div class="span11">{{form_widget(formAccount.lastname,{ 'attr': {'class': 'lastName'} })}}</div>
                     </div>
@@ -20,79 +53,177 @@
                         <div class="span11">{{form_widget(formAccount.firstname,{ 'attr': {'class': 'firstName'} })}}</div>
                     </div>
                     <div class="row-fluid">
-                        <div style="text-align: right"  class="span2">Mot de passe :</div>
-                        <div class="span9">{{form_widget(formAccount.password,{ 'attr': {'class': 'commonInputLine'} })}}</div>
+                        <div class="span2">Pseudo :</div>
+                        <div class="span9">{{form_widget(formAccount.username,{ 'attr': {'class': 'commonInputLine'} })}}</div>
                     </div>
                     <div class="row-fluid">
-                        <div style="text-align: right"  class="span2">Mail :</div>
+                        <div   class="span2">Mail :</div>
                         <div class="span9">{{form_widget(formAccount.email,{ 'attr': {'class': 'commonInputLine'} })}}</div>
                     </div>
                     <div class="row-fluid">
-                        <div style="text-align: right"  class="span2">Tél :</div>
+                        <div   class="span2">Tél :</div>
                         <div class="span9">{{form_widget(formAccount.tel,{ 'attr': {'class': 'commonInputLine'} })}}</div>
                     </div>
                     <div class="row-fluid">
-                        <div style="text-align: right"  class="span2">Cp :</div>
-                        <div class="span1">{{form_widget(formAccount.cp,{ 'attr': {'class': 'commonInputLine'} })}}</div>
-                        <div style="text-align: right"  class="span1">Ville :</div>
-                        <div class="span7">{{form_widget(formAccount.city,{ 'attr': {'class': 'commonInputLine'} })}}</div>
+                        <div   class="span2">Cp :</div>
+                        <div class="span2">{{form_widget(formAccount.cp,{ 'attr': {'class': 'commonInputLine'} })}}</div>
+                        <div   class="span1">Ville :</div>
+                        <div class="span6">{{form_widget(formAccount.city,{ 'attr': {'class': 'commonInputLine'} })}}</div>
                     </div>
                     <div class="row-fluid">
-                        <div style="text-align: right"  class="span2">Région :</div>
-                        <div class="span1">{{form_widget(formAccount.district,{ 'attr': {'class': 'commonInputLine'} })}}</div>
-                        <div style="text-align: right"  class="span1">Pays :</div>
-                        <div class="span7">{{form_widget(formAccount.country,{ 'attr': {'class': 'commonInputLine'} })}}</div>
+                        <div   class="span2">Région :</div>
+                        <div class="span2">{{form_widget(formAccount.district,{ 'attr': {'class': 'commonInputLine'} })}}</div>
+                        <div   class="span1">Pays :</div>
+                        <div class="span6">{{form_widget(formAccount.country,{ 'attr': {'class': 'commonInputLine'} })}}</div>
                     </div>
                     <div class="row-fluid">
-                        <div style="text-align: right"  class="span2">Statut :</div>
+                        <div   class="span2">Statut :</div>
                         <div class="span9">{{form_widget(formAccount.statut)}}</div>
                     </div>
                     <div class="row-fluid">
-                        <div style="text-align: right"  class="span2">Sexe :</div>
+                        <div   class="span2">Sexe :</div>
                         <div class="span9">{{form_widget(formAccount.sex)}}</div>
                     </div>
                     <div class="row-fluid">
-                        <div style="text-align: right"  class="span2">Hobbies :</div>
-                        <div id="hobbies" class="span9">{% render 'HeyAccountBundle:Profil:AddHobbies' %}</div>
+                        <div   class="span2">Né(e) le :</div>
+                        <div class="span9">{{form_widget(formAccount.dateOfBirth)}}</div>
                     </div>
                     <div class="row-fluid">
-                        <div class="offset9">
-                            <button class="btn btn-success" type="submit">Enregistrer</button>
+                        <div   class="span2">Hobbies :</div>
+                        <div id="hobbies" class="span9">{% render 'HeyAccountBundle:Profil:AddHobbies' %}</div>
+                    </div> 
+                    <div style="margin-top: 20px"  class="row-fluid">
+                        <div class="span6"><label for="account_allowMaillingInvitation">Recevoir des maillings d'invitation amis :</label></div> 
+                        <div class="span2">{{form_widget(formAccount.allowMaillingInvitation)}}  </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span6"><label for="account_allowAdsHeyvent">Recevoir des annonces Heyvent :</label> </div> 
+                        <div class="span2"> {{form_widget(formAccount.allowAdsHeyvent)}}</div>
+                    </div>
+
+                    <div style="margin-top: 20px" class="row-fluid">
+                        <div class="span8 offset7">
+                            <button class="btn-heyvent" type="submit"></button>
                         </div>
                     </div>
-                </div>
+           {{ form_rest(formAccount) }}
+                </form>
             </div>
+        </div>
 
-        </form>
-    </div>
+</div>
 {% endblock %}
 {% block javascripts %}
-    <script>
-        $(function() {
-            hobbies();
-            
-        });
-        function hobbies() {
-            $('#accounthobbies_value').focusout(function() {
-                 $('#load').html('<img src="{{ asset('bundles/heysite/images/divers/load.gif') }}" />');
-                 send({value: $('#accounthobbies_value').val()}, './profil/hobbies/add', function(data) {
-                    $('#hobbies').html(data);
-                    hobbies();
-                    $('#load').html('');
-                });
-            });
-            observeDelHobbies();
-        }
-        function observeDelHobbies(){
-        $('.croix').click(function() {
-                        $('#load').html('<img src="{{ asset('bundles/heysite/images/divers/load.gif') }}" />');
-                        send(null, './profil/hobbies/del/'+$(this).attr('data-id'),function(data){
-                            $('#hobbies').html(data);
-                            hobbies();
-                            $('#load').html('');
-                        });
-                    });
-        }
+<script src="{{ asset('bundles/heysite/js/imgareaselect/jquery.imgareaselect.pack.js') }}"></script>
+<script src="{{ asset('bundles/heysite/js/vendor-file-upload/jquery.ui.widget.js')}}"></script>
+<script src="{{ asset('bundles/heysite/js/jquery.iframe-transport.js') }}"></script>
+<script src="{{ asset('bundles/heysite/js/jquery.fileupload.js') }}"></script>
+<script>
+    $(function() {
+        $('#account_cp').myAutoCompleteCp('account_');
+        hobbies();
+        $('img#avatar').imgAreaSelect({
+        aspectRatio: '1:1',
+        handles: true,
+        onSelectEnd: preview
+    });
+    // Envoi du form file en ajax
+    //$('form[name="file"]').submitForm();
+    $('form[name="crop"]').submitForm(function(){
+        $('#fig_avatar_crop img').attr('src','{{ asset('bundles/heysite/images/profils/'~app.user.id~'/Avatar/avatar_crop_49.jpg?')}}' +Math.random());
+        $('#fig_avatar_crop2 img').attr('src','{{ asset('bundles/heysite/images/profils/'~app.user.id~'/Avatar/avatar_crop_82.jpg?')}}' +Math.random());
 
-        </script>
+    });
+    $('#fig_avatar_crop2').click(function(){
+        if($('#picture_module').css('display') == "none"){
+           $('#profil_form').hide();
+           $('#picture_module').show('fade');
+           
+           $('.background-left-nav').animate({height:$('#picture_module').height()+'px'}, 100)  ;
+        }else{
+             $('img#avatar').imgAreaSelect({hide : true});
+            $('#picture_module').hide();
+            $('#profil_form').show('fade'); 
+             $('.background-left-nav').animate({height:$('#profil_form').height()+'px'}, 100)  ;
+           
+        }
+    });
+    
+   
+    $('#file').fileupload({
+        processQueue: [
+        {
+            action: 'load',
+            fileTypes: /^image\/(gif|jpeg|jpg|png)$/,
+            maxFileSize: 10000000 // 10MB
+        }],
+        dataType: 'json',
+        done: function (e, data) {
+         $('#avatar').attr('src','{{ asset('bundles/heysite/images/profils/'~app.user.id~'/Avatar/avatar.jpg?')}}'+Math.random());
+
+        },
+         start: function (e, data) {
+     
+        $('#progress .bar').css(
+            'width','0%'
+        );
+    },
+       progressall: function (e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        $('#progress .bar').css(
+            'width',
+            progress + '%'
+        );
+    }
+    });
+    
+    
+    });
+    function hobbies() {
+            
+        $('span.add').click(function() {
+             $('#load').html('<img src="{{ asset('bundles/heysite/images/divers/load.gif') }}" />');
+             send({value: $('#accounthobbies_value').val()}, './profil/hobbies/add', function(data) {
+                $('#hobbies').html(data);
+                hobbies();
+                $('#load').html('');
+            });
+        });
+        observeDelHobbies();
+    }
+    function observeDelHobbies(){
+    $('.croix').click(function() {
+                    $('#load').html('<img src="{{ asset('bundles/heysite/images/divers/load.gif') }}" />');
+                    send(null, './profil/hobbies/del/'+$(this).attr('data-id'),function(data){
+                        $('#hobbies').html(data);
+                        hobbies();
+                        $('#load').html('');
+                    });
+                });
+    }
+       
+
+
+function preview(img, selection) {
+   /* if (!selection.width || !selection.height)
+    return;
+
+    var scaleX = 60 / (selection.width || 1);
+    var scaleY = 60 / (selection.height || 1);
+  
+    $('img#crop').css({
+     width: Math.round(scaleX * 500),
+     height: Math.round(scaleY * 500),
+     marginLeft: -Math.round(scaleX * selection.x1 ),
+     marginTop: -Math.round(scaleY * selection.y1)
+    });*/
+            $('input[name="file[x1]"]').val(selection.x1);
+            $('input[name="file[y1]"]').val(selection.y1);
+            $('input[name="file[x2]"]').val(selection.x2);
+            $('input[name="file[y2]"]').val(selection.y2);
+            $('input[name="file[w]"]').val(selection.width);
+            $('input[name="file[h]"]').val(selection.height); 
+}
+
+    </script>
 {% endblock %}

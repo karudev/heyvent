@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+.pavevalide {
+display :inline;
+padding:5px 5px;
+border-radius:3px;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border: 3px solid #d1d1d1;
+background-color:#6d2c6c;
+color:#FFF;
+margin-left:5px;
+margin-right:5px;
+}
+.pavevalide:hover {
+	border: 3px solid #461145;
+}
+.pavevalide:before {
+	content:url(fleche-doc.png)
+}
+
+.pavemots {
+display :inline;
+padding:3px 10px;
+border-radius:5px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border: 1px solid #d1d1d1;
+background-color:#e8e1e8;
+color:#796479;
+margin-left:5px;
+margin-right:5px;
+
+}
+.pavemots:hover {
+	border: 1px solid #553155;
+}
+
+.pavechamp{
+	margin-left:5px;
+margin-right:5px;
+width: 400px;
+height:150px;
+color: #656565;
+padding: 10px;
+
+	border:2px solid #c1c1c1;
+	background: #d4d4d4; /* Old browsers */
+
+background: -moz-linear-gradient(top,  #d4d4d4 0%, #ffffff 13%); /* FF3.6+ */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d4d4d4), color-stop(13%,#ffffff)); /* Chrome,Safari4+ */
+
+background: -webkit-linear-gradient(top,  #d4d4d4 0%,#ffffff 13%); /* Chrome10+,Safari5.1+ */
+
+background: -o-linear-gradient(top,  #d4d4d4 0%,#ffffff 13%); /* Opera 11.10+ */
+
+background: -ms-linear-gradient(top,  #d4d4d4 0%,#ffffff 13%); /* IE10+ */
+
+background: linear-gradient(to bottom,  #d4d4d4 0%,#ffffff 13%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4d4d4', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+
+
+}

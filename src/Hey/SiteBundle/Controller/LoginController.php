@@ -10,6 +10,7 @@ use Hey\AccountBundle\Form\Type\AccountType;
 use Hey\AccountBundle\Entity\Account;
 use Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Hey\AccountBundle\Models\Ftp;
 class LoginController extends Controller {
 
     /**
@@ -45,6 +46,7 @@ class LoginController extends Controller {
      * @Template()
      */
     public function quicksignAction() {
+       
         $request = $this->get('request');
         $account_data = $request->request->get('account');
         $form = $this->createForm(new AccountType(), $account_data);
@@ -61,7 +63,7 @@ class LoginController extends Controller {
             $account->setEmail($account_data['email']);
             $account->setAllowAdsHeyvent(0);  
             $account->setAllowMaillingInvitation(0);
-            $account->setUsername(strtolower((substr($account_data['firstname'], 0, 1) . $account_data['lastname'])));
+            $account->setUsername($account_data['username']);
             $account->setDateCreated(new \DateTime());
             $account->setDateLastUpdated(new \DateTime());
             $account->setIsActive(1);
@@ -80,14 +82,44 @@ class LoginController extends Controller {
           //  \Doctrine\Common\Util\Debug::dump($account_data,2);die();
             $em->persist($account);
             $em->flush();
+            
+            if($_SERVER['REMOTE_ADDR'] == "127.0.0.1"){
+            # Création du répertoire
+            mkdir($_SERVER['DOCUMENT_ROOT']."/bundles/heysite/images/profils/".$account->getId(),0777);
+            chmod($_SERVER['DOCUMENT_ROOT']."/bundles/heysite/images/profils/".$account->getId(), 0777);
+            }else{
+            #Connexion sftp
+            $ftp = new Ftp(FTP_HOST);
+            $ftp->login(FTP_USER,FTP_PASSWORD);
+            $ftp->mkdir($account->getId(),0777);
+            $ftp->close();
+            }
+        
+        
+          
            
              // Création d'un nouveau token basé sur l'utilisateur qui vient de s'inscrire
               $token = new UsernamePasswordToken($account, $account->getPassword(), 'secured_area', $account->getRoles());
               // On passe le token créé au service security context afin que l'utilisateur soit authentifié
               $this->get('security.context')->setToken($token);
             
-              
-            return $this->redirect($this->generateUrl('_account_dashboard'));
+              # Envoi d'email
+              if($_SERVER['REMOTE_ADDR'] != "127.0.0.1"){
+              $message = \Swift_Message::newInstance()
+                        ->setSubject('Heyvent : Bienvenue '.$account->getUsername())
+                        ->setFrom(NOREPLY_EMAIL)
+                        ->setTo($account->getEmail())
+                        ->setCc(unserialize(ADMIN_EMAIL))
+                        ->setBody(
+                        $this->renderView(
+                                'HeyAccountBundle:Email:welcome.html.twig', array('account' => $account,'password'=>$account_data['password'])
+                        ),'text/html'
+                        )
+                ;
+                $this->get('mailer')->send($message);
+              }
+                
+            return $this->redirect($this->generateUrl('_account_profil_edit'));
             
             }
         }
@@ -103,7 +135,7 @@ class LoginController extends Controller {
         unset($f->children['tel']);
         unset($f->children['allowMaillingInvitation']);
         unset($f->children['allowAdsHeyvent']);
-         
+        unset($f->children['sex']);
         return array('form' =>  $f);
     }
 

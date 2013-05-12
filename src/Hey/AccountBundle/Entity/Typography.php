@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Typography
  *
- * @ORM\Table(name="Typography")
+ * @ORM\Table(name="typography")
  * @ORM\Entity(repositoryClass="Hey\AccountBundle\Entity\TypographyRepository")
  */
 class Typography

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Sociallink
  *
- * @ORM\Table(name="Sociallink")
+ * @ORM\Table(name="sociallink")
  * @ORM\Entity(repositoryClass="Hey\AccountBundle\Entity\SociallinkRepository")
  */
 class Sociallink

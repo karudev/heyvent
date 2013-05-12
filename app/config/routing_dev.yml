@@ -1,3 +1,7 @@
+_home:
+    pattern:  /
+    defaults: { _controller: HeySiteBundle:Login:login }
+    
 _contact:
     pattern:  /contact
     defaults: { _controller: HeySiteBundle:Contact:index }
@@ -75,6 +79,28 @@ _account_event_create_date:
 _account_event_edit:
     pattern:  /account/event/edit/{id}
     defaults: { _controller: HeyAccountBundle:Event:edit } 
+
+_account_ajax_cp:
+    pattern:  /account/ajax/cp
+    defaults: { _controller: HeyAccountBundle:Ajax:cp } 
+
+_ajax_is_username_exist:
+    pattern:  /ajax/isusernameexist/{username}
+    defaults: { _controller: HeyAccountBundle:Ajax:isUsernameExist, username : '' } 
+    requirements:
+        username: .*
+    
+_ajax_is_email_exist:
+    pattern:  /ajax/isemailexist/{email}
+    defaults: { _controller: HeyAccountBundle:Ajax:isEmailExist, email : '' } 
+    requirements:
+        email: .*
+
+_ajax_is_valid_mdp:
+    pattern:  /ajax/isvalidmdp/{password}
+    defaults: { _controller: HeyAccountBundle:Ajax:isValidMdp, password : '' } 
+    requirements:
+        password: .*
     
 _wdt:
     resource: "@WebProfilerBundle/Resources/config/routing/wdt.xml"

@@ -32,7 +32,7 @@ security:
             form_login:
                 check_path: /account/logincheck
                 login_path: /account/login
-                default_target_path: /account/dashboard
+                default_target_path: /account/profil
             logout:
                 path:   /account/logout
                 target: /account/login

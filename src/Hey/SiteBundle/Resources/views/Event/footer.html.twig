@@ -1,42 +1,77 @@
 <footer>
     <section class="lien">
         <div style="float:left">
-        <ul class="titlefoot noborder">
-            Tableau de bord
-            <li><a href="#">Mes Heyvents</a></li>
-            <li><a href="#">Rechercher</a></li>
-            <li><a href="#">Invitations</a></li>
-        </ul>
-        <ul class="titlefoot">
-            Mon compte
-            <li><a href="#">Liste de diffusion</a></li>
-            <li><a href="#">Mon profil</a></li>
-            <li><a href="#">Créer un Heyvent</a></li>
-        </ul>
-        <ul class="titlefoot">
-            Contactez-nous
-            <li><a href="#">Plus d'infos</a></li>
-            <li><a href="#">Signaler un abus</a></li>
-            <li><a href="#">Se désinscrire</a></li>
-        </ul>
+            <ul class="titlefoot noborder">
+                Tableau de bord
+                <li><a href="#">Mes Heyvents</a></li>
+                <li><a href="#">Rechercher</a></li>
+                <li><a href="#">Invitations</a></li>
+            </ul>
+            <ul class="titlefoot">
+                Mon compte
+                <li><a href="#">Liste de diffusion</a></li>
+                <li><a href="#">Mon profil</a></li>
+                <li><a href="#">Créer un Heyvent</a></li>
+            </ul>
+            <ul class="titlefoot">
+                Contactez-nous
+                <li><a href="#">Plus d'infos</a></li>
+                <li><a href="#">Signaler un abus</a></li>
+                <li><a href="#">Se désinscrire</a></li>
+            </ul>
         </div>
         <div style="float:right">
-        <ul class="titlefoot dernieres_entrees">
-            <p>Dernières entrées</p>
-            <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex1.jpg') }}" /></a></li>
-             <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex2.jpg') }}" /></a></li>
-             <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex3.jpg') }}" /></a></li>
-             <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex4.jpg') }}" /></a></li>
-             <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex5.jpg') }}" /></a></li>
-             <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex6.jpg') }}" /></a></li>
-        </ul>
-                </div>
+            <ul class="titlefoot dernieres_entrees">
+                <p>Dernières entrées</p>
+                <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex1.jpg') }}" /></a></li>
+                <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex2.jpg') }}" /></a></li>
+                <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex3.jpg') }}" /></a></li>
+                <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex4.jpg') }}" /></a></li>
+                <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex5.jpg') }}" /></a></li>
+                <li><a href="#"><img src="{{ asset('bundles/heysite/images/footer/exemples/ex6.jpg') }}" /></a></li>
+            </ul>
+        </div>
     </section>
     <section class="logo_lien">
         <div class="first-margin-left facebook"><a href="#">Facebook</a></div>
         <div class="twitter"><a href="#">Twitter</a></div>
         <div class="google"><a href="#">Google+</a></div>
         <div class="flickr"><a href="#">Flickr</a></div>
-        <div class="heyvent">Tous droits déposés</div>
+        <div title="Obtenir plus d'informations sur la version" style="cursor:pointer" data-toggle="modal" href="#version" class="heyvent">V0.3 - Tous droits réservés</div>
     </section>
 </footer>
+<div id="version" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Historique des versions</h3>
+    </div>
+    <div class="modal-body">
+        <h6>11/05/2013 - Heyvent v0.3</h6>
+        <ul>
+            <li>Changement du logo</li>
+            <li>Module Avatar : changement de libellé et barre de progression</li>
+            <li>Ajout du champ date de naissance</li>
+            <li>Ajout du champ pseudo</li>
+            <li>Conversion automatique d'une image .png en .jpg</li>
+            <li>Découpage automatique possible, sans préselection avec le cadre.Donc compactible avec version mobile</li>
+            <li>Profil : Adaptation du bloc gauche en fontion du bloc droit</li>
+            <li>Amélioration du formulaire création de compte, avec vérification sur le pseudo, l'email et le mot de passe</li>
+        </ul>
+        <h6>09/05/2013 - Heyvent v0.2.1</h6>
+        <ul>
+            <li>Table postalcode ajoutée; aide à la saisie du code postal fonctionnelle</li>
+            <li>Répertoire associé à un compte => l'avatar est uploadé dans le répertoire du compte</li>
+            <li>Passage au mode FTP, ce mode sera appliqué pour la gestion de fichier sur le site</li>
+            <li>Avatar par defaut pour un nouveau compte</li>
+           
+        </ul>
+        <h6>03/05/2013 - Heyvent v0.2</h6>
+        <ul>
+            <li>Remplacements boutons roll</li>
+            <li>Fonctionnalité de modification de son avatar ( avec le système de crop )</li>
+            <li>Amélioration du responsive design version mobile</li>
+            <li>Mise en place d'un historique des versions</li>
+        </ul>
+    </div>
+
+</div>

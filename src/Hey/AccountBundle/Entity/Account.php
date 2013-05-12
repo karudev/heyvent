@@ -44,7 +44,7 @@ class Account implements UserInterface {
     /**
      * @var string
      *
-     * @ORM\Column(name="sex", type="string", length=64)
+     * @ORM\Column(name="sex", type="string", length=64 , nullable=true)
      * 
      */
     protected $sex;
@@ -168,8 +168,10 @@ class Account implements UserInterface {
      */
     protected $country;
 
-    /**
-     * @inheritDoc
+     /**
+     * Get username
+     *
+     * @return string 
      */
     public function getUsername() {
         return $this->username;

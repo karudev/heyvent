@@ -1,10 +1,27 @@
 <h4>Création de votre compte</h4>
 <form name="quicksign" method="post" action="{{path('_quicksign')}}">
-{{ form_widget(form.lastname,{ 'attr': {'class': 'span3','placeholder':'Nom'} })}}
-{{ form_widget(form.firstname,{ 'attr': {'class': 'span3','placeholder':'Prénom'} })}}
-{{ form_widget(form.email,{ 'attr': {'class': 'span3','placeholder':'Email'} })}}
-{{ form_widget(form.password,{ 'attr': {'class': 'span3','placeholder':'Mot de passe'} })}}
-<input type="submit" class="btn btn-success" value="S'incrire maintenant" >
-<input type="reset" class="btn" value="Annuler" >
+<div class="row-fluid">
+{{ form_widget(form.username,{ 'attr': {'class': 'span11','placeholder':'Pseudo','style':'float:left','title' : 'Votre pseudo doit être unique et supérieur à 4 caractères'} })}} <span style="margin-left:5px" id="etat_username" ></span>
+</div>
+<div class="row-fluid">
+{{ form_widget(form.lastname,{ 'attr': {'class': 'span11','placeholder':'Nom'} })}}
+</div>
+<div class="row-fluid">
+{{ form_widget(form.firstname,{ 'attr': {'class': 'span11','placeholder':'Prénom'} })}}
+</div>
+<div class="row-fluid">
+{{ form_widget(form.email,{ 'attr': {'class': 'span11','placeholder':'Email','style':'float:left','title' : 'Votre email doit être unique et valide'} })}} <span style="margin-left:5px" id="etat_email" ></span>
+</div>
+<div class="row-fluid">
+{{ form_widget(form.password,{ 'attr': {'class': 'span11','placeholder':'Mot de passe','style':'float:left','title' : 'Votre mot de passe doit être supérieur à 6 caractères'} })}}  <span style="margin-left:5px" id="etat_password" ></span>
+</div>
+<div class="row-fluid">
+    <button type="submit" id="btn-sign" class="btn-heyvent2"></button>
+</div>
 {{ form_rest(form)}}
 </form>
+<div style="margin-top:10px;clear:both">
+    <p><img alt="Attention" src="{{asset('bundles/heysite/images/divers/warning.png')}}" /><small>Votre pseudo doit être unique et supérieur à 4 caractères</small>.</p>
+    <p><img alt="Attention" src="{{asset('bundles/heysite/images/divers/warning.png')}}" /><small>Votre email doit être unique et valide</small>.</p>
+    <p><img alt="Attention" src="{{asset('bundles/heysite/images/divers/warning.png')}}" /><small>Votre mot de passe doit être supérieur à 6 caractères</small>.</p>
+</div>
