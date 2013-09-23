@@ -21,8 +21,8 @@ app/cache/*
 
 # Configuration files
 #Symfony/app/config/parameters.ini
-#Symfony/app/config/parameters.yml
-
+app/config/parameters.yml
+docs/*
 
 
 # Acme

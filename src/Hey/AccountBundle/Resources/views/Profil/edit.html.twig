@@ -120,6 +120,7 @@
 <script src="{{ asset('bundles/heysite/js/jquery.fileupload.js') }}"></script>
 <script>
     $(function() {
+        $('#accounthobbies_value').myAutoCompleteHobbies();
         $('#account_cp').myAutoCompleteCp('account_');
         hobbies();
         $('img#avatar').imgAreaSelect({
@@ -187,6 +188,7 @@
                 $('#hobbies').html(data);
                 hobbies();
                 $('#load').html('');
+                $('#accounthobbies_value').myAutoCompleteHobbies();
             });
         });
         observeDelHobbies();

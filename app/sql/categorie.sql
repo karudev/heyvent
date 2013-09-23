@@ -1,0 +1,22 @@
+insert into categorie value 
+/*('','Sports'),
+('','Voyages'),*/
+('','Culture'),
+('','Art'),
+('','Arts manuels'),
+('','Musique'),
+('','Gadget'),
+('','Jeux'),
+('','Sciences'),
+('','Loisirs créatifs'),
+('','Loisirs sportifs'),
+('','Art de la table'),
+('','Télé'),
+('','Radio'),
+('','Mode'),
+('','Cinéma'),
+('','Détente, bien être'),
+('','Shopping'),
+('','Véhicules'),
+('','Nature et environnement'),
+('','Divers');
